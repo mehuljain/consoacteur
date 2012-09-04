@@ -1,0 +1,97 @@
+<a name="top"></a>
+<div id="header">
+    <div id="logo">
+        <a href="{{ path('gd_home') }}" class="logo">Logo</a>       
+    </div>
+    <div class="middle">
+        <div class="navigation">
+            <a href="{{ path('gd_site_user_refer_friends') }}" class="parrainage"><span>{% trans %}header.referrallink.text{% endtrans %}</span></a>
+            <a href="{{ path('gd_faq') }}" class="faq"><span>{% trans %}header.faqlink.text{% endtrans %}</span></a>
+            <a href="{{path('gd_site_newsletter')}}" id="newsletter" class="newsletter"><span>{% trans %}header.newsletterlink.text{% endtrans %}</span></a>
+            <a href="{{ path('gd_assistance') }}" class="assistance"><span>{% trans %}header.assistancelink.text{% endtrans %}</span></a>
+            <div class="clr"></div>
+        </div>
+        <div class="msgs">
+            {% if app.session.hasFlash('newsletter-success') %}
+            <div class="">{{ app.session.flash('newsletter-success') }}</div>
+            {% endif %}
+           {% if app.session.hasFlash('closure-request') %}
+            <div class="">{{ app.session.flash('closure-request') }}</div>
+            {% endif %}
+        </div>
+        <div class="search">
+            <div class="title">{% trans %}header.searchtitle.text{% endtrans %}</div>
+            <form action="{{ path('gd_site_user_search') }}" method="get">
+                <div class="search_area">
+                    <input type="text" required="required" name="term" class="search_text" value="{% trans %}search.background.text{% endtrans %}" id="search_keywords" onblur="this.value = this.value || this.defaultValue; this.style.color = '#d5c5b1'" onfocus="this.value=''; this.style.color = '#333333';"/>
+                    <input type="submit" class="search_submit" value=""/>
+                </div>
+                <div id="companies" style="position: absolute; display: block;"></div>
+            </form>
+        </div>
+    </div>
+    <div class="identification">
+        {% if is_granted('ROLE_USER') %}
+            <div class="title"><h3><span class="logged_in"><a href="{{ path('fos_user_security_logout') }}">{% trans %}header.logoutlink.text{% endtrans %}</a></span></h3></div>
+        {% else %}
+            <div class="title"><h3>{% trans %}header.logintitle.text{% endtrans %}</h3></div>
+        {% endif %}
+        <div class="lang">
+            {% set cur_locale = app.request.session.locale %}
+            <a class="gd_locale main" title="{{country.full_name|trans}}-{{ languages[cur_locale|capitalize].full_name|trans }}"><img class="flag" height="12" width="16" src="{{ asset(country_flag) }}"/><span>{{ country.locale_name }}-{{ cur_locale|capitalize }}</span><img class="language_dropdown" src="{{ asset('bundles/gdsite/images/dropdown.png') }}" title="Change Language" /></a>
+            <div class="geography_selector">
+                <span class="select_title">{% trans %}header.countrylanguagetitle.text{% endtrans %}</span>
+                <ul>
+                    {% for key, val in languages %}
+                        <li {% if app.request.session.locale == val.locale_name %}class="cur_lang" {% endif %} title="{{country.full_name|trans}}-{{val.full_name|trans}}"  >
+                            <a class="gd_locale" href="{{ path('switch_locale', { 'locale' : val.locale_name }) }}"><img class="flag" height="12" width="16" src="{{ asset(country_flag) }}" />
+                                <span>{{ country.locale_name }}-{{ key }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% if is_granted('ROLE_USER') %}
+            <div class="form income">
+              <table>
+                <br/>
+                <tr>       
+                  <td><a style="font-size:medium; padding-left: 55px" href="{{ path('gd_site_withdrawal') }}">{% trans %}header.yourearningstitle.text{% endtrans %}&nbsp;{{ accountSummary.confirmedAndValidatedAmount + accountSummary.requestedAmount }}{{ CURRENCY }}</a></td>
+                </tr>
+              </table>
+            </div>
+        {% else %}
+            <div class="form">
+                <form action="{{ path('fos_user_security_check') }}" method="POST"><!-- Path needs to be refactored -->
+                    <div class="level1">
+                        <div class="title">{% trans %}header.username.title{% endtrans %}</div>
+                        <input type="text" id="username" required="required" name="_username" value="{{ last_username| default('') }}" class="text username small_text"/>                    
+                        <a href="{{ path('gd_site_user_registration') }}" id="inscription">{% trans %}header.registrationlink.text{% endtrans %}</a>
+                    </div>
+                    <div class="level2">
+                        <div class="title">{% trans %}header.password.title{% endtrans %}</div>
+                        <input required="required" type="password" name="_password" class="text password small_text"/>
+                        <div class="forgot_password"><a href="{{ path('gd_site_user_resetting') }}" id="forgot_pass">{% trans %}header.forgotpasswordlink.text{% endtrans %}</a></div>
+                    </div>
+                    <input type="submit" class="submit" name="login" value=""/>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token| default('') }}" />
+                    <input type="hidden" name="_target_path" value="{{url('gd_site_legal_confirm')}}" />
+
+                    <div class="clr"></div>
+                </form>
+            </div>
+        {% endif %}
+        <div class="social">
+            <div class="title">{% trans %}header.socialnetwork.title{% endtrans %}</div>
+            <div class="icons">
+                <a target="_blank" href="{{ facebook_link }}" class="fb"><img src="{{ asset('bundles/gdsite/images/facebook.gif') }}" alt="Facebook"/></a>
+                <a target="_blank" href="{{ twitter_link }}"><img src="{{ asset('bundles/gdsite/images/twitter.gif') }}" alt="Twitter"/></a>
+
+                <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

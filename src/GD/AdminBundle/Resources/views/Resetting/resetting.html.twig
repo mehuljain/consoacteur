@@ -1,0 +1,39 @@
+{% extends 'GDAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="span8 offset5 border connection">
+            <h1 class="resetting calign">{% trans %}Forgot Password{% endtrans %}</h1>
+            
+            <form class="form-stacked" action="{{ path('gd_admin_user_resetting') }}" method="POST">
+                <div class="clearfix">
+                    {% if app.session.hasFlash('success') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('success') }}
+                        </div>
+                    {% endif %}
+                    {% if app.session.hasFlash('error') %}
+                        <div class="flash flash-error">
+                            {{ app.session.flash('error') }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="clearfix">
+                    {{ form_errors(form) }}
+                </div>
+
+                <div class="clearfix">
+                    <div class="fleft">{{ form_label(form.usernameOrEmail) }}</div>
+                    <div class="fright">{{ form_widget(form.usernameOrEmail) }}</div>
+                </div>
+                
+                {{ form_rest(form) }}
+                
+                <div class="actions calign">
+                    <input name="submit" type="submit" class="btn primary"  value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

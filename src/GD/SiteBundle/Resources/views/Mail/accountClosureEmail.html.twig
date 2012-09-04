@@ -1,0 +1,15 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'Confirmation désinscription - Conso-Acteur'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bonjour '}} {{user.username}}{{','}}
+
+{{'Votre demande de désinscription a bien été prise en compte.'}}
+
+{{ 'En vous remerciant encore de votre confiance.' }}
+{{" -L'équipe Conso-Acteur" }}
+{% endautoescape %}
+{% endblock %}

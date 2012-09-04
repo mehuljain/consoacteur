@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+          <!--Feedback form flash messages -->
+          <trans-unit id="feedback.success.message">
+                <source>feedback.success.message</source>
+                <target>Thank you for your feedback! Your comment has been queued for moderation</target>
+          </trans-unit>
+          <trans-unit id="feedback.error.message">
+                <source>feedback.error.message</source>
+                <target>There was a problem in saving your feedback. Please try again</target>
+          </trans-unit>       
+          <!-- Registration form flash messages -->
+          <trans-unit id="registration.success.message">
+                <source>registration.success.message</source>
+                <target>Your account has been activated and you are logged in! Please update your profile before checking our new Offers</target>
+          </trans-unit>
+          <!-- Password resetting form flash messages -->
+          <trans-unit id="passwordreset.linkexpired.message">
+                <source>passwordreset.linkexpired.message</source>
+                <target>Your request link has expired. Please make another request by entering username or email</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.invaliduser.message">
+                <source>passwordreset.invaliduser.message</source>
+                <target>The %usernameOrEmail% Username or Email you entered does not exist</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.unauthorizeduser.message">
+                <source>passwordreset.unauthorizeduser.message</source>
+                <target>This user is not allowed to request for a password reset. Please contact our support team for further details</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.repeatrequest.message">
+                <source>passwordreset.repeatrequest.message</source>
+                <target>You have already made a request to reset password in the past %resetHourTime% hour(s). Please check your mail for Password reset link</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.mailsent.message">
+                <source>passwordreset.mailsent.message</source>
+                <target>An Email has been sent to your mail-id. Please click on the password reset link</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.mailsenderror.message">
+                <source>passwordreset.mailsenderror.message</source>
+                <target>Something went wrong! We are sorry for the inconvenience. Please try again later</target>
+          </trans-unit>                   
+          <trans-unit id="passwordreset.emailsent.message">
+                <source>passwordreset.emailsent.message</source>
+                <target>Your password has been reset successfully!</target>
+          </trans-unit>
+          <!-- Login form flash messages -->
+          <trans-unit id="login.notactivated.message">
+                <source>login.notactivated.message</source>
+                <target>Your account is not yet activated. Please enter your username or email to receive the link in your email</target>
+          </trans-unit>
+          <trans-unit id="login.credentialsexpired.message">
+                <source>login.credentialsexpired.message</source>
+                <target>Your credentials have expired. Please enter your username or email to receive the link in your email</target>
+          </trans-unit>     
+          <!-- Profile Form flash messages -->
+          <trans-unit id="profileupdate.success.message">
+                <source>profileupdate.success.message</source>
+                <target>Your profile has been updated successfully. Thank you!</target>
+          </trans-unit>
+          <trans-unit id="emailupdate.success.message">
+                <source>emailupdate.success.message</source>
+                <target>Your email has been updated successfully!</target>
+          </trans-unit>
+          <trans-unit id="passwordupdate.success.message">
+                <source>passwordupdate.success.message</source>
+                <target>Your password has been updated successfully!</target>
+          </trans-unit>
+          <trans-unit id="newrequest.sent.message">
+                <source>newrequest.sent.message</source>
+                <target>Your request has been made. Your request number is %requestNumber%</target>
+          </trans-unit>
+          <!-- Withdrawal Page flash messages -->
+          <trans-unit id="withdrawal.invalidamount.message">
+                <source>withdrawal.invalidamount.message</source>
+                <target>This is not a correct withdrawable amount. Your withdrawable amount is  %withdrawableAmount% %currency%</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.lowamount.message">
+                <source>withdrawal.lowamount.message</source>
+                <target>Your withdrawable amount is too low. Minimum amount to be withdrawn is %minimumAmount% %currency%</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.requestsuccess.message">
+                <source>withdrawal.requestsuccess.message</source>
+                <target>Your withdrawal request has been received! Your request number is %withdrawalId%</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.requesterror.message">
+                <source>withdrawal.requesterror.message</source>
+                <target>There was a problem with receiving your withdrawal request. Please contact the support staff.</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.amountdetails.message">
+                <source>withdrawal.amountdetails.message</source>
+                <target>Your account details were successfully sent to your email. Thank you</target>
+          </trans-unit>
+          <!--Referral Page Flash messages -->
+          <trans-unit id="referralemail.sent.sucess">
+                <source>referralemail.sent.sucess</source>
+                <target>A referal email has been sent to your friend(s). Thank you for refering your friends!</target>
+          </trans-unit>
+          <trans-unit id="referralemail.sent.error">
+                <source>referralemail.sent.error</source>
+                <target>There was some problem in sending the email. Please try again later</target>
+          </trans-unit>
+          </body>
+     </file>
+</xliff>

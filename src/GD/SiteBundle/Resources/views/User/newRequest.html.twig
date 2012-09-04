@@ -1,0 +1,54 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}newrequest.title.text{% endtrans %}{% endblock %}
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% else %}
+                {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                <div class="msgs">
+                    {% if app.session.hasFlash('success') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('success') }}
+                        </div>
+                    {% endif %}
+                </div>
+                <h1 class="title">{% trans %}newrequest.title.text{% endtrans %}</h1>
+                <div class="request">
+                    <form action="{{ path('gd_site_user_new_request') }}" method="POST" novalidate="novalidate">
+                        {{ form_errors(form) }}
+                     <div class="form">
+                        <div class="form_layers floated1">
+                            {{ form_row(form.problem) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            <div>
+                                <label>Date :</label>
+                                {{ "now" | date("d F , Y") }}
+                            </div>
+                        </div>
+                        <div class="form_layers floated1">
+                            {{ form_row(form.subject) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            {{ form_row(form.message) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            <span class="popuplt_btn link">
+                                <input type="submit" class="popuprt_btn" name="send" value="{% trans %}newrequest.submitbutton.text{% endtrans %}">
+                            </span>                            
+                        </div>
+                         {{ form_rest(form) }}
+                    </div>
+                    </form>
+                </div>
+             </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}

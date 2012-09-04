@@ -1,0 +1,130 @@
+/*Global Style*/
+#menu {
+    float: left;
+    margin-right: 20px;
+    font-size: 1.2em;
+    background: white;
+    padding: 1px 1px 0 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+#menu a {
+    font-size: 20px;
+}
+
+/*Toggle Area*/
+#menu .toggle {
+    float: right;
+    width: 9px;
+    padding: 10px;
+    cursor: pointer; /* border-left:1px solid #E0E0E0; */
+    color: #FFF;
+}
+
+#menu ul.navmenu li:first-child .toggle {
+    border-width: 0 0 0 1px;
+}
+
+/*Menu Setup*/
+#menu ul.navmenu {
+    padding: 0;
+    width: 230px;
+    margin-bottom: 1px; /*  border-bottom: 1px solid #CCC; */
+}
+
+#menu ul ul {
+    /*border:1px solid #CCC;*/
+}
+
+#menu ul ul.submenu li {
+    border: none;
+}
+
+#menu ul.navmenu li {
+    margin: 0;
+    list-style: none; /*border-right:1px solid #CCC; border-left:1px solid #CCC; border-top:1px solid #CCC;*/
+    border-bottom: 1px solid white;
+}
+
+#menu ul ul.submenu li a {
+    color: #555;
+    font-size: 14px;
+}
+
+/*Links*/
+#menu ul.navmenu a, #menu ul.navmenu a:visited {
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+#menu ul.navmenu ul.submenu a:hover {
+    background: #dfc6da;
+    color: #333;
+}
+
+/*Heading Outer div*/
+#menu ul.navmenu .menutop {
+    /* border:1px solid #CCC; */
+    border-width: 0 1px;
+    overflow: hidden; /*  width:150px; */
+    background: #2189B9;
+}
+
+/*Header Links*/
+#menu ul.navmenu .menutop a {
+    width: 190px;
+    float: left;
+    margin: 0 0 1px 0;
+    color: white;
+}
+
+/*Header Link Hover*/
+#menu ul.navmenu .menutop a:hover {
+    color: #f0f0f0;
+}
+
+/*Removes white border for the first header*/
+#menu ul.navmenu li:first-child .menutop a {
+    border-width: 0px;
+}
+
+/*Single Menu Width Fix*/
+#menu ul.navmenu .menusingle a {
+    width: 190px;
+}
+
+/*Border Radius and Special Border Width*/
+#menu ul.navmenu li:first-child .menutop {
+    border-bottom: 1px solid #CCC;
+    border-width: 1px 1px 0 1px;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+
+#menu ul.navmenu li:last-child .menutop {
+    border-width: 0px 1px 1px 1px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+
+#menu ul.navmenu li:last-child ul.submenu {
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+
+#menu ul.navmenu li:last-child .menutop-open {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0px;
+    border-width: 0 1px;
+}
+
+#menu ul.navmenu li:last-child {
+    border-bottom: none;
+}

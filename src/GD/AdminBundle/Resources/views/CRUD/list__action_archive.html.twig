@@ -1,0 +1,7 @@
+{% if admin.isGranted('DELETE') and admin.hasRoute('archive') %}
+<a href="{{ admin.generateObjectUrl('archive', object) }}" class="delete_link"
+   title="{% trans from 'SonataAdminBundle' %}action_archive{% endtrans %}">
+    <img src="{{ asset('bundles/sonataadmin/famfamfam/delete.png') }}"
+         alt="{% trans from 'SonataAdminBundle' %}action_archive{% endtrans %}"/>
+</a>
+{% endif %}

@@ -1,0 +1,49 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}forgotpassword.htmltitle.text{% endtrans %}{% endblock %}
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">
+        <div class="rightnavi">
+			<fieldset>
+				<div class="msgs">
+					{% if app.session.hasFlash('success') %}
+						<div class="flash flash-success">
+							{{ app.session.flash('success') }}
+						</div>
+					{% endif %}
+					{% if app.session.hasFlash('error') %}
+						<div class="flash flash-error">
+							{{ app.session.flash('error') }}
+						</div>
+					{% endif %}
+					{% if app.session.hasFlash('user_activate') %}
+						<div class="flash flash-error">
+							{{ app.session.flash('user_activate') }}
+						</div>
+					{% endif %}
+				</div>
+				<legend><h1 class="title">{% trans %}forgotpassword.title.text{% endtrans %}</h1></legend>
+        <div><p style="font-weight: bold">{% trans %}forgotpassword.explanation.text{% endtrans %}</p></div>
+				{{ form_errors(form) }}
+				<form action="{{ path('gd_site_user_resetting') }}" method="POST" novalidate="novalidate">
+					<div class="form">
+						<div class="form_layer floated1">
+							{{ form_row(form.usernameOrEmail) }}
+						</div>
+						<div class="form_layer floated1">
+							<span class="customButton popuplt_btn link">
+									<input id="normal_font" type="submit" class="popuprt_btn"  value="{% trans %}forgotpassword.submitbutton.text{% endtrans %}">
+							</span>
+							<div class="clr"></div>
+						</div>
+						{{ form_rest(form) }}
+					</div>
+				</form>
+			</fieldset>
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

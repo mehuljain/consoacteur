@@ -1,0 +1,90 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}referraldetails.title.text{% endtrans %}{% endblock %}
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                <h1 class="title">{% trans %}referraldetails.title.text{% endtrans %}</h1>
+                <div class="referralDetails">
+                    <table class="table">
+                        <tr>
+                            <th>{% trans %}referraldetails.email.text{% endtrans %}</th>
+                            <th>{% trans %}referraldetails.sentdate.text{% endtrans %}</th>
+                            <th>{% trans %}referraldetails.status.text{% endtrans %}</th>
+                            <th>{% trans %}referraldetails.action.text{% endtrans %}</th>
+                        </tr>
+                        {% for referral in referrals %}
+                            <tr>
+                                <td>{{ referral.referralEmail }}</td>
+                                <td>{{ referral.createdAt| date('M d Y') }}</td>
+                                <td>
+                                    {% set userRegistered = false %}
+                                    {% for user in referralUsers %}
+                                        {% if referral.referralEmail == user.email %}
+                                            {% set userRegistered = true %}
+                                            {% if user.sponsorshipCode == app.user.username %}
+                                                {% trans %}referraldetails.registered.text{% endtrans %}
+                                            {% elseif referral.referralEmail == user.email %}
+                                                {% trans %}referraldetails.registernocode.text{% endtrans %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
+                                {% if not userRegistered %}
+                                  {% if date(referral.createdAt) < date('-15days') %}
+                                    <td>                                        
+                                        <a class="sendEmail" href="{{ path('gd_site_referral_email', {'email' : referral.referralEmail|url_encode() } ) }}">{% trans %}referraldetails.resendemail.text{% endtrans %}<br/></a>
+                                        <small></small>
+                                    </td>
+                                   {% else %}
+                                    <td>
+                                        {% trans %}referralemail.already.sent{% endtrans %}
+                                    </td>
+                                   {% endif %}
+                                {% else %}
+                                    <td>{% trans %}referraldetails.none.text{% endtrans %}</td>
+                                {% endif %}
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="4">{% trans %}referraldetails.noreferral.text{% endtrans %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="social">
+                    <h3>{% trans %}referfriend.ad.text{% endtrans %}</h3>
+                    <br>
+                    <p style="color: #2189B9; font: 13px"><a href="{{ facebook_link }}">{% trans %}referraldetails.facebook.text{% endtrans %}</a> | <a href=" {{ twitter_link }}">{% trans %}referraldetails.twitter.text{% endtrans %}</a> | <a href="{{ path('gd_site_user_refer_friends') }}">{% trans %}referraldetails.referfriend.text{% endtrans %}</a></p>
+                </div>
+                <br>
+             </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.sendEmail').live('click', function (event) {
+            event.preventDefault();
+            var currentElement = $(this);
+            currentElement.next('small').html('Sending Mail...');
+            
+            $.ajax({
+              url: currentElement.attr('href'),
+              success: function(data){
+                currentElement.next('small').html(data);
+              }
+            });
+        });
+    });
+</script>
+{% endblock %}

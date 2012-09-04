@@ -1,0 +1,125 @@
+{# Not being used for version 1 of the website #}
+{% extends 'GDSiteBundle::layout.html.twig' %}
+
+{% block title %}Great Deals Concept{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Great Deals" />
+    <meta name="keywords" content="concept" />
+{% endblock %}
+
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">
+        {% if is_granted('ROLE_USER') %}
+            {% include 'GDSiteBundle::sidebar.html.twig' %}
+        {% else %}
+            {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+        {% endif %}
+        <div class="rightnavi">
+            <div class="title"><font><font>{% trans from "navigation" %}The Concept{% endtrans %}</font></font></div>
+            <div class="c_list">
+                        <table cellspacing="5">                            
+                            <tbody><tr">
+                                <td>
+                                    <div class="boxbg">
+                                        <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                        <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                    </div>
+                                </td>
+                                                        
+                                <td>
+                                    <div class="boxbg">
+                                        <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                        <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                    </div>
+                                </td>
+                                
+                                <td>
+                                    <div class="boxbg">
+                                        <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                        <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="boxbg">
+                                <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                </div>
+                                </td>
+                                                        
+                                <td>
+                                    <div class="boxbg">
+                                <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                </div>
+                                </td>
+                                
+                                <td>
+                                    <div class="boxbg">
+                                <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="boxbg">
+                                <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                    </div>
+                                </td>
+                                                        
+                                <td>
+                                    <div class="boxbg">
+                                <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                    </div>
+                                </td>
+                                
+                                <td>
+                                    <div class="boxbg">
+                                <img src="{{ asset('bundles/gdsite/images/box_image.jpg') }}" class="proimg">
+                                <h4 class="cb"><font><font class="">{% trans %}TITLE{% endtrans %}</font></font></h4>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor{% endtrans %}</font></font></p>
+                                        <p><font><font class="">{% trans %}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut elaborate and aliquis dolore magna.{% endtrans %}</font><font>{% trans %}Ut enim ad minim veniam, quis nostrud exercitant{% endtrans%}
+                                        </font></font></p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    <a href="#" class="cb"><font><font>... More</font></font></a> 
+                    </div>
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

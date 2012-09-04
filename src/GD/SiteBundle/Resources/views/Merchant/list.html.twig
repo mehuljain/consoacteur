@@ -1,0 +1,218 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+
+{% block title %}{% trans %}merchantlist.title.text{% endtrans %}{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{% trans %}merchantlist.metadescription.text{% endtrans %}" />
+    <meta name="keywords" content="{% trans %}merchantlist.metakeywords.text{% endtrans %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% else %}
+                {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                <div class="search_by_alpha">
+                    <div class="title">{% trans %}merchantlist.searchindextitle.text{% endtrans %}</div>
+                    <ul>
+                        {% for i in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0-9'] %}
+                            {% if i in availableMerchantsCharacterMap %}
+                                <li><a class="clickable" href="#" onclick="Javascript:setFilterFormAction('{{ i }}');"><span>{{ i }}</span></a>
+                                </li>
+                            {% else %}
+                                <li><a class="inactive"><span>{{ i }}</span></a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="right_cont">
+                    <div class="offer_header">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <form action="#" method="post" name="filtersForm">
+                                    <td>{% trans %}merchantlist.numbermerchants.text{% endtrans %}
+                                      <select id="rows_per_page" name="rows_per_page" onchange="Javascript:setFilterFormAction(null);">
+                                            {% for i in range(10, 50, 10) %}
+                                            {% if i == app.request.get('rows_per_page', 10) %}
+                                            <option style="width: 23px;" selected="selected" value="{{ i }}">{{ i }}</option>
+                                            {% else %}
+                                            <option style="width: 23px"value="{{ i }}">{{ i }}</option>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                    <td>{% trans %}merchantlist.sortby.text{% endtrans %}
+                                        <select id="cashback_filter" name="sort_by" onchange="Javascript:setFilterFormAction(null);">
+                                            {% if app.request.request.get('sort_by') == 'cashback-amount' %}
+                                                <option selected="selected"
+                                                        value="cashback-amount">
+                                                    {% trans %}merchantlist.cashbackdropdown.text{% endtrans %}
+                                                </option>
+                                            {% else %}
+                                                <option value="cashback-amount">
+                                                    {% trans %}merchantlist.cashbackdropdown.text{% endtrans %}
+                                                </option>
+                                            {% endif %}
+
+                                            {% if app.request.request.get('sort_by') == 'cashback-percentage' %}
+                                                <option selected="selected"
+                                                        value="cashback-percentage">
+                                                    {% trans %}merchantlist.cashbackpercentdropdown.text{% endtrans %}
+                                                </option>
+                                            {% else %}
+                                                <option value="cashback-percentage">
+                                                    {% trans %}merchantlist.cashbackpercentdropdown.text{% endtrans %}
+                                                </option>
+                                            {% endif %}
+
+                                            {% if app.request.request.get('sort_by') == 'start-date' %}
+                                                <option selected="selected"
+                                                        value="start-date">
+                                                    {% trans %}merchantlist.cashbackstartdatedropdown.text{% endtrans %}
+                                                </option>
+                                            {% else %}
+                                                <option value="start-date">
+                                                    {% trans %}merchantlist.cashbackstartdatedropdown.text{% endtrans %}
+                                                </option>
+                                            {% endif %}
+
+                                            {% if app.request.request.get('sort_by') == 'name' %}
+                                                <option selected="selected"
+                                                        value="name">
+                                                    {% trans %}merchantlist.cashbacknamedropdown.text{% endtrans %}
+                                                </option>
+                                            {% else %}
+                                                <option value="name">
+                                                    {% trans %}merchantlist.cashbacknamedropdown.text{% endtrans %}
+                                                </option>
+                                            {% endif %}
+                                        </select>
+                                    </td>
+                                </form>
+                                <td>
+                                    <h3>
+                                        {{ totalOffers }} {{ '{0} merchantlist.nooffers.text |{1} merchantlist.singleoffer.text |]1,Inf] merchantlist.multipleoffers.text' | transchoice(totalOffers) | trans({'%totalOffers%': totalOffers },"messages") }}
+                                    </h3>
+                                </td>
+                                        
+                                <td align="right">
+                                    {{ merchantsPagination.render()|raw }}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="offer_cont">
+                        <div class="title">
+                            <div class="lay1 layers">{% trans %}merchantlist.merchanttitle.text{% endtrans %}</div>
+                            <div class="lay2 layers">{% trans %}merchantlist.cashbacktitle.text{% endtrans %}</div>
+                            <div class="lay3 layers">{% trans %}merchantlist.codepromotitle.text{% endtrans %}</div>
+                            <div class="lay4 layers">{% trans %}merchantlist.subscriptiongaintitle.text{% endtrans %}</div>
+                            <div class="lay5 layers">{% trans %}merchantlist.fullreimbursementtitle.text{% endtrans %}</div>
+                            <div class="clr"></div>
+                        </div>
+                        <ul>
+                            {% for merchant in merchantsPagination %}
+                                <li onclick="window.location = '{{ url('gd_merchant_show', { 'slug': merchant.slug }) }}'" class="row{{ loop.index is odd? '0':'1' }}">
+                                  <div class="lay1 layers"><b>{% if merchant.name|length > 23 %}{{ merchant.name|slice(0,20) }}{{ '...' }}{% else %}{{ merchant.name }}{% endif %}</b></div>
+                                    {# Set the offer values #}
+                                    {% set codePromoCount = 0 %}
+                                    {% set cashbackValue = '---' %}
+                                    {% set fullReimbursementValue = '---'%}
+                                    {% set subscriptionGainValue = '---' %}
+                                    {% for offer in merchant.offers if (offer.isCurrent == true and offer.isArchived == false and offer.startDate|date('Y-m-d') <= "now"|date('Y-m-d') and offer.endDate|date('Y-m-d') >= "now"|date('Y-m-d')) %}
+                                        {% if offer.type == constant('GD\\AdminBundle\\Entity\\Offer::OFFER_TYPE_CASHBACK') %}
+                                            {% set cashbackValue = offer.userGainValue %}
+                                        {% endif %}
+                                        {% if offer.type == constant('GD\\AdminBundle\\Entity\\Offer::OFFER_TYPE_FULL_REIMBURSEMENT') %}
+                                            {% set fullReimbursementValue = offer.userGainValue %}
+                                        {% endif %}
+                                        {% if offer.type == constant('GD\\AdminBundle\\Entity\\Offer::OFFER_TYPE_SUBSCRIPTION_GAIN') %}
+                                            {% set subscriptionGainValue = offer.userGainValue %}
+                                        {% endif %}
+                                        {% if offer.type == constant('GD\\AdminBundle\\Entity\\Offer::OFFER_TYPE_CODE_PROMO') %}
+                                            {% set codePromoCount = codePromoCount + 1 %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div class="lay2 layers">
+                                        {% if cashbackValue|length > 12 %}{{ cashbackValue|slice(0,10) }}{{ '...' }}{% else %}{{ cashbackValue|default('---') }}{% endif %}
+                                    </div>
+                                    <div class="lay3 layers">
+                                        {{ codePromoCount|default('0') }}
+                                    </div>
+                                    <div class="lay4 layers">
+                                        {% if subscriptionGainValue|length > 12 %}{{ subscriptionGainValue|slice(0,10) }}{{ '...' }}{% else %}{{ subscriptionGainValue|default('---') }}{% endif %}
+                                    </div>
+                                    <div class="lay5 layers">
+                                        {% if fullReimbursementValue|length > 12 %}{{ fullReimbursementValue|slice(0,10) }}{{ '...' }}{% else %}{{ fullReimbursementValue|default('---') }}{% endif %}
+                                    </div>
+                                    <div class="clr"></div>
+                                </li>
+                            {% else %}
+                                <li><em>{% trans %}merchantlist.nomerchantfound.text{% endtrans %}</em></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="offer_footer">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <!--td>Nomdre de marchands par page <select name="xxx"><option value="20">20</option></select></td-->
+                                <td align="right">
+                                    {{ merchantsPagination.render()|raw }}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+    function setFilterFormAction(searchKey)
+    {
+        var locale = '{{ app.request.get('_locale') }}';
+        var filter = '{{ app.request.get('filter') }}';
+        var type = '{{ app.request.get('type') }}';
+        var rowsPerPage = document.filtersForm.rows_per_page.value;
+        var sortBy = document.filtersForm.sort_by.value;
+
+        // Check if a search_key is set or not and generate the URL accordingly
+        if (searchKey == undefined) {
+            searchKey = '{{ app.request.get('search_key') }}';
+        }
+
+        if (searchKey.length) {
+            var url = Routing.generate('gd_merchant_list', { '_locale': locale, 'filter': filter, 'type': type, 'rows_per_page': rowsPerPage, 'sort_by': sortBy, 'search_key': searchKey });
+        } else {
+            var url = Routing.generate('gd_merchant_list', { '_locale': locale, 'filter': filter, 'type': type, 'rows_per_page': rowsPerPage, 'sort_by': sortBy });
+        }
+
+        document.filtersForm.action = url;
+        document.filtersForm.submit();
+    }
+    
+   $(document).ready(function() {
+        var searchKey = '{{ app.request.get('search_key') }}';
+        var alphabets = $('.search_by_alpha').children('ul').children('li').children('a.clickable');
+        for(i=0; i<alphabets.length; i++) {
+            if($(alphabets[i]).children('span').html() == searchKey){
+                $(alphabets[i]).addClass('active');
+            }
+        }
+    });
+    </script>
+{% endblock %}

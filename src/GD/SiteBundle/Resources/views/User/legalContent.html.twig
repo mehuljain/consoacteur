@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+{% form_theme form 'GDSiteBundle:Form:form_ajax_div_layout.html.twig' %}
+{% block title %}{% trans %}confirmlegal.notification.title{% endtrans %}{% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('bundles/gdsite/css/style.css') }}" media="screen" type="text/css" rel="stylesheet"/>
+{% endblock %}
+{% block body %}
+<div id="bgwrap">
+<table style="width:100%;height:100%;">
+<tbody>
+<tr>
+<td>
+<div class="redirectionLayout">                
+<div style=" text-align: left;">
+<table cellspacing = "0" width="100%">
+<tbody>
+<tr>
+<td width="100%">
+<div>
+<h3 class="redirectionHeader">{% trans %}confirmlegal.notification.text{% endtrans %}</h3>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="border: 1px solid #2189B9; padding-bottom: 12px; padding-left: 12px">
+<div class="standardHeader"></div>
+<form action="{{ path('gd_site_legal_confirm') }}" method="post" novalidate="novalidate">
+  <div class="form">
+    {{ form_errors(form.confirm) }}
+  <div class="form_layer lay1">                
+  {{ form_row(form.confirm,{'label':  'ajaxregister.readterms.text' |trans |raw }) }} 
+  &nbsp;
+  {% spaceless %}
+  <a class="terms" href="{{path('gd_tnc')}}" target="_blank">{% trans %}ajaxregister.termslink.text{% endtrans %}</a>
+  {% endspaceless %}
+  </div>
+  <div class="form_layer floated1">
+  <span class="popuplt_btn">
+  <input type="submit" id="subscribe" class="popuprt_btn" value="{% trans %}confirmlegal.button.text{% endtrans %}">
+  </span>
+  </div>
+  </div>
+  {{form_rest(form)}}
+  </form>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
+</div>
+{% endblock %}

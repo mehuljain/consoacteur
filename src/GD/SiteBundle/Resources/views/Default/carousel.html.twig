@@ -1,0 +1,77 @@
+<div class="layer cashback">
+    <div class="top"></div>
+    <div class="middle">
+        <div class="title"><h2>{% trans %}carousel.cashback.title{% endtrans %}</h2></div>
+        <div class="intro"></div>
+        <div class="module">
+            <div id="cashback-top">
+                <a id="cashback-carousel-top-arrow" class="top_arrow"></a>
+            </div>
+            <div id="cashback-carousel" class="carousel">
+                <ul>
+                    {% for item in cashback %}
+                            <li>
+                                <a href="{{ path('gd_merchant_show', { 'slug': item.merchant_slug }) }}">
+                                <div class="top"></div>
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                    <tr>
+                                        <td width="50%" valign="middle" align="center"><img alt="{% trans %}imageloading.text{% endtrans %}" src="{{ asset(item.merchant_id~"."~item.merchant_image)| imagine_filter('sidebarthumb', true) }}">
+                                        </td>
+                                        <td valign="middle" class="amount"><span>{{ item.display_value }}</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom"></div>
+                                </a>
+                            </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="cashback-bottom">
+                <a id="cashback-carousel-bottom-arrow" class="bottom_arrow"></a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom"></div>
+    <a href="{{ path('gd_merchant_list', { 'filter': 'offer', 'type': 'cashback' }) }}" class="cbright padrg link"><span class="cbleft padlf">{% trans %}carousel.seemerchants.text{% endtrans %}</span></a>
+</div>
+<div class="layer codes_promo">
+    <div class="top"></div>
+    <div class="middle">
+        <div class="title"><h2>{% trans %}carousel.codepromo.title{% endtrans %}</h2></div>
+        <div class="intro"></div>
+        <div class="module">
+            <div id="codepromo-top">
+                <a id="codepromo-carousel-top-arrow" class="top_arrow" href="#"></a>
+            </div>
+            <div id="codepromo-carousel" class="carousel">
+                <ul>
+                    {% for item in codepromo %}
+                        <li>
+                            <a href="{{ path('gd_merchant_show', { 'slug': item.merchant_slug }) }}">
+                            <div class="top"></div>
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td width="50%" valign="middle" align="center"><img alt="{% trans %}imageloading.text{% endtrans %}" src="{{ asset(item.merchant_id~"."~item.merchant_image) | imagine_filter('sidebarthumb', true)}}">
+                                    </td>
+                                    <td valign="top" class="detail">{{ item.merchant_name }}
+                                        <span>{{ item.codepromo_count }} {% trans %}carousel.codepromocount.text{% endtrans %}</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="bottom"></div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="codepromo-bottom">
+                <a id="codepromo-carousel-bottom-arrow" class="bottom_arrow" href="#"></a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom"></div>
+    <a href="{{ path('gd_merchant_list', { 'filter': 'offer', 'type': 'code-promo' }) }}" class="cpright padrg link"><span class="cpleft padlf">{% trans %}carousel.seemerchants.text{% endtrans %}</span></a>
+</div>

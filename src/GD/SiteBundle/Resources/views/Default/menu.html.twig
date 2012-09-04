@@ -1,0 +1,57 @@
+<div id="menu">
+    <div class="left"></div>
+    <div class="middle">
+            <a href="{{ path('gd_home') }}" class="home"> </a>
+        <ul id="topnav">
+            <li><a href="{{ path('gd_how_it_works') }}" class="menu {% if 'gd_how_it_works' == app.session.get('this_route').name %} {{ 'active' }} {% endif %}"><span>{% trans %}menu.howitworks.title{% endtrans %}</span></a>
+            </li>
+            <li><a href="#" class="menu {% if ('category' == app.session.get('menu') or 'tag' == app.session.get('menu')) and ('gd_merchant_list' == app.session.get('this_route').name or 'gd_merchant_show' == app.session.get('this_route').name) %} {{ 'active' }} {% endif %}"><span id="spanMenu">{% trans %}menu.categories.title{% endtrans %}<img class='sub_menu' src='{{ asset('bundles/gdsite/images/menu_down.png') }}'/></span></a>
+                <div class="sub">
+                    {% for module in modules %}
+                        <div class="level{{loop.index}}">
+                            {% if module.type is constant('GD\\AdminBundle\\Entity\\Module::MODULE_TYPE_CATEGORIES') %}
+                                {% for category in module.categories %}
+                                    <h3><a href="{{ path('gd_merchant_list', { 'filter': 'category', 'type': category.slug }) }}">{{ category.name }}</a></h3>
+                                    {% for tag in category.tags %}
+                                        {% if not loop.first %},&nbsp;{% endif %}
+                                        <a href="{{ path('gd_merchant_list', { 'filter': 'tag', 'type': tag.slug, 'primarycategory': category.slug }) }}">{{ tag.name }}</a>
+                                    {% endfor %}
+                                    {% if not loop.last %}<br/><br/>{% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            {% if module.type is constant('GD\\AdminBundle\\Entity\\Module::MODULE_TYPE_HTML') %}
+                                {{ module.html|raw }}
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </li>
+            <li>
+                <a href="{{ path('gd_merchant_list', { 'filter': 'offer', 'type': 'cashback' }) }}"
+                   class="menu {% if 'cashback' == app.session.get('menu') and ('gd_merchant_list' == app.session.get('this_route').name or ('gd_merchant_show' == app.session.get('this_route').name and 'gd_merchant_list' == app.session.get('last_route').name )) %} {{ 'active' }} {% endif %}"><span>{% trans %}menu.cashback.title{% endtrans %}</span></a></li>
+            <li>
+                <a href="{{ path('gd_merchant_list', { 'filter': 'offer', 'type': 'code-promo' }) }}"
+                   class="menu {% if 'code-promo' == app.session.get('menu') and ('gd_merchant_list' == app.session.get('this_route').name or ('gd_merchant_show' == app.session.get('this_route').name and 'gd_merchant_list' == app.session.get('last_route').name )) %} {{ 'active' }} {% endif %}"><span>{% trans %}menu.codepromo.title{% endtrans %}</span></a></li>
+            <li>
+                <a href="{{ path('gd_merchant_list', { 'filter': 'offer', 'type': 'full-reimbursement' }) }}"
+                   class="menu {% if 'full-reimbursement' == app.session.get('menu') and ('gd_merchant_list' == app.session.get('this_route').name or ('gd_merchant_show' == app.session.get('this_route').name and 'gd_merchant_list' == app.session.get('last_route').name )) %} {{ 'active' }} {% endif %}"><span>{% trans %}menu.fullreimburse.title{% endtrans %}</span></a></li>
+            <li class="last">
+                <a href="{{ path('gd_merchant_list', { 'filter': 'offer', 'type': 'subscription-gain' }) }}"
+                   class="menu {% if 'subscription-gain' == app.session.get('menu') and ('gd_merchant_list' == app.session.get('this_route').name or ('gd_merchant_show' == app.session.get('this_route').name and 'gd_merchant_list' == app.session.get('last_route').name )) %} {{ 'active' }} {% endif %}"><span>{% trans %}menu.subscriptiongain.title{% endtrans %}</span></a></li>
+        </ul>
+        <div class="seperator"></div>
+        <div class="other_links">
+            <ul>
+                <li>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a href="{{ path('gd_site_user_refer_friends') }}"><span>{% trans %}menu.referral.title{% endtrans %}</span></a>
+                    {% else %}
+                        <a href="{{ path('gd_site_user_registration') }}"><span>{% trans %}menu.howtoregister.title{% endtrans %}</span></a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="right"></div>
+    <div class="clr"></div>
+</div>

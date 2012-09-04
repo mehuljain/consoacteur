@@ -1,0 +1,50 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'Releve Conso-Acteur'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}
+<p>{{ 'Bonjour,' }}</p>
+<p>{{ 'Voici ci-dessous vos relevés de conso-acteur au date:'}} <b>{{  "now" | date("d F , Y") }}</b>
+<br/>
+</p>
+<table cellspacing="6" cellpadding="0" border="1" width="100%">
+  <tbody>
+    <tr>
+      <td><b>{% trans %}userearningstable.withdrawalamount.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.withdrawableAmount }}{{ currency }}</b></td>
+    </tr>
+    <tr>
+      <td><b>{% trans %}userearningstable.confirmedvalidatedamount.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.confirmedAndValidatedAmount }}{{ currency }}</b></td>
+    </tr>
+    <tr>
+      <td><b>{% trans %}userearningstable.referralamounttovalidate.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.referralAmountToBeValidated }}{{ currency }}</b></td>
+    </tr>
+    <tr>
+      <td><b>{% trans %}userearningstable.offeramounttovalidate.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.offerAmountToBeValidated }}{{ currency }}</b></td>
+    </tr>
+    <tr>
+      <td><b>{% trans %}userearningstable.currentlyrequestedamount.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.requestedAmount }}{{ currency }}</b></td>
+    </tr>
+    <tr>
+      <td><b>{% trans %}userearningstable.invalidatedamount.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.invalidatedAmount }}{{ currency }}</b></td>
+    </tr>
+    <tr>
+      <td><b>{% trans %}userearningstable.onholdamount.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.onHoldAmount }}{{ currency }}</b></td>
+    </tr>
+    <tr>
+      <td><b>{% trans %}userearningstable.withdrawnamount.text{% endtrans %}</b></td>
+      <td align="right"><b>{{ accountSummary.withdrawnAmount }}{{ currency }}</b></td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+<p>{{ 'En vous remerciant encore de votre confiance.' }}</p>
+<p>{{" -L'équipe Conso-Acteur" }}</p>
+{% endblock %}

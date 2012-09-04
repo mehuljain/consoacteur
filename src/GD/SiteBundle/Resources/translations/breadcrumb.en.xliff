@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+     <body>
+     <!--Breadcrumbs translations-->
+      <trans-unit id="home.page">
+                <source>home.page</source>
+                <target>Home</target>
+      </trans-unit>
+      <trans-unit id="how.it.works">
+                <source>how.it.works</source>
+                <target>How it works</target>
+      </trans-unit>
+      <trans-unit id="how.to.register">
+                <source>how.to.register</source>
+                <target>How to register</target>
+      </trans-unit>
+      <trans-unit id="cashback.offer">
+                <source>cashback.offer</source>
+                <target>Cashback</target>
+      </trans-unit>
+      <trans-unit id="code.promo">
+                <source>code.promo</source>
+                <target>Codes Promo</target>
+      </trans-unit>
+      <trans-unit id="full.reimbursement">
+                <source>full.reimbursement</source>
+                <target>Full Reimbursement</target>
+      </trans-unit>
+      <trans-unit id="subscription.gain">
+                <source>subscription.gain</source>
+                <target>Subscription Gain</target>
+      </trans-unit>
+      <trans-unit id="copyright.act">
+                <source>copyright.act</source>
+                <target>Copyright Act</target>
+      </trans-unit>
+      <trans-unit id="sitemap">
+                <source>sitemap</source>
+                <target>Site Map</target>
+      </trans-unit>
+      <trans-unit id="rss.feed">
+                <source>rss.feed</source>
+                <target>RSS feed</target>
+      </trans-unit>
+      <trans-unit id="your.profile">
+                <source>your.profile</source>
+                <target>My Profile</target>
+      </trans-unit>
+      <trans-unit id="your.earnings">
+                <source>your.earnings</source>
+                <target>My Earnings</target>
+      </trans-unit>
+      <trans-unit id="your.earnings.details">
+                <source>your.earnings.details</source>
+                <target>My Earnings Details</target>
+      </trans-unit>
+      <trans-unit id="new.request">
+                <source>new.request</source>
+                <target>New Request</target>
+      </trans-unit>
+      <trans-unit id="your.requests">
+                <source>your.requests</source>
+                <target>My Requests</target>
+      </trans-unit>
+      <trans-unit id="refer.friend">
+                <source>refer.friend</source>
+                <target>Refer Friend</target>
+      </trans-unit>
+      <trans-unit id="referral.details">
+                <source>referral.details</source>
+                <target>Referral Details</target>
+      </trans-unit>
+      <trans-unit id="new.offers">
+                <source>new.offers</source>
+                <target>New Offers</target>
+      </trans-unit>
+      <trans-unit id="top.offers">
+                <source>top.offers</source>
+                <target>Top Offers</target>
+      </trans-unit>
+      <trans-unit id="private.offers">
+                <source>private.offers</source>
+                <target>Private Offers</target>
+      </trans-unit>
+      <trans-unit id="preferred.offers">
+                <source>preferred.offers</source>
+                <target>Preferred Offers</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.bank">
+                <source>withdrawal.bank</source>
+                <target>Bank Withdrawal</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.cheque">
+                <source>withdrawal.cheque</source>
+                <target>Cheque Withdrawal</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.paypal">
+                <source>withdrawal.paypal</source>
+                <target>Paypal Withdrawal</target>
+      </trans-unit>
+      <trans-unit id="forgot.password">
+                <source>forgot.password</source>
+                <target>Forgot Password</target>
+      </trans-unit>
+      <trans-unit id="change.email">
+                <source>change.email</source>
+                <target>Change Email</target>
+      </trans-unit>
+      <trans-unit id="change.password">
+                <source>change.password</source>
+                <target>Change Password</target>
+      </trans-unit>
+      <trans-unit id="check.password">
+                <source>check.password</source>
+                <target>Check Password</target>
+      </trans-unit>
+      <trans-unit id="account.closure">
+                <source>account.closure</source>
+                <target>Account Closure</target>
+      </trans-unit>
+      </body>
+    </file>
+</xliff>

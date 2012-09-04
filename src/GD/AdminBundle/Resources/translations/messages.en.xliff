@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="carousel.notification.message">
+                <source>carousel.notification.message</source>
+                <target>Please do not select more than 9 merchants</target>
+            </trans-unit>
+            <trans-unit id="slug.emptynotification.message">
+                <source>slug.emptynotification.message</source>
+                <target>Please leave this field blank if creating a new object</target>
+            </trans-unit>
+            <trans-unit id="merchantkeywords.notification.message">
+                <source>merchantkeywords.notification.message</source>
+                <target>Comma separated list of keywords. Example: Tennis Shoes, Running shoes</target>
+            </trans-unit>
+            <trans-unit id="merchantimage.notification.message">
+                <source>merchantimage.notification.message</source>
+                <target>Maximum file size is 1 MB, permissible image types: .png, .jpg .jpeg and .gif</target>
+            </trans-unit>
+            <trans-unit id="merchant.offermaturitynotification.message">
+                <source>merchant.offermaturitynotification.message</source>
+                <target>In days</target>
+            </trans-unit>
+            <trans-unit id="merchant.categorynotification.message">
+                <source>merchant.categorynotification.message</source>
+                <target>Please ensure that the category set as PrimaryCategory is not removed</target>
+            </trans-unit>
+            <trans-unit id="merchant.tagnotification.message">
+                <source>merchant.tagnotification.message</source>
+                <target>Please ensure that the tag set as PrimaryTag is not removed</target>
+            </trans-unit>
+            <trans-unit id="offer.redirectionurlnotification.message">
+                <source>offer.redirectionurlnotification.message</source>
+                <target>Prepend the url with http:// and also ensure that the "{userid}" is passed as the argument.</target>
+            </trans-unit>
+            <trans-unit id="offer.usergaincashbacknotification.message">
+                <source>offer.usergaincashbacknotification.message</source>
+                <target>This value is seen in the site. Example: 7.5% or 7€ or Jusqu'a 5%</target>
+            </trans-unit>
+            <trans-unit id="offer.usergainpercentnotification.message">
+                <source>offer.usergainpercentnotification.message</source>
+                <target>Only numerals, no % sign required. Example: 7.50. Please note that while changing this value, the user gain value must also be changed accordingly.</target>
+            </trans-unit>
+            <trans-unit id="mandatoryfield.notification.message">
+                <source>mandatoryfield.notification.message</source>
+                <target>This is a mandatory field</target>
+            </trans-unit>
+            <trans-unit id="cashbackpercentage.notification.message">
+                <source>cashbackpercentage.notification.message</source>
+                <target>Only numerals, no % sign required. Example: 7.50</target>
+            </trans-unit>
+            <trans-unit id="cashbackamount.notification.message">
+                <source>cashbackamount.notification.message</source>
+                <target>Please enter only digits without currency symbols. Example: 3.5</target>
+            </trans-unit>
+            <trans-unit id="codepromovalue.notification.message">
+                <source>codepromovalue.notification.message</source>
+                <target>The actual code promo. Example: CB2114Q</target>
+            </trans-unit>
+            <trans-unit id="fullreimburse.maxwinamountnotification.message">
+                <source>fullreimburse.maxwinamountnotification.message</source>
+                <target>Please enter only digits without currency symbols. Example: 20</target>
+            </trans-unit>
+            <trans-unit id="fullreimburse.mintransactionnotification.message">
+                <source>fullreimburse.mintransactionnotification.message</source>
+                <target>Please enter only digits without currency symbols. Example: 100</target>
+            </trans-unit>
+            <!--Offer Types -->
+            <trans-unit id="Cashback">
+                <source>Cashback</source>
+                <target>Cashback</target>
+            </trans-unit>
+            <trans-unit id="Full Reimbursement">
+                <source>Full Reimbursement</source>
+                <target>Full Reimbursement</target>
+            </trans-unit>
+            <trans-unit id="Coupon Code">
+                <source>Coupon Code</source>
+                <target>Coupon Code</target>
+            </trans-unit>
+            <trans-unit id="Subscription Gain">
+                <source>Subscription Gain</source>
+                <target>Subscription Gain</target>
+            </trans-unit>
+            <!--Bonus Types -->
+            <trans-unit id="Referral">
+                <source>Referral</source>
+                <target>Referral</target>
+            </trans-unit>
+            <trans-unit id="Offer">
+                <source>Offer</source>
+                <target>Offer</target>
+            </trans-unit>
+            <trans-unit id="Joining Bonus">
+                <source>Joining Bonus</source>
+                <target>Joining Bonus</target>
+            </trans-unit>
+            <!--Status types -->
+            <trans-unit id="Waiting">
+                <source>Waiting</source>
+                <target>Waiting</target>
+            </trans-unit>
+            <trans-unit id="Pending Confirmation">
+                <source>Pending Confirmation</source>
+                <target>Pending Confirmation</target>
+            </trans-unit>
+            <trans-unit id="Confirmed">
+                <source>Confirmed</source>
+                <target>Confirmed</target>
+            </trans-unit>
+            <trans-unit id="Payment Requested">
+                <source>Payment Requested</source>
+                <target>Payment Requested</target>
+            </trans-unit>
+            <trans-unit id="Payment Approved">
+                <source>Payment Approved</source>
+                <target>Payment Approved</target>
+            </trans-unit>
+            <trans-unit id="Paid">
+                <source>Paid</source>
+                <target>Paid</target>
+            </trans-unit>
+            <trans-unit id="Cancelled">
+                <source>Cancelled</source>
+                <target>Cancelled</target>
+            </trans-unit>
+            <trans-unit id="Rejected">
+                <source>Rejected</source>
+                <target>Rejected</target>
+            </trans-unit>
+            <trans-unit id="On Hold">
+                <source>On Hold</source>
+                <target>On Hold</target>
+            </trans-unit>
+            <trans-unit id="Lost">
+                <source>Lost</source>
+                <target>Lost</target>
+            </trans-unit>
+            <!--Withdrawal Types -->
+            <trans-unit id="Bank Type 1">
+                <source>Bank Type 1</source>
+                <target>Bank(IBAN)</target>
+            </trans-unit>
+            <trans-unit id="Bank Type 2">
+                <source>Bank Type 2</source>
+                <target>Bank(Without IBAN)</target>
+            </trans-unit>
+            <trans-unit id="Cheque">
+                <source>Cheque</source>
+                <target>Cheque</target>
+            </trans-unit>
+            <trans-unit id="Paypal">
+                <source>Paypal</source>
+                <target>Paypal</target>
+            </trans-unit>
+            <!-- Locale Country/Language -->
+            <trans-unit id="300">
+                <source>Switzerland</source>
+                <target>Suisse</target>
+            </trans-unit>
+            <trans-unit id="301">
+                <source>French</source>
+                <target>Française</target>
+            </trans-unit>
+            <trans-unit id="302">
+                <source>English</source>
+                <target>Anglais</target>
+            </trans-unit>
+            <trans-unit id="303">
+                <source>Dutch</source>
+                <target>Néerlandais</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

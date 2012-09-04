@@ -1,0 +1,144 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}userprofile.title.text{% endtrans %}{% endblock %}
+{% form_theme form 'GDSiteBundle:Form:form_detail_div_layout.html.twig' %}
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% include 'GDSiteBundle::sidebar.html.twig' %}
+            <div class="rightnavi">
+                <div class="msgs">
+                    {% if app.session.hasFlash('profileUpdate') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('profileUpdate') }}
+                        </div>
+                    {% endif %}
+                    {% if app.session.hasFlash('user_created') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('user_created') }}
+                        </div>
+                    {% endif %}
+                    {% if app.session.hasFlash('registration_successmessage') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('registration_successmessage') }}
+                        </div>
+                    {% endif %}
+                </div>
+                <h1 class="title">{% trans %}userprofile.title.text{% endtrans %}</h1>
+                <form action="{{ path('gd_site_user_profile') }}" method="post" id="userProfile" novalidate="novalidate">
+                    <div class="form">
+                        {{ form_errors(form) }}
+                        <fieldset>
+                            <legend>{% trans %}detailregister.mandatoryfields.text{% endtrans %}</legend>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.salutation) }}
+                            </div>                    
+                            <div class="form_layers floated1">
+                                {{ form_row(form.email) }}
+                            <div class="clr"></div>
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.username) }}
+                            <div class="clr"></div>
+                            </div>
+                            <div class="form_layers floated1">
+                            <span><a class="terms" href="{{ path('gd_site_user_change_email') }}">{% trans %}changeemail.link.text{% endtrans %}</a></span>
+                             </div>
+                            <div class="form_layers floated1">
+                            <span><a class="terms" href="{{ path('gd_user_change_password') }}">{% trans %}changepassword.link.text{% endtrans %}</a></span>
+                            </div>
+                            <div class="form_layers floated1">
+                            <div class="clr"></div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>{% trans %}detailregister.personaldetails.text{% endtrans %}</legend>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profilePersonal.firstName) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profilePersonal.lastName) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profilePersonal.dateOfBirth) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.gender) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profilePersonal.profession) }}
+                            </div>                   
+                        </fieldset>
+                        <fieldset>
+                            <legend>{% trans %}detailregister.addressdetails.text{% endtrans %}</legend>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAddress.apartmentNumber) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAddress.addressLocation) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAddress.locationName) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAddress.complementaryAddressDetails, {'help': 'detailregister.adressnotification.text'| trans}) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAddress.zipcode) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAddress.city) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAddress.country) }}
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>{% trans %}detailregister.contactdetails.text{% endtrans %}</legend>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileContact.phoneHome) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileContact.phoneMobile) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileContact.phoneOffice) }}
+                            </div>                                        
+                        </fieldset>
+                        <fieldset>
+                            <legend>{% trans %}detailregister.advertisementdetails.text{% endtrans %}</legend>
+                           <div class="form_layers floated1">
+                                {{ form_row(form.profileAds.advertisementByEmail,{'help': 'detailregister.advtemailnotification.text'| trans}) }}
+                            </div>
+                            {#<div class="form_layers floated1">
+                                {{ form_row(form.profileAds.advertisementByPost,{'help': 'detailregister.advtpostnotification.text'| trans}) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAds.advertisementByTelephone,{'help': 'detailregister.advtphonenotification.text'| trans}) }}
+                            </div>
+                            <div class="form_layers floated1">
+                                {{ form_row(form.profileAds.advertisementBySms,{'help': 'detailregister.advtsmsnotification.text'| trans}) }}
+                            </div>#}
+                            <div class="form_layers floated1">
+                                {{ form_row(form.newsletterSubscription,{'label':  'userdetails.newsletter.label' |trans |raw, }) }}<small>{% trans%}userdetails.newsletterlimit.text{% endtrans %}</small>
+                            </div>                           
+                        </fieldset>
+                                
+                        <span class="form_btn"><input type="submit" class="" name="profile_update" value="{% trans %}userprofile.updatebutton.text{% endtrans %}"></span>
+                </div>
+                </form>
+                <div class="clr"></div>
+                        <fieldset style="clear: both; padding-top: 10px;">
+                            <legend>{% trans %}userprofile.closeaccount.text{% endtrans %}</legend>
+                              <div class="message">
+                               <h4>{% trans %}userprofile.closeaccountlink.text{% endtrans %}</h4>
+                              </div>
+                              <div class="clr"></div>
+                                  <span><a class="terms" href="{{ path('gd_validate_password') }}">{% trans %}userprofile.closeaccountbutton.text{% endtrans %}</a></span>
+                        </fieldset>
+                </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}

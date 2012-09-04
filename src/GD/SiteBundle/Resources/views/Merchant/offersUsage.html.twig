@@ -1,0 +1,54 @@
+{# not used anymore #}
+{% extends 'GDSiteBundle::layout.html.twig' %}
+<form action="{{ path('gd_site_user_registration') }}" method="POST" id="auth-register-form" novalidate="novalidate">
+  {% block field_errors %}
+{% spaceless %}
+    <div style="color:#C63F3F; clear: both; font-weight: bold; margin: 8px 0 12px; ">     
+         {{ form_errors(form.salutation) }}          
+         {{ form_errors(form.username) }}
+         {{ form_errors(form.plainPassword) }}         
+         {{ form_errors(form.email) }}        
+         {{ form_errors(form.hasAcceptedTermsAndConditions) }}
+     </div>
+{% endspaceless %}
+{% endblock field_errors %}
+  <div class="form">
+        <div class="form_layer floated1">
+            {{ form_label(form.salutation) }}
+            {{ form_widget(form.salutation) }}
+        </div>
+        <div class="form_layer floated1">
+            {{ form_label(form.username)  }}
+            {{ form_widget(form.username) }}
+        </div>
+        <div class="form_layer floated1">
+            {{ form_row(form.plainPassword) }}
+        </div>
+        <div class="form_layer floated2">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="form_layer lay1">
+            {{ form_widget(form.hasAcceptedTermsAndConditions) }} <span>I accept the <a target="_blank" class="terms" href="{{ path('gd_tnc') }}">terms and conditions</a> </span>
+        </div>
+        <div class="form_layer floated1">
+          <span class="popuplt_btn"><input type="submit" class="popuprt_btn" value="{% trans %}Valider{% endtrans %}"></span>
+        </div>
+    </div>
+</form>
+ Already a member?
+<form action="{{ path('fos_user_security_check') }}" method="POST"><!-- Path needs to be refactored -->
+ <div class="level1">
+                        <div class="title">{% trans %}Username{% endtrans %}:</div>
+                        <input type="text" required="required" name="_username" class="text username small_text"/>
+                        <a href="{{ path('gd_site_user_registration') }}" id="inscription">{% trans %}Registration{% endtrans %}</a>
+                    </div>
+                    <div class="level2">
+                        <div class="title">{% trans %}Password{% endtrans %}:</div>
+                        <input required="required" type="password" name="_password" class="text password small_text"/>
+                        <div class="forgot_password"><a href="{{ path('gd_site_user_resetting') }}" id="forgot_pass">{% trans %}Forgot Password{% endtrans %}?</a></div>
+                    </div>
+                    <input type="submit" class="submit" name="login" value=""/>
+
+<div class="clr"></div>
+</form>

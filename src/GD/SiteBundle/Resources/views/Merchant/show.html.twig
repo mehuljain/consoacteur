@@ -1,0 +1,200 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ merchant.title }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Great Deals - {{ merchant.metaDescription }}" />
+    <meta name="keywords" content="{{ merchant.metaKeywords }}" />
+{% endblock %}
+
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% else %}
+                {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                <div class="msgs">
+                    {% if app.session.hasFlash('success') %}
+                    <div class="flash flash-success">{{ app.session.flash('success') }}</div>
+                    {% endif %}
+                    {% if app.session.hasFlash('warning') %}
+                    <div class="flash  flash-warning">{{ app.session.flash('warning') }}</div>
+                    {% endif %}
+                    {% if app.session.hasFlash('error') %}
+                    <div class="flash  flash-error">{{ app.session.flash('error') }}</div>
+                    {% endif %}
+                    {% if app.session.hasFlash('feedback-success') %}
+                    <div class="flash flash-success">{{ app.session.flash('feedback-success') }}</div>
+                    {% endif %}
+                    {% if app.session.hasFlash('feedback-error') %}
+                    <div class="flash flash-error">{{ app.session.flash('feedback-error') }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="right_cont">
+                    <div class="right_cont_top"></div>
+                    <div class="right_cont_middle">
+                        <div class="intro">
+                            <input type="hidden" id="hidden" value="{{ merchant.id }}"/>
+                            <table width="100%" cellspacing="5" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td width="20%" valign="middle" align="center"><img alt="Loading.." src="{{ asset(merchant.id ~"."~ merchant.image) | imagine_filter('descriptionthumb', true)}}">
+                                    </td>
+                                    <td width="50%" valign="top">
+                                        <h3>{{ merchant.name }}</h3>
+
+                                        <p>{{ merchant.description|raw }}</p>
+                                    </td>
+                                    <td valign="top" align="right">
+                                        {% for key, stars in starRating %}
+                                            {% if stars %}
+                                                {% for i in 1..stars %}
+                                                    <img alt="Loading.." src="{{ asset('bundles/gdsite/images/star_%key%.png')|replace({ '%key%': key }) }}">
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if cashbackOffer %}                                            
+                                                    <a target="_blank" href="{{ path('gd_offers_usage', { 'slug': cashbackOffer.slug }) }}" class="button offerLink"><span>{% trans %}merchantdetail.cashbacklink.text{% endtrans %}</span></a>                                               
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="other">                            
+                            {% if is_granted('ROLE_USER') %}
+                                <div class="prefered">
+                                    {% for preferedMerchants in app.user.getPreferredMerchants if preferedMerchants.slug == merchant.slug %}
+                                        <h5>{% trans %}merchants.preferredadd.success{% endtrans %}&nbsp;|&nbsp;<a id="remove_pref" href="{{ path('gd_site_prefered_merchant_remove', { 'slug' : merchant.slug } ) }}">{% trans %}merchants.preferredremove.text{% endtrans %}</a></h5>
+                                    {% else %}
+                                        <h5><a id="preferences" href="{{ path('gd_site_prefered_merchant', { 'slug' : merchant.slug } ) }}">{% trans %}merchants.preferredadd.text{% endtrans %}</a></h5>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div class="prefered">
+                                    <h5><a href="{{ path('gd_site_prefered_merchant', { 'slug' : merchant.slug } ) }}">{% trans %}merchants.preferredadd.text{% endtrans %}</a></h5>
+                                </div>
+                            {% endif %}
+                            <div class="cat_tags">
+                                {% if merchant.categories|length > 0 or merchant.tags|length > 0 %}
+                                <span style="font-weight: bold; font-size: 11px;">{% trans %}merchants.seecategories.text{% endtrans %}</span>
+                                {% endif %}
+                                {% set counter = 0 %}
+                                {% for cat in merchant.categories %}
+                                {% set counter = counter + 1 %}
+                                {% if counter < 3 %}
+                                <a style="color: #2189B9;" href="{{ path('gd_merchant_list', { 'filter': 'category', 'type': cat.getSlug }) }}">{{ cat.getName }}</a> |                                
+                                {% endif %}
+                                {% endfor %}
+                                {% set counter = 0 %}
+                                {% for tag in merchant.tags %}                                
+                                {% set counter = counter + 1 %}
+                                {% if counter < 3 %}
+                                <a style="color: #2189B9;" href="{{ path('gd_merchant_list', { 'filter': 'tag', 'type': tag.getSlug }) }}">{{ tag.getName }}</a> |
+                                {% endif %}                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="accordian">
+                            {% include 'GDSiteBundle:Merchant:_details.html.twig' %}
+                        </div>
+                        <!-- End of class accordian -->
+                    </div>
+                    <div class="right_cont_bottom"></div>
+                </div>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+    <script type="text/javascript">
+        function getCode(element,code,displayUri){
+            $(element).parents('td').append('<img width=\"1\" height=\"1\" />');
+            $(element).parents('td').children('img').attr( 'src', displayUri );
+            $(element).parent('span').html(code);
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#feedback-pagination a").live('click', function (event) {
+                event.preventDefault();
+
+                $.ajax({
+                    url: this.href,
+                    success: function( data ) {
+                        $('#_feedback').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('a#preferences').live('click', function (event) {
+                event.preventDefault();
+                
+                $.ajax({
+                    url: this.href,
+                    success: function( data ) {
+                        $('a#preferences').replaceWith('<a>'+data+'</a>');
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('a#remove_pref').live('click', function (event) {
+                event.preventDefault();
+                
+                $.ajax({
+                    url: this.href,
+                    success: function( data ) {
+                        $('.prefered').replaceWith('<a>'+data+'</a>');
+                    }
+                });
+            });
+        });
+    </script>
+    
+    {% if cashbackOffer %}
+        <script type="text/javascript">
+            $('#cb').append('<img width=\"1\" height=\"1\" src=\"{{ cashbackOffer.displayUri }}\" />');
+        </script>
+    {% endif %}
+    
+    {% if subscriptionGain %}
+        <script type="text/javascript">
+            $('#sg').append('<img width=\"1\" height=\"1\" src=\"{{ subscriptionGain.displayUri }}\" />');
+        </script>
+    {% endif %}
+    
+    {% if fullReimbursementOffer %}
+        <script type="text/javascript">
+            $('#fre').append('<img width=\"1\" height=\"1\" src=\"{{ fullReimbursementOffer.displayUri }}\" />');
+        </script>
+    {% endif %}
+    
+    <script type="text/javascript">
+        function popup(link){
+            $("#lightbox, .authentication").fadeIn(300);
+            $('.authentication .continue a').attr('href',link);
+        }
+    </script>
+
+{% endblock %}

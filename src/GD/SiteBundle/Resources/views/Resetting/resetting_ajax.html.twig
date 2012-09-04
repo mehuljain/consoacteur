@@ -1,0 +1,16 @@
+{# Must be deleted as it is never being used #}
+{{ form_errors(form) }}
+<form action="{{ path('gd_site_user_resetting') }}" method="POST" id="resetting-form">
+<div class="form">
+    <div class="form_layer floated1">
+        {{ form_row(form.usernameOrEmail) }}
+    </div>
+    <div class="form_layer floated1">
+        <span class="popuplt_btn link">
+            <input id="normal_font" type="submit" class="popuprt_btn" name="register" value="{% trans %}forgotpassword.submitbutton.text{% endtrans %}">
+        </span>
+        <div class="clr"></div>
+    </div>
+    {{ form_rest(form) }}
+</div>
+</form>

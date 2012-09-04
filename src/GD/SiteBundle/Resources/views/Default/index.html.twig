@@ -1,0 +1,343 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+
+{% block title %}{% trans %}homepage.title{% endtrans %}{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{% trans %}homepage.metadescription{% endtrans %}" />
+    <meta name="keywords" content="{% trans %}homepage.metakeyword{% endtrans %}" />
+{% endblock %}
+
+{% block content %}
+	<div class="banner"> <!-- all the required html tags will be rendered into this div -->
+		<ul class="bannerSlider"> 
+		{#	<!-- The li's will be rendered dynamically as 
+				<li><img src="{{ asset('bundles/gdsite/images/bannerX.png') }}" alt="Image X" /></li>
+				X is the index of the banner images. The banner images wil be located at /SiteBundle/Resources/public/images
+				Please run: [ app/console assets:install web --symlink ] command after adding or removing any images
+			-->#}
+        <li><a href="{{ path('gd_site_user_registration') }}"><img src="{{ asset('bundles/gdsite/images/banner1.jpg') }}" alt="Image 1" /></a></li>
+        <li><a href="{{ path('gd_top_merchants') }}"><img src="{{ asset('bundles/gdsite/images/banner2.jpg') }}" alt="Image 2" /></a></li>	    	
+		</ul>
+		<ul class="bannerCounter">
+		{#	<!-- The li's will be rendered dynamically as 
+				<li id="ctrX"><img src="{{ asset('bundles/gdsite/images/greydot.png') }}" alt="Image X" /></li>
+				X is the id index to control banner images. The two images 'greydot.png' & 'purpledot.png' are used by default 
+				and can be changed if needed. They are located at SiteBundle/Resources/public/images
+			-->#}
+			<li id="ctr1"><img src="{{ asset('bundles/gdsite/images/greydot.png') }}" alt="Image 1" /></li>
+			<li id="ctr2"><img src="{{ asset('bundles/gdsite/images/greydot.png') }}" alt="Image 2" /></li>
+		{#	<li id="ctr3"><img src="{{ asset('bundles/gdsite/images/greydot.png') }}" alt="Image 3" /></li>#}
+		</ul>
+	</div>
+	<div class="content">
+	{% render "GDSiteBundle:Default:carousel" %}
+	<div class="layer inscription">
+	    <div class="top"></div>
+	    <div class="middle">
+		<div class="title"><h2>{% trans %}homepage.rapidsubscription.title{% endtrans %}</h2></div>
+		<div class="ad"></div>
+		<div class="form" id="ajax_registration_homepage">
+		    {% render "GDSiteBundle:Default:rapidSubscription" with {'isAjax': true } %}
+		</div>
+	    </div>
+	    <div class="bottom"></div>
+	</div>
+	<div class="clr"></div>
+	</div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style type="text/css">
+        
+        .carousel li,
+        .jcarousel-item-vertical,
+        .jcarousel-item-placeholder-vertical {
+            width: 269px;
+        }
+	
+	.banner {
+             width: 960px;
+             overflow: hidden;
+        }
+
+        .bannerSlider {
+             width: 10000px; /* should be always greater than (widthOfBanner*numberOfBanners) */ 
+             list-style: none;
+             margin: 0px;
+             padding: 0px;
+       	}
+
+        .bannerSlider li {
+            float: left;
+        }
+		.bannerCounter {
+			list-style: none;
+			float: right;
+			margin: -27px 25px 0px 0px;
+		}
+		.bannerCounter li {
+			float: left;
+			display: block;
+			padding: 0 3px;
+		}
+		.bannerCounter li img {
+			cursor: pointer;
+		}
+		
+		#cashback-carousel {
+			height: 216px;
+			overflow: hidden;
+		}
+
+		#cashback-carousel ul {
+			height: 10000px;
+			list-style: none;
+			margin: 0px 0px 0px 0px;
+			padding: 0px;
+		}
+
+		#cashback-carousel li {
+			float: left;
+		}
+		
+		#codepromo-carousel {
+			height: 216px;
+			overflow: hidden;
+		}
+
+		#codepromo-carousel ul {
+			height: 10000px;
+			list-style: none;
+			margin: 0px 0px 0px 0px;
+			padding: 0px;
+		}
+
+		#codepromo-carousel li {
+			float: left;
+		}
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        
+	/*---------------Banner FadeIn & FadeOut------------------------*/
+	var images =  $('.bannerSlider').find('img');
+        var totalImages = images.length;
+        var imageWidth = images[0].width;
+        var currImg = 1;
+		$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/purpledot.png') }}");
+
+		//Change this value to alter the delay(in millisec) between change of banner images. 
+		var transitionDelay = 8000;
+		
+	setInterval(function() {
+	    if(currImg == totalImages)
+            {
+				$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/greydot.png') }}");
+				$('.bannerSlider').animate({marginLeft: '0'});
+                currImg = 1;
+				$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/purpledot.png') }}");
+            }
+            else
+            {
+                $('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/greydot.png') }}");
+				$('.bannerSlider').animate({marginLeft: '-='+imageWidth});
+                currImg++;
+				$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/purpledot.png') }}");
+            }
+	}, transitionDelay);
+	$('.bannerCounter li img').click(function() {
+		var thisVar = $(this).parent();
+		var cnt = thisVar.attr('id');
+		cnt = parseInt(cnt.match(/\d/g));
+		if(currImg>cnt){
+			$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/greydot.png') }}");
+			jQuery('.bannerSlider').animate({marginLeft: '+='+(currImg-cnt)*imageWidth});
+			currImg = cnt;
+			$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/purpledot.png') }}");
+		}					
+		if(currImg<cnt){
+			$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/greydot.png') }}");
+			jQuery('.bannerSlider').animate({marginLeft: '-='+(cnt-currImg)*imageWidth});
+			currImg = cnt;
+			$('.bannerCounter li').eq(currImg-1).find('img').attr('src',"{{ asset('bundles/gdsite/images/purpledot.png') }}");
+		}
+	});
+	
+	//-----------------------CashBack vertical carousel------------------------------
+	(function($) {
+		var carouselHeight = jQuery('.carousel').css('height');
+		var cbOffers =  jQuery('#cashback-carousel ul').find('li');
+		var totCbOffers = cbOffers.length;
+		
+		var currPos = 1;
+		//Initializing the DOWN arrow
+		if(totCbOffers < (currPos+3))
+		{
+			$('#cashback-bottom a')
+			.css('background','url("{{ asset('bundles/gdsite/images/arrow_down_disable.png') }}")')
+			.css('cursor','default');
+		}
+		
+		//On click of UP arrow
+		$('#cashback-top a').click(function(event) {
+			event.preventDefault();  
+			if((currPos-3)>=1)
+			{
+				jQuery('#cashback-carousel ul').animate({marginTop: '+='+(carouselHeight)});
+				currPos -= 3;
+			}
+			else if((currPos-2)==1)
+			{
+				jQuery('#cashback-carousel ul').animate({marginTop: '+='+(parseInt(carouselHeight,10)*2/3)});
+				currPos -= 2;
+			}
+			else if((currPos-1)==1)
+			{
+				jQuery('#cashback-carousel ul').animate({marginTop: '+='+(parseInt(carouselHeight,10)/3)});
+				currPos -= 1;
+			}
+			
+			if(currPos == 1)
+			{
+				$('#cashback-top a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_up_disable.png') }}")')
+				.css('cursor','default');
+			}
+		
+			if(totCbOffers >= (currPos+3))
+			{
+				$('#cashback-bottom a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_down.png') }}")')
+				.css('cursor','pointer');
+			}
+		});
+		
+		//On click of DOWN arrow
+		$('#cashback-bottom a').click(function(event) {
+			event.preventDefault();  
+			if(totCbOffers>=(currPos+5))
+			{
+				jQuery('#cashback-carousel ul').animate({marginTop: '-='+(carouselHeight)});
+				currPos += 3;
+			}
+			else if(totCbOffers==(currPos+4))
+			{
+				jQuery('#cashback-carousel ul').animate({marginTop: '-='+(parseInt(carouselHeight,10)*2/3)});
+				currPos += 2;
+			}
+			else if(totCbOffers==(currPos+3))
+			{
+				jQuery('#cashback-carousel ul').animate({marginTop: '-='+(parseInt(carouselHeight,10)/3)});
+				currPos += 1;
+			}
+			
+			if(currPos == (totCbOffers-2))
+			{
+				$('#cashback-bottom a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_down_disable.png') }}")')
+				.css('cursor','default');
+			}
+		
+			if(currPos != 1)
+			{
+				$('#cashback-top a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_up.png') }}")')
+				.css('cursor','pointer');
+			}
+				
+		});
+		
+	})(jQuery);
+	
+	//-----------------------CodePromo vertical carousel------------------------------
+	(function($) {
+		var carouselHeight = jQuery('.carousel').css('height');
+		var cpOffers =  jQuery('#codepromo-carousel ul').find('li');
+		var totCpOffers = cpOffers.length;
+		
+		var currPos = 1;
+		//Initializing the DOWN arrow
+		if(totCpOffers < (currPos+3))
+		{
+			$('#codepromo-bottom a')
+			.css('background','url("{{ asset('bundles/gdsite/images/arrow_down_disable.png') }}")')
+			.css('cursor','default');
+		}
+		
+		//On click of UP arrow
+		$('#codepromo-top a').click(function(event) {
+			event.preventDefault();  
+			if((currPos-3)>=1)
+			{
+				jQuery('#codepromo-carousel ul').animate({marginTop: '+='+(carouselHeight)});
+				currPos -= 3;
+			}
+			else if((currPos-2)==1)
+			{
+				jQuery('#codepromo-carousel ul').animate({marginTop: '+='+(parseInt(carouselHeight,10)*2/3)});
+				currPos -= 2;
+			}
+			else if((currPos-1)==1)
+			{
+				jQuery('#codepromo-carousel ul').animate({marginTop: '+='+(parseInt(carouselHeight,10)/3)});
+				currPos -= 1;
+			}
+			
+			if(currPos == 1)
+			{
+				$('#codepromo-top a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_up_disable.png') }}")')
+				.css('cursor','default');
+			}
+		
+			if(totCpOffers >= (currPos+3))
+			{
+				$('#codepromo-bottom a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_down.png') }}")')
+				.css('cursor','pointer');
+			}
+		});
+		
+		//On click of DOWN arrow
+		$('#codepromo-bottom a').click(function(event) {
+			event.preventDefault();  
+			if(totCpOffers>=(currPos+5))
+			{
+				jQuery('#codepromo-carousel ul').animate({marginTop: '-='+(carouselHeight)});
+				currPos += 3;
+			}
+			else if(totCpOffers==(currPos+4))
+			{
+				jQuery('#codepromo-carousel ul').animate({marginTop: '-='+(parseInt(carouselHeight,10)*2/3)});
+				currPos += 2;
+			}
+			else if(totCpOffers==(currPos+3))
+			{
+				jQuery('#codepromo-carousel ul').animate({marginTop: '-='+(parseInt(carouselHeight,10)/3)});
+				currPos += 1;
+			}
+			
+			if(currPos == (totCpOffers-2))
+			{
+				$('#codepromo-bottom a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_down_disable.png') }}")')
+				.css('cursor','default');
+			}
+		
+			if(currPos != 1)
+			{
+				$('#codepromo-top a')
+				.css('background','url("{{ asset('bundles/gdsite/images/arrow_up.png') }}")')
+				.css('cursor','pointer');
+			}
+				
+		});
+		
+	})(jQuery);
+    
+    </script>
+{% endblock %}

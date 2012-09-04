@@ -1,0 +1,9 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="inner">
+        <h1>Sorry, you cannot access this page.</h1>
+        <br /><br />
+        <h2>Please use this <a href="{{ path(app.request.session.get('last_route').name , app.request.session.get('last_route').params ) }}">link</a> to go back to the previous page.</h2>
+    </div>
+{% endblock %}

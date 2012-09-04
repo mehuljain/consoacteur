@@ -1,0 +1,92 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% form_theme form 'GDSiteBundle:Form:form_detail_div_layout.html.twig' %}
+{% block title%}{% trans %}withdrawalpage.title.text{% endtrans %}{% endblock %}
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">      
+            {% include 'GDSiteBundle::sidebar.html.twig' %}      
+        <div class="rightnavi">           
+            <h1 class="title">{% trans %}withdrawalpage.title.text{% endtrans %}</h1>
+            <br>
+            <div class="msgs"><h4>{% trans %}withdrawalpage.msg.text{% endtrans %}</h4></div>
+            <div class="clr"></div>           
+            <form id="withdrawalForm" action="{{ path('gd_site_withdrawal_transaction', { 'type': app.request.get('type'), 'amount': app.request.get('amount'),'checkArray': app.request.get('checkArray') }) }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+             <div class="form">
+             {% if app.request.get('type') == 1 %}
+                 <div class="form_layers floated1">
+                        {{ form_row(form.iban) }}
+                 </div>
+                 <div class="form_layers floated1">
+                        {{ form_row(form.address) }}
+                 </div>
+                 <div class="form_layers floated1">
+                        {{ form_row(form.swiftCode) }}
+                 </div>
+             {% elseif app.request.get('type') == 4 %}
+               <div class="form_layers floated1">
+                        {{ form_row(form.email) }}
+               </div>          
+             {% elseif app.request.get('type') == 3 %}
+                <div class="form_layers floated1">
+                        {{ form_row(form.chequePayee) }}
+                 </div>
+                 <div class="form_layers floated1">
+                        {{ form_row(form.address) }}
+                 </div>
+             {% endif %}
+             <div class="form_layers floated1">
+                        {{ form_row(form.amount) }}
+             </div>
+             <div class="form_layers floated1">
+                        {{ form_row(form.code, {'help': 'withdrawalpage.codenotification.text' | trans }) }}
+                        {{ form_errors(form) }}
+             </div>
+             <div class="clr"></div>
+             <div id="getCodeBlock">
+               <div class="form_layers floated1">
+                <a href="{{ url('gd_site_withdrawal_get_code') }}" id="withdrawal-code">{% trans %}withdrawalpage.getcode.text{% endtrans %}</a>               
+               </div>               
+             </div>
+             <div class="form_layers floated1">
+                <div id="code-message" style="margin-left: 160px;" ></div>
+                <div id="loader" style="height: 30px; margin-left: 160px; background:white url('{{ asset('bundles/gdsite/images/loader.gif') }}')  no-repeat left center; display: none"></div>
+             </div>            
+            <div class="clr"></div>            
+            <div class="form_layers floated1">
+                <span class="popuplt_btn link" style="margin-left: 160px;">
+                         <input id="normal_font" type="submit" class="popuprt_btn" value="{% trans %}withdrawalpage.submitbutton.text{% endtrans %}">
+                </span>
+            </div>           
+            </div>
+                {{form_rest(form)}}
+            </form>
+            <div class="clr"></div>
+            <div class="faq"><a target="_blank" href="{{ path('gd_faq') }}">{% trans %}userearnings.faqlink.text{% endtrans %}</a></div>
+         </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#withdrawal-code").on('click', function (event) {
+            $('#getCodeBlock').hide();
+            $('#loader').show();
+            event.preventDefault();
+            $.ajax({
+              url: $(this).attr('href'),
+              success: function(data){
+                $('#code-message').html(data);
+                $('#loader').hide();
+              }
+            });
+        });
+    });
+    
+</script>
+{% endblock %}

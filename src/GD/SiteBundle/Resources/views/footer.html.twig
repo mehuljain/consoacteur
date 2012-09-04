@@ -1,0 +1,29 @@
+<div id="footer">
+    <div class="footer">
+        <ul>
+            <li>
+                <h3>{% trans %}footer.coulmn1links.title{% endtrans %}</h3>
+                <a href="{{ path('gd_copyright_act') }}" class="link">{% trans %}footerlink.aboutus.text{% endtrans %}</a>
+                <a href="{{ path('gd_sitemap') }}" class="link">{% trans %}footerlink.sitemap.text{% endtrans %}</a>
+                <a href="{{ path('gd_assistance') }}" class="link">{% trans %}footerlink.contactus.text{% endtrans %}</a>
+            </li>
+            <li>
+                <h3>{% trans %}footer.coulmn2social.title{% endtrans %}</h3>
+                <a  href="{{ facebook_link }}" target="_blank" class="link">{% trans %}footerlink.facebook.text{% endtrans %}</a>
+                <a href="{{ twitter_link }}" target="_blank" class="link">{% trans %}footerlink.twitter.text{% endtrans %}</a>
+            </li>
+            <li class="newsletter">
+                <h3>{% trans %}footer.coulmn3newsletter.title{% endtrans %}</h3>
+                <div class="inside">                   
+                    {% render "GDSiteBundle:Default:newsletterSubscription" with {'isNewsletterfooter': true } %}
+                    <div id="msg"></div>
+                </div>
+            </li>
+            <li>
+                <h3>{% trans %}footer.coulmn4general.title{% endtrans %}</h3>
+                <a href="{{ path('gd_faq') }}" class="link">{% trans %}footerlink.faq.text{% endtrans %}</a>
+                <a href="{{path('gd_tnc')}}"  class="link">{% trans %}footerlink.terms.text{% endtrans %}</a>
+            </li>
+        </ul>
+        <div class="clr"></div>
+    </div>

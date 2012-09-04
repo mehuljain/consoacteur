@@ -1,0 +1,24 @@
+<form action="{{ path('gd_site_newsletter') }}" id="newsletter-form" method="post" novalidate="novalidate">
+{% block field_errors %}
+{% spaceless %}
+    <div class="popup-validation-errors">
+        {{ form_errors(form.email) }}
+    </div>
+    <br/>
+{% endspaceless %}
+{% endblock field_errors %}
+{% block content %}
+    <div class="msgs">{% trans %}newsletter.popuptitle.label{% endtrans %}</div>
+    <div class="form">
+        <div class="floated1">
+            {{ form_widget(form.email) }}            
+            {{ form_rest(form) }}
+            <div class="clr"></div>
+        </div>
+        <div class="form_layers floated1">
+            <span class="popuplt_btn newsltrBtn"><input type="submit" class="popuprt_btn" value="{% trans %}newsletter.popupsubmit.button{% endtrans %}"></span>
+        </div>
+        <div class="clr"></div>
+    </div>
+{% endblock %}
+</form>

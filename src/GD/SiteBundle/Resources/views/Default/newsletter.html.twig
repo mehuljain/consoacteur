@@ -1,0 +1,39 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}newsletter.htmltitle.text{% endtrans %}{% endblock %}
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">
+        <div class="rightnavi">
+           <div class="msgs">
+                {% if app.session.hasFlash('newsletter_flash') %}
+                    <div class="flash flash-success">
+                        {{ app.session.flash('newsletter_flash') }}
+                    </div>
+                {% endif %}
+            </div>
+            <h1 class="title">{% trans %}newsletter.popuptitle.label{% endtrans %}</h1>
+            <form action="{{ path('gd_site_newsletter') }}" method="post" {{ form_enctype(form) }} >
+              <div class="form_layer">
+                <div class="form_layers floated2 ">
+                  {{ form_errors(form.email) }}
+                  <div class="clr"></div>
+                </div>
+                <div class="floated1">
+                  {{ form_widget(form.email) }}
+                  {{ form_rest(form) }}
+                  <div class="clr"></div>
+                </div>
+                <br>
+                <div class="form_layers floated1">
+                    <span class="popuplt_btn"><input type="submit" class="popuprt_btn" value="{% trans %}newsletter.popupsubmit.button{% endtrans %}"></span>
+                </div>
+              <div class="clr"></div>
+              </div>
+            </form>
+          </div>
+         <div class="clr"></div>
+      </div>
+  </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}

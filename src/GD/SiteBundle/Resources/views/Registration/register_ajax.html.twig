@@ -1,0 +1,48 @@
+{% form_theme form 'GDSiteBundle:Form:form_ajax_div_layout.html.twig' %}
+<form action="{{ path('gd_site_user_registration') }}" method="POST" id="register-form"> 
+{% if error == 1 %}
+    <input type="hidden" name="register" value="1">    
+{% elseif error == 2 %}
+     <input type="hidden" name="register" value="2">
+{% endif %}  
+{% block field_errors %}
+{% spaceless %}
+    <div class="popup-validation-errors">
+        {{ form_errors(form.salutation) }}         
+        {{ form_errors(form.username) }}
+        {{ form_errors(form.plainPassword) }}
+        {{ form_errors(form.email) }}         
+        {{ form_errors(form.hasAcceptedTermsAndConditions) }}
+    </div>
+{% endspaceless %}
+{% endblock field_errors %}
+{% block content %}
+  <div class="form">
+        <div class="form_layer floated1">
+          {{ form_label(form.salutation) }}
+          {{ form_widget(form.salutation) }}          
+        </div>
+        <div class="form_layer floated1">
+            {{ form_label(form.username)  }}
+            {{ form_widget(form.username) }}
+        </div>
+        <div class="form_layer floated1">
+            {{ form_row(form.plainPassword) }}
+        </div>
+        <div class="form_layer floated2">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+            <div class="clr"></div>
+        </div>        
+        <div class="form_layer lay1">                
+            {{ form_row(form.hasAcceptedTermsAndConditions,{'label':  'ajaxregister.readterms.text' |trans |raw }) }}
+            {% spaceless %}
+            <a class="terms" href="{{path('gd_tnc')}}" target="_blank">{% trans %}ajaxregister.termslink.text{% endtrans %}</a>
+            {% endspaceless %}
+        </div>
+        <div class="form_layer floated1">
+          <span class="popuplt_btn reg_popuplt_btn"><input type="submit" class="popuprt_btn" value="{% trans %}ajaxregister.registerbutton.text{% endtrans %}"></span>
+        </div>
+   </div>
+</form>
+{% endblock %}

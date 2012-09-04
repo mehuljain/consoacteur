@@ -1,0 +1,3 @@
+{% for key, val in languages %}
+    <li><a href="{{ path('switch_base_language', { 'language' : val.locale_name }) }}">{{ val.full_name }}</a></li>
+{% endfor %}

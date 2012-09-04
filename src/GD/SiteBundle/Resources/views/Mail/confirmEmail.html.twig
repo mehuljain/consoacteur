@@ -1,0 +1,20 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'Merci de confirmer votre compte dans Conso-Acteur'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bienvenue '}}{{user.username}}{{','}}
+
+{{ 'Vous vous êtes bien enregistré et nous sommes heureux de vous compter parmi les membres de notre communauté' }}
+{{'Pour valider votre compte utilisateur, merci de vous rendre sur :'}} 
+{{ confirmationUrl }}
+
+{{ 'Pour confirmer votre inscription, vous pouvez également copier/coller ce lien dans la barre de votre navigateur: '}}
+{{ confirmationUrl }}
+
+{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}
+{{" -L'équipe Conso-Acteur" }}
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% block subject %}
+{% autoescape false %}
+{{'Choisissez, Consommez et Gagnez avec Conso-Acteur!'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bonjour,'}}
+{{sponsorshipCode}} {{ "vous a invité à rejoindre la communauté Conso-Acteur :" }} {{ siteUrl }}
+
+{{ 'Ce nouveau site propose :' }}
+  {{ "du cashback, des réductions sur vos achats effectués auprès des plus grands marchands" }} 
+  
+{{ "Pour s'inscrire sur Conso-Acteur : vous pouvez cliquer sur "}} {{ registrationUrl }} {{ "en indiquant le code parrain :"}} {{ sponsorshipCode }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}
+<p>{{ 'Bonjour,'}}</p>
+<p>{{sponsorshipCode }} {{ "vous a invité à rejoindre la communauté Conso-Acteur :" }} {{ siteUrl }}</p>
+<br>
+<p>{{ 'Ce nouveau site propose :' }}
+<ul>
+  <li>{{ "du cashback, des réductions sur vos achats effectués auprès des plus grands marchands"}}</li>
+</ul>
+</p>
+<p>{{ "Pour s'inscrire sur Conso-Acteur : vous pouvez cliquer sur "}} {{ registrationUrl }} {{ "en indiquant le code parrain :"}} <b>{{ sponsorshipCode }}</b></p>
+{% endblock %}

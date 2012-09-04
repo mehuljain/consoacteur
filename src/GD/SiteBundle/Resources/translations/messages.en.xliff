@@ -1,0 +1,1789 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+     <body>
+     <!--ChoiceList Translations -->
+      <!-- Account Closure Reasons-->
+      <trans-unit id="account.closure.reason1">
+                <source>account.closure.reason1</source>
+                <target>I did not find the offers interesting</target>
+      </trans-unit>
+      <trans-unit id="account.closure.reason2">
+                <source>account.closure.reason2</source>
+                <target>I no longer wish to enhance my image</target>
+      </trans-unit>
+      <trans-unit id="account.closure.reason3">
+                <source>account.closure.reason3</source>
+                <target>I don't trust GreatDeals</target>
+      </trans-unit>
+      <trans-unit id="account.closure.reason4">
+                <source>account.closure.reason4</source>
+                <target>I found something better elsewhere</target>
+      </trans-unit>
+     <!--Address Locations-->
+     <trans-unit id="address.location.choice0">
+                <source>address.location.choice0</source>
+                <target>Street</target>
+     </trans-unit>
+     <trans-unit id="address.location.choice1">
+                <source>address.location.choice1</source>
+                <target>Avenue</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice2">
+                <source>address.location.choice2</source>
+                <target>Boulevard</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice3">
+                <source>address.location.choice3</source>
+                <target>Quai</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice4">
+                <source>address.location.choice4</source>
+                <target>Impasse</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice5">
+                <source>address.location.choice5</source>
+                <target>Chemin</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice6">
+                <source>address.location.choice6</source>
+                <target>Route</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice7">
+                <source>address.location.choice7</source>
+                <target>Place</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice8">
+                <source>address.location.choice8</source>
+                <target>Villa</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice9">
+                <source>address.location.choice9</source>
+                <target>Parc</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice10">
+                <source>address.location.choice10</source>
+                <target>Square</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice11">
+                <source>address.location.choice11</source>
+                <target>Alley</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice12">
+                <source>address.location.choice12</source>
+                <target>Cours</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice13">
+                <source>address.location.choice13</source>
+                <target>Sente</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice14">
+                <source>address.location.choice14</source>
+                <target>Sentier</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice15">
+                <source>address.location.choice15</source>
+                <target>Passage</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice16">
+                <source>address.location.choice16</source>
+                <target>Jardins</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice17">
+                <source>address.location.choice17</source>
+                <target>Parvis</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice18">
+                <source>address.location.choice18</source>
+                <target>Residence</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice19">
+                <source>address.location.choice19</source>
+                <target>Terrasse</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice20">
+                <source>address.location.choice20</source>
+                <target>Grande Rue</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice21">
+                <source>address.location.choice21</source>
+                <target>Grand Place</target>
+      </trans-unit>
+     <trans-unit id="address.location.choice22">
+                <source>address.location.choice22</source>
+                <target>Chateau</target>
+      </trans-unit> 
+      <!--Advertisement Options-->
+      <trans-unit id="advertisement.option.choice1">
+                <source>advertisement.option.choice1</source>
+                <target>Not more than 4 per month</target>
+      </trans-unit>
+      <trans-unit id="advertisement.option.choice2">
+                <source>advertisement.option.choice2</source>
+                <target>Maximum 2 per month</target>
+      </trans-unit>
+      <trans-unit id="advertisement.option.choice3">
+                <source>advertisement.option.choice3</source>
+                <target>Maximum 1 per month</target>
+      </trans-unit>
+      <trans-unit id="advertisement.option.choice4">
+                <source>advertisement.option.choice4</source>
+                <target>As needed to be best informed</target>
+      </trans-unit>
+      <trans-unit id="advertisement.option.choice5">
+                <source>advertisement.option.choice5</source>
+                <target>None</target>
+      </trans-unit>
+     <!-- Gender Options -->
+     <trans-unit id="gender.option.choice1">
+                <source>gender.option.choice1</source>
+                <target>Female</target>
+      </trans-unit>
+      <trans-unit id="gender.option.choice2">
+                <source>gender.option.choice2</source>
+                <target>Male</target>
+      </trans-unit>
+      <!-- Problem Statement Options -->
+      <trans-unit id="problem.statement.choice1">
+                <source>problem.statement.choice1</source>
+                <target>Technical Problem</target>
+      </trans-unit>
+      <trans-unit id="problem.statement.choice2">
+                <source>problem.statement.choice2</source>
+                <target>Cashback Commission Problem</target>
+      </trans-unit>
+      <trans-unit id="problem.statement.choice3">
+                <source>problem.statement.choice3</source>
+                <target>Payment Issues</target>
+      </trans-unit>
+      <trans-unit id="problem.statement.choice4">
+                <source>problem.statement.choice4</source>
+                <target>Referral Commission Problem</target>
+      </trans-unit>
+      <trans-unit id="problem.statement.choice5">
+                <source>problem.statement.choice5</source>
+                <target>Code Promo Problem</target>
+      </trans-unit>
+      <trans-unit id="problem.statement.choice6">
+                <source>problem.statement.choice6</source>
+                <target>Others</target>
+      </trans-unit>
+       <!-- Profession Options -->
+      <trans-unit id="profession.option.choice1">
+                <source>profession.option.choice1</source>
+                <target>farmer</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice2">
+                <source>profession.option.choice2</source>
+                <target>craftsman</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice3">
+                <source>profession.option.choice3</source>
+                <target>at home</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice4">
+                <source>profession.option.choice4</source>
+                <target>middle management</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice5">
+                <source>profession.option.choice5</source>
+                <target>senior</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice6">
+                <source>profession.option.choice6</source>
+                <target>entrepreneur</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice7">
+                <source>profession.option.choice7</source>
+                <target>merchant</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice8">
+                <source>profession.option.choice8</source>
+                <target>employed</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice9">
+                <source>profession.option.choice9</source>
+                <target>Job Search</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice10">
+                <source>profession.option.choice10</source>
+                <target>retired</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice11">
+                <source>profession.option.choice11</source>
+                <target>student</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice12">
+                <source>profession.option.choice12</source>
+                <target>worker</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice13">
+                <source>profession.option.choice13</source>
+                <target>military</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice14">
+                <source>profession.option.choice14</source>
+                <target>official</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice15">
+                <source>profession.option.choice15</source>
+                <target>teacher</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice16">
+                <source>profession.option.choice16</source>
+                <target>professional</target>
+      </trans-unit>
+      <trans-unit id="profession.option.choice17">
+                <source>profession.option.choice17</source>
+                <target>other</target>
+      </trans-unit>
+      <!-- Referral Options -->
+      <trans-unit id="referral.option.choice1">
+                <source>referral.option.choice1</source>
+                <target>Refered By friend</target>
+      </trans-unit>
+      <trans-unit id="referral.option.choice2">
+                <source>referral.option.choice2</source>
+                <target>By Registration</target>
+      </trans-unit>
+      <trans-unit id="referral.option.choice3">
+                <source>referral.option.choice3</source>
+                <target>Google Search</target>
+      </trans-unit>
+      <trans-unit id="referral.option.choice4">
+                <source>referral.option.choice4</source>
+                <target>Newspaper</target>
+      </trans-unit>
+      <trans-unit id="referral.option.choice5">
+                <source>referral.option.choice5</source>
+                <target>Advertisement</target>
+      </trans-unit>
+      <trans-unit id="referral.option.choice6">
+                <source>referral.option.choice6</source>
+                <target>Others</target>
+      </trans-unit>
+      <!--Salutation Options-->
+      <trans-unit id="salutation.option.choice1">
+                <source>salutation.option.choice1</source>
+                <target>Mr</target>
+      </trans-unit>
+      <trans-unit id="salutation.option.choice2">
+                <source>salutation.option.choice2</source>
+                <target>Ms</target>
+      </trans-unit>
+      <trans-unit id="salutation.option.choice3">
+                <source>salutation.option.choice3</source>
+                <target>Mrs</target>
+      </trans-unit>
+      <!--Form Fields Labels-->
+      <!--Bank Withdrawal -->
+      <trans-unit id="bankwithdrawal.iban.label">
+                <source>bankwithdrawal.iban.label</source>
+                <target>IBAN</target>
+      </trans-unit>
+      <trans-unit id="bankwithdrawal.address.label">
+                <source>bankwithdrawal.address.label</source>
+                <target>Bank Address</target>
+      </trans-unit>
+      <trans-unit id="bankwithdrawal.swiftcode.label">
+                <source>bankwithdrawal.swiftcode.label</source>
+                <target>Bank SwiftCode</target>
+      </trans-unit>
+      <trans-unit id="bankwithdrawal.bankname.label">
+                <source>bankwithdrawal.bankname.label</source>
+                <target>Bank Name</target>
+      </trans-unit>
+      <trans-unit id="bankwithdrawal.bankcountry.label">
+                <source>bankwithdrawal.bankcountry.label</source>
+                <target>Bank Country</target>
+      </trans-unit>
+      <trans-unit id="bankwithdrawal.accountnumber.label">
+                <source>bankwithdrawal.accountnumber.label</source>
+                <target>Your Account Number</target>
+      </trans-unit>
+      <!-- Cheque Withdrawal -->
+      <trans-unit id="chequewithdrawal.payee.label">
+                <source>chequewithdrawal.payee.label</source>
+                <target>Cheque Payee</target>
+      </trans-unit>
+      <trans-unit id="chequewithdrawal.useraddress.label">
+                <source>chequewithdrawal.useraddress.label</source>
+                <target>Your Address</target>
+      </trans-unit>
+      <trans-unit id="paypalwithdrawal.email.label">
+                <source>paypalwithdrawal.email.label</source>
+                <target>PayPal Email</target>
+      </trans-unit>
+      <trans-unit id="paypalwithdrawal.confirmemail.label">
+                <source>paypalwithdrawal.confirmemail.label</source>
+                <target>Confirm PayPal Email</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.amount.label">
+                <source>withdrawal.amount.label</source>
+                <target>Amount</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.code.label">
+                <source>withdrawal.code.label</source>
+                <target>Withdrawal Code</target>
+      </trans-unit>
+      <!--Account Closure Form -->
+      <trans-unit id="accountclose.reason.label">
+                <source>accountclose.reason.label</source>
+                <target>Reason to close my account</target>
+      </trans-unit>
+      <trans-unit id="accountclose.reasonemptyvalue.label">
+                <source>accountclose.reasonemptyvalue.label</source>
+                <target>Choose a Reason Statement</target>
+      </trans-unit>
+      <trans-unit id="accountclose.message.label">
+                <source>accountclose.message.label</source>
+                <target>Message</target>
+      </trans-unit>
+      <!--Address Details Form-->
+      <trans-unit id="addressdetails.apartmentNumber.label">
+                <source>addressdetails.apartmentNumber.label</source>
+                <target>Apartment Number</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.locationemptyvalue.label">
+                <source>addressdetails.locationemptyvalue.label</source>
+                <target>Choose an Address Location</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.countryemptyvalue.label">
+                <source>addressdetails.countryemptyvalue.label</source>
+                <target>Choose a Country</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.country.label">
+                <source>addressdetails.country.label</source>
+                <target>Country</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.location.label">
+                <source>addressdetails.location.label</source>
+                <target>Address Location</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.locationname.label">
+                <source>addressdetails.locationname.label</source>
+                <target>Location Name</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.complementaryAddressDetails.label">
+                <source>addressdetails.complementaryAddressDetails.label</source>
+                <target>Complementary Address Details</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.zipcode.label">
+                <source>addressdetails.zipcode.label</source>
+                <target>Zipcode</target>
+      </trans-unit>
+      <trans-unit id="addressdetails.city.label">
+                <source>addressdetails.city.label</source>
+                <target>City</target>
+      </trans-unit>
+      <!--Advertisement Options Form Label -->
+      <trans-unit id="advertisementdetails.emptyvalue.label">
+                <source>advertisementdetails.emptyvalue.label</source>
+                <target>Choose an option</target>
+      </trans-unit>
+      <trans-unit id="advertisementdetails.emailtype.label">
+                <source>advertisementdetails.emailtype.label</source>
+                <target>Advertisement By Email</target>
+      </trans-unit>
+      <trans-unit id="advertisementdetails.posttype.label">
+                <source>advertisementdetails.posttype.label</source>
+                <target>Advertisement By Post</target>
+      </trans-unit>
+      <trans-unit id="advertisementdetails.telephonetype.label">
+                <source>advertisementdetails.telephonetype.label</source>
+                <target>Advertisement By Telephone</target>
+      </trans-unit>
+      <trans-unit id="advertisementdetails.smstype.label">
+                <source>advertisementdetails.smstype.label</source>
+                <target>Advertisement By SMS</target>
+      </trans-unit>
+      <!--Change Email Form Label -->
+      <trans-unit id="changeemail.currentpassword.label">
+                <source>changeemail.currentpassword.label</source>
+                <target>Your Current Password</target>
+      </trans-unit>
+      <trans-unit id="changeemail.newemail.label">
+                <source>changeemail.newemail.label</source>
+                <target>New email</target>
+      </trans-unit>
+      <trans-unit id="changeemail.confirmemail.label">
+                <source>changeemail.confirmemail.label</source>
+                <target>Confirm email</target>
+      </trans-unit>
+      <!--Change Password Form Label -->
+      <trans-unit id="changepassword.newpassword.label">
+                <source>changepassword.newpassword.label</source>
+                <target>New password</target>
+      </trans-unit>
+      <trans-unit id="changepassword.confirmpassword.label">
+                <source>changepassword.confirmpassword.label</source>
+                <target>Confirm password</target>
+      </trans-unit>
+      <!--Check Password Form Label -->
+      <trans-unit id="checkpassword.currentpassword.label">
+                <source>checkpassword.currentpassword.label</source>
+                <target>Enter your password</target>
+      </trans-unit>
+      <!-- Contact Details Form Label -->
+      <trans-unit id="contactdetails.homephone.label">
+                <source>contactdetails.homephone.label</source>
+                <target>Home Phone</target>
+      </trans-unit>
+      <trans-unit id="contactdetails.mobilephone.label">
+                <source>contactdetails.mobilephone.label</source>
+                <target>Mobile Phone</target>
+      </trans-unit>
+      <trans-unit id="contactdetails.officephone.label">
+                <source>contactdetails.officephone.label</source>
+                <target>Office Phone</target>
+      </trans-unit>
+      <!--New Request Form Type-->
+      <trans-unit id="newrequest.problemtype.label">
+                <source>newrequest.problemtype.label</source>
+                <target>Problem</target>
+      </trans-unit>
+      <trans-unit id="newrequest.problememptyvalue.label">
+                <source>newrequest.problememptyvalue.label</source>
+                <target>Choose a Problem Statement</target>
+      </trans-unit>
+      <trans-unit id="newrequest.subject.label">
+                <source>newrequest.subject.label</source>
+                <target>Subject</target>
+      </trans-unit>
+      <trans-unit id="newrequest.message.label">
+                <source>newrequest.message.label</source>
+                <target>Message</target>
+      </trans-unit>
+      <!-- Password Reset Request Form Label -->
+      <trans-unit id="passwordreset.usernameEmail.label">
+                <source>passwordreset.usernameEmail.label</source>
+                <target>Enter Username or Email</target>
+      </trans-unit>
+      <!-- User Personal Details Form Labels -->
+      <trans-unit id="userdetails.firstname.label">
+                <source>userdetails.firstname.label</source>
+                <target>First Name</target>
+      </trans-unit>
+      <trans-unit id="userdetails.lastname.label">
+                <source>userdetails.lastname.label</source>
+                <target>Last Name</target>
+      </trans-unit>
+      <trans-unit id="userdetails.dateofbirth.label">
+                <source>userdetails.dateofbirth.label</source>
+                <target>Date Of Birth</target>
+      </trans-unit>
+      <trans-unit id="year.label">
+                <source>year.label</source>
+                <target>Year</target>
+      </trans-unit>
+      <trans-unit id="month.label">
+                <source>month.label</source>
+                <target>Month</target>
+      </trans-unit>
+      <trans-unit id="day.label">
+                <source>day.label</source>
+                <target>Day</target>
+      </trans-unit>
+      <trans-unit id="userdetails.profession.label">
+                <source>userdetails.profession.label</source>
+                <target>Profession</target>
+      </trans-unit>
+      <trans-unit id="userdetails.professionemptyvalue.label">
+                <source>userdetails.professionemptyvalue.label</source>
+                <target>Select Your Profession</target>
+      </trans-unit>
+      <trans-unit id="userdetails.salutationrequired.label">
+                <source>userdetails.salutationrequired.label</source>
+                <target>Salutation*</target>
+      </trans-unit>
+      <trans-unit id="userdetails.gender.label">
+                <source>userdetails.gender.label</source>
+                <target>Gender</target>
+      </trans-unit>
+      <trans-unit id="userdetails.emailrequired.label">
+                <source>userdetails.emailrequired.label</source>
+                <target>Email*</target>
+      </trans-unit>
+      <trans-unit id="userdetails.usernamerequired.label">
+                <source>userdetails.usernamerequired.label</source>
+                <target>Username*</target>
+      </trans-unit>
+      <trans-unit id="userdetails.passwordrequired.label">
+                <source>userdetails.passwordrequired.label</source>
+                <target>Password*</target>
+      </trans-unit>
+      <trans-unit id="userdetails.confirmpasswordrequired.label">
+                <source>userdetails.confirmpasswordrequired.label</source>
+                <target>Confirm Password*</target>
+      </trans-unit>
+      <trans-unit id="userdetails.newsletter.label">
+                <source>userdetails.newsletter.label</source>
+                <target>Newsletter</target>
+      </trans-unit>
+      <trans-unit id="userdetails.sharecontact.label">
+                <source>userdetails.sharecontact.label</source>
+                <target>Share Contact</target>
+      </trans-unit>
+      <trans-unit id="userdetails.referraltype.label">
+                <source>userdetails.referraltype.label</source>
+                <target>Referral Type</target>
+      </trans-unit>
+      <trans-unit id="userdetails.sponsorcode.label">
+                <source>userdetails.sponsorcode.label</source>
+                <target>Sponsorship Code</target>
+      </trans-unit>
+      <trans-unit id="userdetails.newsletterlimit.text">
+                <source>userdetails.newsletterlimit.text</source>
+                <target>Not more than 1 per week</target>
+      </trans-unit>
+     <!-- Front End Messages -->
+     <!--Newsletter Form(_newsletter_popup.html.twig) -->
+     <trans-unit id="newsletter.popuptitle.label">
+                <source>newsletter.popuptitle.label</source>
+                <target>Enter your email address and confirm to receive special offers and coupon codes from merchants</target>
+     </trans-unit>
+     <trans-unit id="newsletter.popupsubmit.button">
+                <source>newsletter.popupsubmit.button</source>
+                <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="newsletter.htmltitle.text">
+                <source>newsletter.htmltitle.text</source>
+                <target>Newsletter</target>
+      </trans-unit>
+      <!--Carousel Home Page(carousel.html.twig)-->
+      <trans-unit id="carousel.cashback.title">
+                <source>carousel.cashback.title</source>
+                <target>Cashback</target>
+      </trans-unit>
+      <trans-unit id="carousel.codepromo.title">
+                <source>carousel.codepromo.title</source>
+                <target>Codes Promo</target>
+      </trans-unit>
+      <trans-unit id="imageloading.text">
+                <source>imageloading.text</source>
+                <target>Loading...</target>
+      </trans-unit>
+      <trans-unit id="carousel.seemerchants.text">
+                <source>carousel.seemerchants.text</source>
+                <target>See Our Merchants</target>
+      </trans-unit>
+      <trans-unit id="carousel.codepromocount.text">
+                <source>carousel.codepromocount.text</source>
+                <target>code promo offers</target>
+      </trans-unit>
+      <!--Home Page(index.html.twig)-->
+      <trans-unit id="homepage.title">
+                <source>homepage.title</source>
+                <target>GreatDeals - Home Page</target>
+      </trans-unit>
+      <trans-unit id="homepage.metadescription">
+                <source>homepage.metadescription</source>
+                <target>metadescription</target>
+      </trans-unit>
+      <trans-unit id="homepage.metakeyword">
+                <source>homepage.metakeyword</source>
+                <target>keywords</target>
+      </trans-unit>
+      <trans-unit id="homepage.rapidsubscription.title">
+                <source>homepage.rapidsubscription.title</source>
+                <target>Free Registration</target>
+      </trans-unit>
+      <!-- Navigation Menu(menu.html.twig)-->
+      <trans-unit id="menu.howitworks.title">
+                <source>menu.howitworks.title</source>
+                <target>How it works ?</target>
+      </trans-unit>
+      <trans-unit id="menu.categories.title">
+                <source>menu.categories.title</source>
+                <target>Our Categories</target>
+      </trans-unit>
+      <trans-unit id="menu.cashback.title">
+                <source>menu.cashback.title</source>
+                <target>Cashback</target>
+      </trans-unit>
+      <trans-unit id="menu.codepromo.title">
+                <source>menu.codepromo.title</source>
+                <target>Codes Promo</target>
+      </trans-unit>
+      <trans-unit id="menu.fullreimburse.title">
+                <source>menu.fullreimburse.title</source>
+                <target>Full Reimbursement</target>
+      </trans-unit>
+      <trans-unit id="menu.subscriptiongain.title">
+                <source>menu.subscriptiongain.title</source>
+                <target>Subscription Gain</target>
+      </trans-unit>
+      <trans-unit id="menu.referral.title">
+                <source>menu.referral.title</source>
+                <target>Referral</target>
+      </trans-unit>
+      <trans-unit id="menu.howtoregister.title">
+                <source>menu.howtoregister.title</source>
+                <target>How to register?</target>
+      </trans-unit>
+      <!-- Merchant Details Page(_details.html.twig) -->
+      <trans-unit id="merchantdetail.cashback.title">
+                <source>merchantdetail.cashback.title</source>
+                <target>Cashback</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.cashbackavailable.text">
+                <source>merchantdetail.cashbackavailable.text</source>
+                <target>cashback available</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.cashbackdescription.text">
+                <source>merchantdetail.cashbackdescription.text</source>
+                <target>Cashback Description:</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.cashbacklink.text">
+                <source>merchantdetail.cashbacklink.text</source>
+                <target>Cashback Link</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.nocashback.text">
+                <source>merchantdetail.nocashback.text</source>
+                <target>No Cashback Offer found for this merchant</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.codepromo.title">
+                <source>merchantdetail.codepromo.title</source>
+                <target>Codes Promo</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.codepromoavailable.text">
+                <source>merchantdetail.codepromoavailable.text</source>
+                <target>code promo available</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.codepromodescription.text">
+                <source>merchantdetail.codepromodescription.text</source>
+                <target>Code Promo Description:</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.codepromovalidity.text">
+                <source>merchantdetail.codepromovalidity.text</source>
+                <target>Date of validity</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.codepromogetcodelink.text">
+                <source>merchantdetail.codepromogetcodelink.text</source>
+                <target>Get Code</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.codepromousecodelink.text">
+                <source>merchantdetail.codepromousecodelink.text</source>
+                <target>Use Code</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.nocodepromo.text">
+                <source>merchantdetail.nocodepromo.text</source>
+                <target>No Code Promo Offers found for this merchant.</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.subscriptiongainavailable.text">
+                <source>merchantdetail.subscriptiongainavailable.text</source>
+                <target>subscription gain available</target>
+      </trans-unit>
+        <trans-unit id="merchantdetail.subscriptiongain.title">
+                <source>merchantdetail.subscriptiongain.title</source>
+                <target>Subscription Gain</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.subscriptiongainlink.text">
+                <source>merchantdetail.subscriptiongainlink.text</source>
+                <target>Subscription Gain Link</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.nosubscriptiongain.text">
+                <source>merchantdetail.nosubscriptiongain.text</source>
+                <target>No Subscription Gain Offer found for this merchant</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.fullreimbursementtitle.text">
+                <source>merchantdetail.fullreimbursementtitle.text</source>
+                <target>Full Reimbursement</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.fullreimbursementavailable.text">
+                <source>merchantdetail.fullreimbursementavailable.text</source>
+                <target>full reimbursement attainable</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.fullreimbursementtermsconditions.text">
+                <source>merchantdetail.fullreimbursementtermsconditions.text</source>
+                <target>Terms and Conditions</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.fullreimbursementlink.text">
+                <source>merchantdetail.fullreimbursementlink.text</source>
+                <target>Full Reimbursement Link</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.nofullreimbursement.text">
+                <source>merchantdetail.nofullreimbursement.text</source>
+                <target>No Full Reimbursement Offer found for this merchant</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.feedbacktitle.text">
+                <source>merchantdetail.feedbacktitle.text</source>
+                <target>Comments</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.nofeedback.text">
+                <source>merchantdetail.nofeedback.text</source>
+                <target>There are no feedbacks for this merchant</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.singlefeedback.text">
+                <source>merchantdetail.singlefeedback.text</source>
+                <target> There is 1 feedback for this merchant</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.multiplefeedbacks.text">
+                <source>merchantdetail.multiplefeedbacks.text</source>
+                <target>There are %numFeedback% feedbacks for this merchant</target>
+      </trans-unit>
+      <trans-unit id="merchantdetail.givefeedbacklink.text">
+                <source>merchantdetail.givefeedbacklink.text</source>
+                <target>Give Feedback</target>
+      </trans-unit>
+      <trans-unit id="feedbackdescription.at.text">
+                <source>feedbackdescription.at.text</source>
+                <target>at</target>
+      </trans-unit>
+      <trans-unit id="feedbackdescription.by.text">
+                <source>feedbackdescription.by.text</source>
+                <target>by</target>
+      </trans-unit>
+      <trans-unit id="offers.notification1.text">
+                <source>offers.notification1.text</source>
+                <target>*The cashback will be credited to your account in the website.</target>
+      </trans-unit>
+      <trans-unit id="offers.notification2.text">
+                <source>offers.notification2.text</source>
+                <target>You can request for a payment once you have 20€ in your account</target>
+      </trans-unit>
+      <!--Merchants List page (list.html.twig)-->
+      <trans-unit id="merchantlist.title.text">
+                <source>merchantlist.title.text</source>
+                <target>Merchant List</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.metadescription.text">
+                <source>merchantlist.metadescription.text</source>
+                <target>Great Deals - Merchant List</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.metakeywords.text">
+                <source>merchantlist.metakeywords.text</source>
+                <target>Great Deals - Merchant List</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.searchindextitle.text">
+                <source>merchantlist.searchindextitle.text</source>
+                <target>Search by alphabetical order</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.numbermerchants.text">
+                <source>merchantlist.numbermerchants.text</source>
+                <target>Number of merchants per page</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.cashbackdropdown.text">
+                <source>merchantlist.cashbackdropdown.text</source>
+                <target>Cashback Amount</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.cashbackpercentdropdown.text">
+                <source>merchantlist.cashbackpercentdropdown.text</source>
+                <target>Cashback Percentage</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.cashbackstartdatedropdown.text">
+                <source>merchantlist.cashbackstartdatedropdown.text</source>
+                <target>Start Date</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.cashbacknamedropdown.text">
+                <source>merchantlist.cashbacknamedropdown.text</source>
+                <target>Name</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.merchanttitle.text">
+                <source>merchantlist.merchanttitle.text</source>
+                <target>Merchants</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.cashbacktitle.text">
+                <source>merchantlist.cashbacktitle.text</source>
+                <target>Cashback</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.codepromotitle.text">
+                <source>merchantlist.codepromotitle.text</source>
+                <target>Codes Promo</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.subscriptiongaintitle.text">
+                <source>merchantlist.subscriptiongaintitle.text</source>
+                <target>Subscription Gain</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.fullreimbursementtitle.text">
+                <source>merchantlist.fullreimbursementtitle.text</source>
+                <target>Full Reimbursement</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.nomerchantfound.text">
+                <source>merchantlist.nomerchantfound.text</source>
+                <target>No merchants found</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.sortby.text">
+                <source>merchantlist.sortby.text</source>
+                <target>Sort by</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.nooffers.text">
+                <source>merchantlist.nooffers.text</source>
+                <target>Offers</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.singleoffer.text">
+                <source>merchantlist.singleoffer.text</source>
+                <target>Offer</target>
+      </trans-unit>
+      <trans-unit id="merchantlist.multipleoffers.text">
+                <source>merchantlist.multipleoffers.text</source>
+                <target>Offers</target>
+      </trans-unit>
+      <!--Merchant redirection popup(redirectionValidate.html.twig)-->
+      <trans-unit id="merchantredirection.title.text">
+                <source>merchantredirection.title.text</source>
+                <target>Win Cashback with us</target>
+      </trans-unit>
+      <trans-unit id="merchantredirection.loginlink.text">
+                <source>merchantredirection.loginlink.text</source>
+                <target>Login</target>
+      </trans-unit>
+      <trans-unit id="merchantredirection.subscribelink.text">
+                <source>merchantredirection.subscribelink.text</source>
+                <target>Subscribe</target>
+      </trans-unit>
+      <trans-unit id="merchantredirection.forgotpasswordlink.text">
+                <source>merchantredirection.forgotpasswordlink.text</source>
+                <target>Forgot Password</target>
+      </trans-unit>
+      <trans-unit id="merchantredirection.continuesanscashbacklink.text">
+                <source>merchantredirection.continuesanscashbacklink.text</source>
+                <target>Continuer Sans Cashback</target>
+      </trans-unit>
+      <trans-unit id="merchantredirection.notification.text">
+                <source>merchantredirection.notification.text</source>
+                <target>You must be subscribed to win bonus from our offers</target>
+      </trans-unit>
+      <trans-unit id="merchantredirection.wincashbacklink.text">
+                <source>merchantredirection.wincashbacklink.text</source>
+                <target>Win Cashback</target>
+      </trans-unit>
+      <!--Ajax Registration Popup Form(homepage_register_ajax.html.twig)-->
+      <trans-unit id="ajaxregister.termslink.text">
+                <source>ajaxregister.termslink.text</source>
+                <target>terms and conditions</target>
+      </trans-unit>
+      <trans-unit id="ajaxregister.readterms.text">
+                <source>ajaxregister.readterms.text</source>
+                <target>I have read and agree to the</target>
+      </trans-unit>
+      <trans-unit id="ajaxregister.registerbutton.text">
+                <source>ajaxregister.registerbutton.text</source>
+                <target>Register</target>
+      </trans-unit>
+      <!--How to register Form(register.html.twig)-->
+      <trans-unit id="detailregister.htmltitle.text">
+                <source>detailregister.htmltitle.text</source>
+                <target>Subscription</target>
+      </trans-unit>
+      <trans-unit id="detailregister.title.text">
+                <source>detailregister.title.text</source>
+                <target>Subscribe for free and win  5€ in your account.</target>
+      </trans-unit>
+      <trans-unit id="detailregister.mandatoryfields.text">
+                <source>detailregister.mandatoryfields.text</source>
+                <target>Mandatory Fields</target>
+      </trans-unit>
+      <trans-unit id="detailregister.personaldetails.text">
+                <source>detailregister.personaldetails.text</source>
+                <target>Personal Details</target>
+      </trans-unit>
+      <trans-unit id="detailregister.addressdetails.text">
+                <source>detailregister.addressdetails.text</source>
+                <target>Address Details</target>
+      </trans-unit>
+      <trans-unit id="detailregister.contactdetails.text">
+                <source>detailregister.contactdetails.text</source>
+                <target>Contact Details</target>
+      </trans-unit>
+      <trans-unit id="detailregister.referraldetails.text">
+                <source>detailregister.referraldetails.text</source>
+                <target>Referral Details</target>
+      </trans-unit>
+      <trans-unit id="detailregister.advertisementdetails.text">
+                <source>detailregister.advertisementdetails.text</source>
+                <target>Advetisement Details</target>
+      </trans-unit>
+      <trans-unit id="detailregister.referralnotification.text">
+                <source>detailregister.referralnotification.text</source>
+                <target>Please enter your sponsor code</target>
+      </trans-unit>
+      <trans-unit id="detailregister.adressnotification.text">
+                <source>detailregister.adressnotification.text</source>
+                <target>building,street,floor...</target>
+      </trans-unit>
+      <trans-unit id="detailregister.advtemailnotification.text">
+                <source>detailregister.advtemailnotification.text</source>
+                <target>How many advertisement emails would you like to receive ?</target>
+      </trans-unit>
+      <trans-unit id="detailregister.advtpostnotification.text">
+                <source>detailregister.advtpostnotification.text</source>
+                <target>How many advertisement posts would you like to receive ?</target>
+      </trans-unit>
+      <trans-unit id="detailregister.advtphonenotification.text">
+                <source>detailregister.advtphonenotification.text</source>
+                <target>How many advertisement calls would you like to receive ?</target>
+      </trans-unit>
+      <trans-unit id="detailregister.advtsmsnotification.text">
+                <source>detailregister.advtsmsnotification.text</source>
+                <target>How many advertisement sms would you like to receive ?</target>
+      </trans-unit>
+      <trans-unit id="registersucsess.htmltitle.text">
+                <source>registersucsess.htmltitle.text</source>
+                <target>Registration Successful</target>
+      </trans-unit>
+      <!--Password Reset Form(password_resets.html.twig) -->
+      <trans-unit id="passwordreset.htmltitle.text">
+                <source>passwordreset.htmltitle.text</source>
+                <target>Password Reset</target>
+      </trans-unit>
+      <trans-unit id="passwordreset.title.text">
+                <source>passwordreset.title.text</source>
+                <target>Password Reset</target>
+      </trans-unit>
+      <trans-unit id="passwordreset.submitbutton.text">
+                <source>passwordreset.submitbutton.text</source>
+                <target>Change</target>
+      </trans-unit>
+      <!--Forgot Password(resetting.html.twig)-->
+      <trans-unit id="forgotpassword.htmltitle.text">
+                <source>forgotpassword.htmltitle.text</source>
+                <target>Forgot Password</target>
+      </trans-unit>
+      <trans-unit id="forgotpassword.title.text">
+                <source>forgotpassword.title.text</source>
+                <target>Forgot Password</target>
+      </trans-unit>
+      <trans-unit id="forgotpassword.submitbutton.text">
+                <source>forgotpassword.submitbutton.text</source>
+                <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="forgotpassword.explanation.text">
+                <source>forgotpassword.explanation.text</source>
+                <target>If you have forgotten your login or password, give us your e-mail/login address provided during registration.</target>
+      </trans-unit>
+      <!--Account Close Form(accountClosure.html.twig)-->
+      <trans-unit id="accountclose.htmltitle.text">
+                <source>accountclose.htmltitle.text</source>
+                <target>Close My Account</target>
+      </trans-unit>
+      <trans-unit id="accountclose.title.text">
+                <source>accountclose.title.text</source>
+                <target>Close My Account</target>
+      </trans-unit>
+      <trans-unit id="accountclose.confirmation.text">
+                <source>accountclose.confirmation.text</source>
+                <target>Yes, I confirm to close my account</target>
+      </trans-unit>
+      <trans-unit id="accountclose.submitbutton.text">
+                <source>accountclose.submitbutton.text</source>
+                <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="accountclose.cancelbutton.text">
+                <source>accountclose.cancelbutton.text</source>
+                <target>Cancel</target>
+      </trans-unit>
+      <!--Change Email Form(changeemail.html.twig)-->
+      <trans-unit id="changeemail.title.text">
+                <source>changeemail.title.text</source>
+                <target>Change Email</target>
+      </trans-unit>
+      <trans-unit id="changeemail.submitbutton.text">
+                <source>changeemail.submitbutton.text</source>
+                <target>Change</target>
+      </trans-unit>
+      <!--Change Passwrod Form(changePassword.html.twig)-->
+      <trans-unit id="changepassword.title.text">
+                <source>changepassword.title.text</source>
+                <target>Change Password</target>
+      </trans-unit>
+      <trans-unit id="changepassword.submitbutton.text">
+                <source>changepassword.submitbutton.text</source>
+                <target>Change</target>
+      </trans-unit>
+      <!--Check Passwrod Form(checkPassword.html.twig)-->
+      <trans-unit id="checkpassword.title.text">
+                <source>checkpassword.title.text</source>
+                <target>Check Password</target>
+      </trans-unit>
+      <trans-unit id="checkpassword.submitbutton.text">
+                <source>checkpassword.submitbutton.text</source>
+                <target>Validate</target>
+      </trans-unit>
+      <!--New Request Form(newRequest.html.twig)-->
+      <trans-unit id="newrequest.title.text">
+                <source>newrequest.title.text</source>
+                <target>New Request</target>
+      </trans-unit>
+      <trans-unit id="newrequest.submitbutton.text">
+                <source>newrequest.submitbutton.text</source>
+                <target>Send</target>
+      </trans-unit>
+      <!--User Earning Details (userEarningsDetail.html.twig)-->
+      <trans-unit id="userearnings.title.text">
+                <source>userearnings.title.text</source>
+                <target>User Earnings Details</target>
+      </trans-unit>
+      <trans-unit id="userearnings.confirmedvalidatedamount.text">
+                <source>userearnings.confirmedvalidatedamount.text</source>
+                <target>Confirmed and Validated Amount</target>
+      </trans-unit>
+      <trans-unit id="userearnings.datetitle.text">
+                <source>userearnings.datetitle.text</source>
+                <target>Date</target>
+      </trans-unit>
+      <trans-unit id="userearnings.statustitle.text">
+                <source>userearnings.statustitle.text</source>
+                <target>Status</target>
+      </trans-unit>
+      <trans-unit id="userearnings.amounttypetitle.text">
+                <source>userearnings.amounttypetitle.text</source>
+                <target>Description</target>
+      </trans-unit>
+      <trans-unit id="userearnings.ordernumbertitle.text">
+                <source>userearnings.ordernumbertitle.text</source>
+                <target>Order No</target>
+      </trans-unit>
+      <trans-unit id="userearnings.merchanttitle.text">
+                <source>userearnings.merchanttitle.text</source>
+                <target>Referrer/Merchant</target>
+      </trans-unit>
+      <trans-unit id="userearnings.earningstitle.text">
+                <source>userearnings.earningstitle.text</source>
+                <target>Amount Earned</target>
+      </trans-unit>
+      <trans-unit id="userearnings.joiningbonus.text">
+                <source>userearnings.joiningbonus.text</source>
+                <target>Joining Bonus</target>
+      </trans-unit>
+      <trans-unit id="userearnings.norecords.text">
+                <source>userearnings.norecords.text</source>
+                <target>No Records Found</target>
+      </trans-unit>
+      <trans-unit id="userearnings.tobevalidatedamount.text">
+                <source>userearnings.tobevalidatedamount.text</source>
+                <target>Offer Amount to be validated</target>
+      </trans-unit>
+      <trans-unit id="userearnings.waitingstatus.text">
+                <source>userearnings.waitingstatus.text</source>
+                <target>Waiting</target>
+      </trans-unit>
+      <trans-unit id="userearnings.referraltobevalidated.text">
+                <source>userearnings.referraltobevalidated.text</source>
+                <target>Referral Amount to be validated</target>
+      </trans-unit>
+      <trans-unit id="userearnings.referralbonustitle.text">
+                <source>userearnings.referralbonustitle.text</source>
+                <target>Bonus</target>
+      </trans-unit>
+      <trans-unit id="userearnings.referraltitle.text">
+                <source>userearnings.referraltitle.text</source>
+                <target>Referral</target>
+      </trans-unit>      
+      <trans-unit id="userearnings.invalidatedamount.text">
+                <source>userearnings.invalidatedamount.text</source>
+                <target>Invalidated Amount</target>
+      </trans-unit>
+      <trans-unit id="userearnings.withdrawnamount.text">
+                <source>userearnings.withdrawnamount.text</source>
+                <target>Withdrawn Amount</target>
+      </trans-unit>
+      <trans-unit id="userearnings.cancelledcashback.title">
+                <source>userearnings.cancelledcashback.title</source>
+                <target>Cancelled Cashback</target>
+      </trans-unit>
+      <trans-unit id="userearnings.onholdamount.text">
+                <source>userearnings.onholdamount.text</source>
+                <target>On Hold Amount</target>
+      </trans-unit>
+      <trans-unit id="userearnings.reasontitle.text">
+                <source>userearnings.reasontitle.text</source>
+                <target>Reason</target>
+      </trans-unit>
+      <trans-unit id="userearnings.ordermerchantdetail.text">
+                <source>userearnings.ordermerchantdetail.text</source>
+                <target>Detail</target>
+      </trans-unit>
+      <trans-unit id="userearnings.paymentrequestamount.text">
+                <source>userearnings.paymentrequestamount.text</source>
+                <target>Payment Requested Amount</target>
+      </trans-unit>
+      <!--User Profile Page(viewProfile.html.twig)-->
+      <trans-unit id="userprofile.title.text">
+                <source>userprofile.title.text</source>
+                <target>Your Profile</target>
+      </trans-unit>
+      <trans-unit id="userprofile.updatebutton.text">
+                <source>userprofile.updatebutton.text</source>
+                <target>Update</target>
+      </trans-unit>
+      <trans-unit id="userprofile.closeaccount.text">
+                <source>userprofile.closeaccount.text</source>
+                <target>Close Account</target>
+      </trans-unit>
+      <trans-unit id="userprofile.closeaccountbutton.text">
+                <source>userprofile.closeaccountbutton.text</source>
+                <target>Close Account</target>
+      </trans-unit>
+      <trans-unit id="userprofile.closeaccountlink.text">
+                <source>userprofile.closeaccountlink.text</source>
+                <target>Please click here to close your account</target>
+      </trans-unit>
+      <trans-unit id="changeemail.link.text">
+                <source>changeemail.link.text</source>
+                <target>Change Email</target>
+      </trans-unit>
+      <trans-unit id="changepassword.link.text">
+                <source>changepassword.link.text</source>
+                <target>Change Password</target>
+      </trans-unit>
+      <!--User Earnings Index (index.html.twig)-->
+      <trans-unit id="userearningspage.title.text">
+                <source>userearningspage.title.text</source>
+                <target>User Earnings</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.withdrawalamount.text">
+                <source>userearningstable.withdrawalamount.text</source>
+                <target>Withdrawable Amount</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.confirmedvalidatedamount.text">
+                <source>userearningstable.confirmedvalidatedamount.text</source>
+                <target>Confirmed and Validated Amount</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.referralamounttovalidate.text">
+                <source>userearningstable.referralamounttovalidate.text</source>
+                <target>Referral Amount to be validated</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.offeramounttovalidate.text">
+                <source>userearningstable.offeramounttovalidate.text</source>
+                <target>Offer Amount to be validated</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.currentlyrequestedamount.text">
+                <source>userearningstable.currentlyrequestedamount.text</source>
+                <target>Currently Requested Amount</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.invalidatedamount.text">
+                <source>userearningstable.invalidatedamount.text</source>
+                <target>Invalidated Amount</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.onholdamount.text">
+                <source>userearningstable.onholdamount.text</source>
+                <target>On Hold Amount</target>
+      </trans-unit>
+      <trans-unit id="userearningstable.withdrawnamount.text">
+                <source>userearningstable.withdrawnamount.text</source>
+                <target>Withdrawn Amount</target>
+      </trans-unit>
+      <trans-unit id="userearnings.seedetailamount.text">
+                <source>userearnings.seedetailamount.text</source>
+                <target>See all the amount in detail</target>
+      </trans-unit>
+      <trans-unit id="userearnings.seedetailamountlink.text">
+                <source>userearnings.seedetailamountlink.text</source>
+                <target>see my detailed earnings</target>
+      </trans-unit>
+      <trans-unit id="userearnings.receivedetailamount.text">
+                <source>userearnings.receivedetailamount.text</source>
+                <target>Receive your account details via email</target>
+      </trans-unit>
+      <trans-unit id="userearnings.receivedetailamountlink.text">
+                <source>userearnings.receivedetailamountlink.text</source>
+                <target>Receive</target>
+      </trans-unit>
+      <trans-unit id="userearnings.withdrawoptionstitle.text">
+                <source>userearnings.withdrawoptionstitle.text</source>
+                <target>Withdraw By</target>
+      </trans-unit>
+      <trans-unit id="userearnings.withdrawsubmitbutton.text">
+                <source>userearnings.withdrawsubmitbutton.text</source>
+                <target>Withdraw</target>
+      </trans-unit>
+      <trans-unit id="userearnings.faqlink.text">
+                <source>userearnings.faqlink.text</source>
+                <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="userearnings.cheque.text">
+                <source>userearnings.cheque.text</source>
+                <target>Cheque</target>
+      </trans-unit>
+      <trans-unit id="userearnings.minimumamount.text">
+                <source>userearnings.minimumamount.text</source>
+                <target>Minimum %amount%</target>
+      </trans-unit>
+      <trans-unit id="userearnings.bank.text">
+                <source>userearnings.bank.text</source>
+                <target>Bank</target>
+      </trans-unit>
+      <trans-unit id="userearnings.paypal.text">
+                <source>userearnings.paypal.text</source>
+                <target>Paypal</target>
+      </trans-unit>
+      <trans-unit id="userearnings.withdrawamountnotify.text">
+                <source>userearnings.withdrawamountnotify.text</source>
+                <target>The amount for which you can request for a payment</target>
+      </trans-unit>
+      <trans-unit id="userearnings.chequedetails.text">
+                <source>userearnings.chequedetails.text</source>
+                <target>Your withdrawable amount must be atleast 30€ to request a payment by cheque</target>
+      </trans-unit>
+      <trans-unit id="userearnings.bankdetails.text">
+                <source>userearnings.bankdetails.text</source>
+                <target>Your withdrawable amount must be atleast 20€ to request a payment by bank transfer</target>
+      </trans-unit>
+      <trans-unit id="userearnings.paypaldetails.text">
+                <source>userearnings.paypaldetails.text</source>
+                <target>Your withdrawable amount must be atleast 20€ to request a payment by paypal transfer</target>
+      </trans-unit>      
+      <!--Withdrawal Page(withdrawal.html.twig)-->
+      <trans-unit id="withdrawalpage.title.text">
+                <source>withdrawalpage.title.text</source>
+                <target>Withdrawal</target>
+      </trans-unit>
+      <trans-unit id="withdrawalpage.msg.text">
+                <source>withdrawalpage.msg.text</source>
+                <target>Please provide the details below</target>
+      </trans-unit>
+      <trans-unit id="withdrawalpage.getcode.text">
+                <source>withdrawalpage.getcode.text</source>
+                <target>Get Code</target>
+      </trans-unit>
+      <trans-unit id="withdrawalpage.submitbutton.text">
+                <source>withdrawalpage.submitbutton.text</source>
+                <target>Submit</target>
+      </trans-unit>
+      <!--Header translations(header.html.twig)-->
+      <trans-unit id="header.referrallink.text">
+                <source>header.referrallink.text</source>
+                <target>Referral</target>
+      </trans-unit>
+      <trans-unit id="header.faqlink.text">
+                <source>header.faqlink.text</source>
+                <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="header.newsletterlink.text">
+                <source>header.newsletterlink.text</source>
+                <target>Newsletter</target>
+      </trans-unit>
+      <trans-unit id="header.assistancelink.text">
+                <source>header.assistancelink.text</source>
+                <target>Assistance</target>
+      </trans-unit>
+      <trans-unit id="header.searchtitle.text">
+                <source>header.searchtitle.text</source>
+                <target>Search Site:</target>
+      </trans-unit>
+      <trans-unit id="header.logoutlink.text">
+                <source>header.logoutlink.text</source>
+                <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="header.logintitle.text">
+                <source>header.logintitle.text</source>
+                <target>Identification</target>
+      </trans-unit>
+      <trans-unit id="header.countrylanguagetitle.text">
+                <source>header.countrylanguagetitle.text</source>
+                <target>Country-Language</target>
+      </trans-unit>
+      <trans-unit id="header.yourearningstitle.text">
+                <source>header.yourearningstitle.text</source>
+                <target>You have earned:</target>
+      </trans-unit>
+      <trans-unit id="header.username.title">
+                <source>header.username.title</source>
+                <target>Username</target>
+      </trans-unit>
+      <trans-unit id="header.registrationlink.text">
+                <source>header.registrationlink.text</source>
+                <target>Registration</target>
+      </trans-unit>
+      <trans-unit id="header.forgotpasswordlink.text">
+                <source>header.forgotpasswordlink.text</source>
+                <target>Forgot Password?</target>
+      </trans-unit>
+      <trans-unit id="header.password.title">
+                <source>header.password.title</source>
+                <target>Password</target>
+      </trans-unit>
+      <trans-unit id="header.socialnetwork.title">
+                <source>header.socialnetwork.title</source>
+                <target>Join our community</target>
+      </trans-unit>
+      <trans-unit id="search.background.text">
+                <source>search.background.text</source>
+                <target>merchant name...</target>
+      </trans-unit>
+      <!--layout(layout.html.twig)-->
+      <trans-unit id="layout.title.text">
+                <source>layout.title.text</source>
+                <target>Welcome!</target>
+      </trans-unit>
+      <trans-unit id="layout.metadescription.text">
+                <source>layout.metadescription.text</source>
+                <target>Great Deals</target>
+      </trans-unit>
+      <trans-unit id="layout.metakeywords.text">
+                <source>layout.metakeywords.text</source>
+                <target>Cashback, Code Promo, Subscription Gain, Full Reimbruisement</target>
+      </trans-unit>
+      <trans-unit id="layout.javascriptdisabled.text">
+                <source>layout.javascriptdisabled.text</source>
+                <target>You must enable Javascript to support all the functionalities of the website!</target>
+      </trans-unit>
+      <!--pagination translations(pagination.html.twig)-->
+      <trans-unit id="paginate.previous.text">
+                <source>paginate.previous.text</source>
+                <target>Previous</target>
+      </trans-unit>
+      <trans-unit id="paginate.next.text">
+                <source>paginate.next.text</source>
+                <target>Next</target>
+      </trans-unit>
+      <!--Popup translations (popup.html.twig)-->
+      <trans-unit id="popup.feeback.title">
+                <source>popup.feeback.title</source>
+                <target>Feedback</target>
+      </trans-unit>
+      <trans-unit id="popup.feebackcommenttitle.text">
+                <source>popup.feebackcommenttitle.text</source>
+                <target>Your Review :</target>
+      </trans-unit>
+      <trans-unit id="popup.feebackratingtitle.text">
+                <source>popup.feebackratingtitle.text</source>
+                <target>Rating :</target>
+      </trans-unit>
+      <trans-unit id="popup.feebacktextlength.text">
+                <source>popup.feebacktextlength.text</source>
+                <target>500 Characters Maximum</target>
+      </trans-unit>
+      <trans-unit id="popup.feebacksubmitbutton.text">
+                <source>popup.feebacksubmitbutton.text</source>
+                <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="popup.newslettertitle.text">
+                <source>popup.newslettertitle.text</source>
+                <target>Enter your email address and confirm to receive special offers and coupon codes from merchants</target>
+      </trans-unit>
+      <trans-unit id="popup.newslettersubmitbutton.text">
+                <source>popup.newslettersubmitbutton.text</source>
+                <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="popup.newsletter.title">
+                <source>popup.newsletter.title</source>
+                <target>Newsletter</target>
+      </trans-unit>
+      <trans-unit id="popup.registration.title">
+                <source>popup.registration.title</source>
+                <target>Inscription</target>
+      </trans-unit>      
+      <trans-unit id="popup.feedbackrating1.text">
+                <source>popup.feedbackrating1.text</source>
+                <target>1 out of 5</target>
+      </trans-unit>      
+      <trans-unit id="popup.feedbackrating2.text">
+                <source>popup.feedbackrating2.text</source>
+                <target>2 out of 5</target>
+      </trans-unit>      
+      <trans-unit id="popup.feedbackrating3.text">
+                <source>popup.feedbackrating3.text</source>
+                <target>3 out of 5</target>
+      </trans-unit>      
+      <trans-unit id="popup.feedbackrating4.text">
+                <source>popup.feedbackrating4.text</source>
+                <target>4 out of 5</target>
+      </trans-unit>      
+      <trans-unit id="popup.feedbackrating5.text">
+                <source>popup.feedbackrating5.text</source>
+                <target>5 out of 5</target>
+      </trans-unit>      
+      <!--Registered Sidebar translations(sidebar.html.twig)-->
+      <trans-unit id="sidebar.youraccount.text">
+                <source>sidebar.youraccount.text</source>
+                <target>Your Account</target>
+      </trans-unit>
+      <trans-unit id="sidebar.yourprofile.text">
+                <source>sidebar.yourprofile.text</source>
+                <target>Your Profile</target>
+      </trans-unit>
+      <trans-unit id="sidebar.yourearnings.text">
+                <source>sidebar.yourearnings.text</source>
+                <target>Your Earnings</target>
+      </trans-unit>
+      <trans-unit id="sidebar.referrals.text">
+                <source>sidebar.referrals.text</source>
+                <target>Referrals</target>
+      </trans-unit>
+      <trans-unit id="sidebar.myreferrals.text">
+                <source>sidebar.myreferrals.text</source>
+                <target>My Referrals</target>
+      </trans-unit>
+      <trans-unit id="sidebar.referfriend.text">
+                <source>sidebar.referfriend.text</source>
+                <target>Refer a friend</target>
+      </trans-unit>
+      <trans-unit id="sidebar.youroffers.text">
+                <source>sidebar.youroffers.text</source>
+                <target>Your Offers</target>
+      </trans-unit>
+      <trans-unit id="sidebar.newoffers.text">
+                <source>sidebar.newoffers.text</source>
+                <target>New Offers</target>
+      </trans-unit>
+      <trans-unit id="sidebar.topoffers.text">
+                <source>sidebar.topoffers.text</source>
+                <target>Top Offers</target>
+      </trans-unit>
+      <trans-unit id="sidebar.privateoffers.text">
+                <source>sidebar.privateoffers.text</source>
+                <target>Private Offers</target>
+      </trans-unit>
+      <trans-unit id="sidebar.preferredoffers.text">
+                <source>sidebar.preferredoffers.text</source>
+                <target>Preferred Offers</target>
+      </trans-unit>
+      <trans-unit id="sidebar.yourrequest.text">
+                <source>sidebar.yourrequest.text</source>
+                <target>Your Requests</target>
+      </trans-unit>
+      <trans-unit id="sidebar.newrequest.text">
+                <source>sidebar.newrequest.text</source>
+                <target>New Request</target>
+      </trans-unit>
+      <trans-unit id="sidebar.newmerchants.text">
+                <source>sidebar.newmerchants.text</source>
+                <target>New Merchants</target>
+      </trans-unit>
+      <trans-unit id="sidebar.topmerchants.text">
+                <source>sidebar.topmerchants.text</source>
+                <target>Top Merchants</target>
+      </trans-unit>
+      <trans-unit id="sidebar.morelink.text">
+                <source>sidebar.morelink.text</source>
+                <target>...more</target>
+      </trans-unit>
+      <trans-unit id="withdrawalpage.codenotification.text">
+                <source>withdrawalpage.codenotification.text</source>
+                <target>Please click below to get the withdrawal code</target>
+      </trans-unit>
+      <!-- Referral Details Page(referralDetails.html.twig) -->
+      <trans-unit id="referraldetails.email.text">
+                <source>referraldetails.email.text</source>
+                <target>Email</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.sentdate.text">
+                <source>referraldetails.sentdate.text</source>
+                <target>Sent Date</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.status.text">
+                <source>referraldetails.status.text</source>
+                <target>Status</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.action.text">
+                <source>referraldetails.action.text</source>
+                <target>Action</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.none.text">
+                <source>referraldetails.none.text</source>
+                <target>None</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.resendemail.text">
+                <source>referraldetails.resendemail.text</source>
+                <target>Resend Email</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.registernocode.text">
+                <source>referraldetails.registernocode.text</source>
+                <target>Registered without sponsorship code</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.registered.text">
+                <source>referraldetails.registered.text</source>
+                <target>Registered</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.referfriend.text">
+                <source>referraldetails.referfriend.text</source>
+                <target>Refer a friend</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.facebook.text">
+                <source>referraldetails.facebook.text</source>
+                <target>Facebook</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.twitter.text">
+                <source>referraldetails.twitter.text</source>
+                <target>Twitter</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.title.text">
+                <source>referraldetails.title.text</source>
+                <target>My Referrals</target>
+      </trans-unit>
+      <trans-unit id="referralemail.already.sent">
+                <source>referralemail.already.sent</source>
+                <target>Already sent</target>
+      </trans-unit>
+      <trans-unit id="referraldetails.noreferral.text">
+                <source>referraldetails.noreferral.text</source>
+                <target>No referrals</target>
+      </trans-unit>
+      <trans-unit id="referfriend.ad.text">
+                <source>referfriend.ad.text</source>
+                <target>Refer your friends by:</target>
+      </trans-unit>
+      <!--Preferred Merchants Notifications -->
+      <trans-unit id="merchants.preferredadd.success">
+                <source>merchants.preferredadd.success</source>
+                <target>Added to Your Preference</target>
+      </trans-unit>
+      <trans-unit id="merchants.preferredadd.error">
+                <source>merchants.preferredadd.error</source>
+                <target>Could not add to your preference, please try again later</target>
+      </trans-unit>
+      <trans-unit id="merchants.preferredremove.success">
+                <source>merchants.preferredremove.success</source>
+                <target>Merchant Removed from you preference</target>
+      </trans-unit>
+      <trans-unit id="merchants.preferredremove.error">
+                <source>merchants.preferredremove.error</source>
+                <target>Could not remove, please try again later</target>
+      </trans-unit>
+      <trans-unit id="merchants.preferredremove.text">
+                <source>merchants.preferredremove.text</source>
+                <target>Remove</target>
+      </trans-unit>
+      <trans-unit id="merchants.preferredadd.text">
+                <source>merchants.preferredadd.text</source>
+                <target>Add to my favourites</target>
+      </trans-unit>
+      <trans-unit id="merchants.seecategories.text">
+                <source>merchants.seecategories.text</source>
+                <target>See also:</target>
+      </trans-unit>
+      <!--Withdrawal Code Notification messages-->
+      <trans-unit id="withdrawal.coderequest.success">
+                <source>withdrawal.coderequest.success</source>
+                <target>Please check your email for the withdrawal code</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.coderequest.error">
+                <source>withdrawal.coderequest.error</source>
+                <target>Could not send the code via email, please try again</target>
+      </trans-unit>
+      <!--How it works page-->
+      <trans-unit id="howitworks.htmltitle.text">
+                <source>howitworks.htmltitle.text</source>
+                <target>How it works ?</target>
+      </trans-unit>
+      <trans-unit id="howitworks.title.text">
+                <source>howitworks.title.text</source>
+                <target>How it works ?</target>
+      </trans-unit>
+      <trans-unit id="howitworks.step1.lefttext">
+                <source>howitworks.step1.lefttext</source>
+                <target>Subscribe</target>
+      </trans-unit>
+      <trans-unit id="howitworks.step1.righttext">
+                <source>howitworks.step1.righttext</source>
+                <target>and win 5€ in your account</target>
+      </trans-unit>
+      <trans-unit id="howitworks.step2.lefttext">
+                <source>howitworks.step2.lefttext</source>
+                <target>Make your purchases</target>
+      </trans-unit>
+      <trans-unit id="howitworks.step2.righttext">
+                <source>howitworks.step2.righttext</source>
+                <target>with our merchants</target>
+      </trans-unit>
+      <trans-unit id="howitworks.step3.lefttext">
+                <source>howitworks.step3.lefttext</source>
+                <target>Your account will be credited</target>
+      </trans-unit>
+      <trans-unit id="howitworks.step3.righttext">
+                <source>howitworks.step3.righttext</source>
+                <target>with the amount promised</target>
+      </trans-unit>
+      <trans-unit id="howitworks.step4.text">
+                <source>howitworks.step4.text</source>
+                <target>Receive your gains*</target>
+      </trans-unit>
+      <trans-unit id="howitworks.subscribe.button">
+                <source>howitworks.subscribe.button</source>
+                <target>Subscribe</target>
+      </trans-unit>
+      <trans-unit id="howitworks.term1.text">
+                <source>howitworks.term1.text</source>
+                <target>*You can request for a payment once you have an amount of 20€ in your account</target>
+      </trans-unit>
+      <trans-unit id="howitworks.term2.text">
+                <source>howitworks.term2.text</source>
+                <target>You can request for the payment by Cheque, Paypal and Bank</target>
+      </trans-unit>
+      <!--New Merchants(new_merchants.html.twig) -->
+      <trans-unit id="new_merchant.nooffer.text">
+                <source>merchant.nooffer.text</source>
+                <target>%totalOffers% Offers</target>
+      </trans-unit>
+      <trans-unit id="new_merchant.singleoffer.text">
+                <source>merchant.singleoffer.text</source>
+                <target>%totalOffers% Offer</target>
+      </trans-unit>
+      <trans-unit id="new_merchant.multipleoffers.text">
+                <source>merchant.multipleoffers.text</source>
+                <target>%totalOffers% Offers</target>
+      </trans-unit>
+      <!--Registration success messages -->
+      <trans-unit id="register.redirectsuccess.text">
+                <source>register.redirectsuccess.text</source>
+                <target>Congratulations ! A registration confirmation email has been sent to your email address. You must confirm your registration by clicking on the link sent to your email address. However, you can now click the below link and win cashback on your purchase.</target>
+      </trans-unit>
+      <trans-unit id="register.ajaxsuccess.text">
+                <source>register.ajaxsuccess.text</source>
+                <target>Congratulations ! A registration confirmation email has been sent to your email address. You must confirm your registration by clicking on the link sent to your email address.</target>
+      </trans-unit>
+      <!--login.html.twig (Login page) -->
+      <trans-unit id="login.htmltitle.text">
+                <source>login.htmltitle.text</source>
+                <target>Login</target>
+      </trans-unit>
+      <trans-unit id="login.title.text">
+                <source>login.title.text</source>
+                <target>Login</target>
+      </trans-unit>
+      <trans-unit id="login.emptypassword.message">
+                <source>The presented password cannot be empty.</source>
+                <target>The presented password cannot be empty.</target>
+      </trans-unit>
+      <trans-unit id="login.invalidpassword.message">
+                <source>The presented password is invalid.</source>
+                <target>The username or password provided is invalid.</target>
+      </trans-unit>
+      <trans-unit id="login.badcredentials.message">
+                <source>Bad credentials</source>
+                <target>The username or password provided is invalid.</target>
+      </trans-unit>
+      <trans-unit id="login.accountlocked.message">
+                <source>User account is locked.</source>
+                <target>The user account is locked. Please contact our support team.</target>
+      </trans-unit>
+      <trans-unit id="login.accountdisabled.message">
+                <source>User account is disabled.</source>
+                <target>The user account is disabled. Please contact our support team.</target>
+      </trans-unit>
+      <trans-unit id="login.accountexpired.message">
+                <source>User account has expired.</source>
+                <target>The user account is expired. Please contact our support team.</target>
+      </trans-unit>
+      <trans-unit id="login.credentialsexpired.message">
+                <source>User credentials have expired.</source>
+                <target>The user credentials have expired. Please contact our support team.</target>
+      </trans-unit>
+      <trans-unit id="login.emptyusername.message">
+                <source>The username cannot be empty.</source>
+                <target>The username cannot be empty.</target>
+      </trans-unit>
+      <trans-unit id="login.registrationlink.text">
+                <source>login.registrationlink.text</source>
+                <target>Not subscribed yet ?</target>
+      </trans-unit>
+      <!-- Refer a friend (referFriend.html.twig)-->
+      <trans-unit id="referralpage.title.text">
+                <source>referralpage.title.text</source>
+                <target>Refer your friends</target>
+      </trans-unit>
+      <trans-unit id="referralpage.admessage1.text">
+                <source>referralpage.admessage1.text</source>
+                <target>More the number of referrals more you win</target>
+      </trans-unit>
+      <trans-unit id="referralpage.admessage2.text">
+                <source>referralpage.admessage2.text</source>
+                <target>5 € referral bonus* per referral</target>
+      </trans-unit>
+      <trans-unit id="referralpage.email.label">
+                <source>referralpage.email.label</source>
+                <target>Email %number%</target>
+      </trans-unit>
+      <trans-unit id="referralpage.subject.label">
+                <source>referralpage.subject.label</source>
+                <target>Subject</target>
+      </trans-unit>
+      <trans-unit id="referralmail.defaultsubject.text">
+                <source>referralmail.defaultsubject.text</source>
+                <target>Win With this site!</target>
+      </trans-unit>      
+      <trans-unit id="referralmail.yourmessage.text">
+                <source>referralmail.yourmessage.text</source>
+                <target>Your message</target>
+      </trans-unit>   
+      <trans-unit id="referralpage.message.label">
+                <source>referralpage.message.label</source>
+                <target>Your message</target>
+      </trans-unit>
+      <trans-unit id="referralpage.gdmessage.text">
+                <source>referralpage.gdmessage.text</source>
+                <target>Our message</target>
+      </trans-unit>
+      <trans-unit id="referral.notification1.text">
+                <source>referral.notification1.text</source>
+                <target>*The amount will be credited to your account once it is validated.</target>
+      </trans-unit>
+      <trans-unit id="referralpage.submit.button">
+                <source>referralpage.submit.button</source>
+                <target>Send</target>
+      </trans-unit>
+      <trans-unit id="referralpage.cancel.button">
+                <source>referralpage.cancel.button</source>
+                <target>Cancel</target>
+      </trans-unit>
+      <!--Footer translations -->
+      <trans-unit id="footer.coulmn1links.title">
+                <source>footer.coulmn1links.title</source>
+                <target>Links</target>
+      </trans-unit>
+      <trans-unit id="footerlink.aboutus.text">
+                <source>footerlink.aboutus.text</source>
+                <target>About us</target>
+      </trans-unit>
+      <trans-unit id="footerlink.sitemap.text">
+                <source>footerlink.sitemap.text</source>
+                <target>Sitemap</target>
+      </trans-unit>
+      <trans-unit id="footerlink.contactus.text">
+                <source>footerlink.contactus.text</source>
+                <target>Contact us</target>
+      </trans-unit>
+      <trans-unit id="footer.coulmn2social.title">
+                <source>footer.coulmn2social.title</source>
+                <target>Follow us</target>
+      </trans-unit>
+      <trans-unit id="footerlink.facebook.text">
+                <source>footerlink.facebook.text</source>
+                <target>Our Facebook page</target>
+      </trans-unit>
+      <trans-unit id="footerlink.twitter.text">
+                <source>footerlink.twitter.text</source>
+                <target>Follow us on twitter</target>
+      </trans-unit>
+      <trans-unit id="footer.coulmn3newsletter.title">
+                <source>footer.coulmn3newsletter.title</source>
+                <target>Newsletter</target>
+      </trans-unit>
+      <trans-unit id="footer.newsletterrequest.text">
+                <source>footer.newsletterrequest.text</source>
+                <target>Enter your email address and confirm to receive special offers and coupon codes from merchants</target>
+      </trans-unit>
+      <trans-unit id="footer.submitbutton.text">
+                <source>footer.submitbutton.text</source>
+                <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="footer.coulmn4general.title">
+                <source>footer.coulmn4general.title</source>
+                <target>More</target>
+      </trans-unit>
+      <trans-unit id="footerlink.faq.text">
+                <source>footerlink.faq.text</source>
+                <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="footerlink.terms.text">
+                <source>footerlink.terms.text</source>
+                <target>Terms and Conditions</target>
+      </trans-unit>
+      <!--Confirm Legal terms and conditions -->
+      <trans-unit id="confirmlegal.notification.text">
+                <source>confirmlegal.notification.text</source>
+                <target>Confirm legal terms and conditions</target>
+      </trans-unit>
+      <trans-unit id="confirmlegal.notification.title">
+                <source>confirmlegal.notification.title</source>
+                <target>Confirm legal terms and conditions</target>
+      </trans-unit>
+      <trans-unit id="confirmlegal.button.text">
+                <source>confirmlegal.button.text</source>
+                <target>Confirm</target>
+      </trans-unit>
+      </body>
+    </file>
+</xliff>

@@ -1,0 +1,138 @@
+sonata_admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /{_locale}/admin
+    defaults:  { _locale: en }
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /{_locale}/admin
+    defaults:  { _locale: en }
+
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+gd_admin:
+    resource: "@GDAdminBundle/Controller"
+    type:     annotation
+
+gd_site:
+    resource: "@GDSiteBundle/Controller"
+    type:     annotation
+    prefix: /{_locale}
+    defaults:  { _locale: en }
+    requirements:
+        _locale: en|fr
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /{_locale}
+    
+fos_user_profile_show:
+    pattern: /{_locale}/secured/profile
+    defaults: { _controller: GDSiteBundle:User:profile }
+
+sonata_user_impersonating:
+    pattern: /
+    defaults: { _controller: GDSiteBundle:Default:index }
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+gd_getcode:
+    pattern: /{_locale}/getcode
+    defaults: {_controller: GDSiteBundle:User:getCode }
+    options:
+        expose: true
+
+gd_top_merchants:
+    pattern: /merchants/{filter}/{type}/page/{page}/rows-per-page/{rows_per_page}/sort-by/{sort_by}/search-key/{search_key}
+    defaults: {_controller: GDSiteBundle:Merchant:list, filter: list, type: top, page: 1, rows_per_page: 10, sort_by: cashback-amount, search_key: ''}
+    
+#Static pages
+gd_how_it_works:
+    pattern: /{_locale}/how-does-it-work
+    defaults: {_controller: GDSiteBundle:Default:howDoesItWork }
+
+gd_concept:
+    pattern: /{_locale}/concept
+    defaults: {_controller: GDSiteBundle:Default:concept }
+
+gd_sponsorship:
+    pattern: /{_locale}/pages/sponsorship
+    defaults: {_controller: GDSiteBundle:Default:page }
+
+gd_assistance:
+    pattern: /{_locale}/pages/assistance
+    defaults: {_controller: GDSiteBundle:Default:page }
+
+gd_faq:
+    pattern: /{_locale}/pages/faq
+    defaults: {_controller: GDSiteBundle:Default:page }
+    
+gd_copyright_act:
+    pattern: /{_locale}/pages/copyright-act
+    
+gd_sitemap:
+    pattern: /{_locale}/pages/sitemap
+    defaults: {_controller: GDSiteBundle:Default:page }
+    
+gd_user_earnings_faq:
+    pattern: /{_locale}/pages/user-earnings-faq
+    defaults: {_controller: GDSiteBundle:Default:page }
+    
+gd_rss_feed:
+    pattern: /{_locale}/pages/rss-feed
+    defaults: {_controller: GDSiteBundle:Default:page }
+    
+gd_tnc:
+    pattern: /{_locale}/pages/terms-and-conditions
+    defaults: {_controller: GDSiteBundle:Default:page }
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /auth
+
+gd_admin_get_categories_from_tag_json:
+    pattern: /{_locale}/admin/gd/admin/merchant/get-categories-from-tag/{tagId}
+    defaults: {_controller: GDAdminBundle:MerchantAdmin:getCategoryJSON}
+    options:
+        expose: true
+
+gd_admin_set_blacklist_reason:
+    pattern: /{_locale}/admin/gd/admin/customer/set-blacklist-reason/{customerId}/{reason}
+    defaults: {_controller: GDAdminBundle:CustomerAdmin:setBlacklistReason}
+    options:
+        expose: true
+
+gd_admin_change_email:
+    pattern: /{_locale}/admin/gd/admin/user/change-email
+    defaults: {_controller: GDAdminBundle:Default:changeEmail}
+
+gd_admin_change_password:
+    pattern: /{_locale}/admin/gd/admin/user/change-password
+    defaults: {_controller: GDAdminBundle:Default:changePassword}
+
+# sonata_user_impersonating:
+    # pattern: /
+    # defaults: { _controller: SonataPageBundle:Page:catchAll }
+
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+# Search
+gd_site_user_search:
+    pattern: /{_locale}/searche
+    defaults: {_controller: GDSiteBundle:Search:executeSearch}
+
+#Imagine Bundle
+_imagine:
+    resource: .
+    type:     imagine  
+

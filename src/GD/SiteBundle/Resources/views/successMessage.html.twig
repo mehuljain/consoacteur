@@ -1,0 +1,24 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{#Mehul TODO: Check with WowDesigns where this is being used#}
+{% block body2 %}
+<div class="inner">
+    {% include 'GDSiteBundle::breadcrumb.html.twig' %}
+    <div class="content">
+        {% include 'GDSiteBundle::sidebar.html.twig' %}
+        {% block content %}
+        <div class="rightnavi">
+            <h1 class="title">Message</h1>
+            <div class="msgs">
+                {% if app.session.hasFlash('message') %}
+                    <div class="flash flash-success">
+                        {{ app.session.flash('message') }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endblock %}
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

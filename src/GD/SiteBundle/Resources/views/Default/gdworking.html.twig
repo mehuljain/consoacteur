@@ -1,0 +1,48 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}howitworks.htmltitle.text{% endtrans %}{% endblock %}
+
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">
+        {% if is_granted('ROLE_USER') %}
+            {% include 'GDSiteBundle::sidebar.html.twig' %}
+        {% else %}
+            {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+        {% endif %}
+        <div class="rightnavi">
+            <div class="title"><font><h4>{% trans %}howitworks.title.text{% endtrans %}</h4></font></div>
+            <div class="cont_list">
+                        <div class="step1">
+                            <img src="{{ asset('bundles/gdsite/images/step1.jpg') }}">
+                            <h3><span><font class="">{% trans %}howitworks.step1.lefttext{% endtrans %}</font></span><font><font class="">&nbsp;{% trans %}howitworks.step1.righttext{% endtrans %}</font></font></h3>                            
+                        </div>
+                        <div class="step2">
+                            <h3><span><font class="">{% trans %}howitworks.step2.lefttext{% endtrans %}</font></span><font><font class="">&nbsp;{% trans %}howitworks.step2.righttext{% endtrans %}</font></font></h3>
+                            <img src="{{ asset('bundles/gdsite/images/step2.jpg') }}">
+                        </div>
+                        <div class="step3">
+                            <h3><span><font class="">{% trans %}howitworks.step3.lefttext{% endtrans %}</font></span><font><font class="">&nbsp;{% trans %}howitworks.step3.righttext{% endtrans %}</font></font></h3>
+                            <img src="{{ asset('bundles/gdsite/images/step3.jpg') }}">
+                        </div>
+                        <div class="step4">
+                            <h3><span><font class="">{% trans %}howitworks.step4.text{% endtrans %}</font></span></h3>
+                            <img src="{{ asset('bundles/gdsite/images/step4.jpg') }}">
+                        </div>
+                        <div>
+                         {% if is_granted('ROLE_USER') == false %}
+                         <span class="subscribe_btn">
+                         <a href="{{ path('gd_site_user_registration') }}">{% trans %}howitworks.subscribe.button{% endtrans %}</a>
+                         </span>
+                         {% endif %}
+                        </div>
+                        <br/>
+            </div>            
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="notification">{% trans %}howitworks.term1.text{% endtrans %}</div>
+      <div class="notification">{% trans %}howitworks.term2.text{% endtrans %}</div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

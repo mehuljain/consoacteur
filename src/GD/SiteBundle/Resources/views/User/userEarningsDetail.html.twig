@@ -1,0 +1,260 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}userearnings.title.text{% endtrans %}{% endblock %}
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                <h1 class="title">{% trans %}userearnings.title.text{% endtrans %}</h1>
+                <div class="details">
+                    <table class="table earningDetails t1">
+                        <thead>
+                            <tr>
+                                <th class="head head1" colspan="5"><span class="aleft">{% trans %}userearnings.confirmedvalidatedamount.text{% endtrans %}</span><span class="fright">{{ confirmedAndValidatedAmount }} {{ CURRENCY }}</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="t-heading">
+                                <td>{% trans %}userearnings.datetitle.text{% endtrans %}</td>
+                                <td>{% trans %}userearnings.amounttypetitle.text{% endtrans %}</td>
+                                <td>{% trans %}userearnings.ordernumbertitle.text{% endtrans %}</td>
+                                <td>{% trans %}userearnings.merchanttitle.text{% endtrans %}</td>
+                                <td>{% trans %}userearnings.earningstitle.text{% endtrans %}</td>
+                            </tr>
+                        {% for transaction in app.user.transactions if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_CONFIRMED') == transaction.status) %}
+                                <tr>
+                                    <td>{{ transaction.transactionDate|date("d/m/Y") }}</td>
+                                    <td>{% if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_OFFER') == transaction.type) %}
+                                    {{ transaction..offer.getTypeAsString | trans }}
+                                      {% elseif constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_REFERRAL') == transaction.type %} {{ transaction.getTypeAsString | trans }} {% else %} --- {% endif %}</td>
+                                    <td>{% if transaction.orderNumber is null %}---{% else %}{{transaction.orderNumber}}{% endif %}</td>
+                                    {% if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_OFFER') == transaction.type) %}
+                                        <td>{{ transaction.offer.merchant.getName }}</td>
+                                    {% elseif (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_REFERRAL') == transaction.type) %}
+                                        <td>{{ transaction.getreferralEmail }}</td>
+                                    {% elseif (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_JOINING') == transaction.type) %}
+                                        <td>{% trans %}userearnings.joiningbonus.text{% endtrans %}</td>
+                                    {% endif %}
+                                    <td>{{ transaction.userGainAmount|number_format(2) }} {{ CURRENCY }}</td>
+                                </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">{% trans %}userearnings.norecords.text{% endtrans %}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="details">
+                    <table class="table earningDetails t2">
+                        <thead>
+                            <tr>
+                                <th class="head  head2" colspan="5"><span class="aleft">{% trans %}userearnings.tobevalidatedamount.text{% endtrans %}</span><span class="fright">{{ offerAmountToBeValidated }} {{ CURRENCY }}</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr  class="t-heading">
+                            <td>{% trans %}userearnings.datetitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.merchanttitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.ordernumbertitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.statustitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.earningstitle.text{% endtrans %}</td>
+                        </tr>
+                        {% for transaction in app.user.transactions if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_OFFER') == transaction.type and (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_WAITING') == transaction.status or constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_PENDING_CONFIRMATION') == transaction.status)) %}
+                            <tr>
+                                <td>{{ transaction.transactionDate|date("d/m/Y") }}</td>
+                                {% if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_OFFER') == transaction.type) %}
+                                        <td>{{ transaction.offer.merchant.getName }}</td> {% else %} <td>---</td> {% endif %}
+                                 <td>{% if transaction.orderNumber is null %}---{% else %}{{transaction.orderNumber}}{% endif %}</td>
+                                <td>{% trans %}userearnings.waitingstatus.text{% endtrans %}</td>
+                                <td>{{ transaction.userGainAmount|number_format(2) }} {{ CURRENCY }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">{% trans %}userearnings.norecords.text{% endtrans %}</td>
+                            </tr>
+                        {% endfor %} 
+                        </tbody>
+                    </table>
+                </div>
+                 <div class="details">
+                    <table class="table earningDetails t3">
+                        <thead>
+                        <tr>
+                            <th class="head  head3" colspan="3"><span class="aleft">{% trans %}userearnings.referraltobevalidated.text{% endtrans %}</span><span class="fright">{{ referralAmountToBeValidated }} {{ CURRENCY }}</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr  class="t-heading">
+                            <td>{% trans %}userearnings.datetitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.referraltitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.referralbonustitle.text{% endtrans %}</td>
+                        </tr>
+                       {% for transaction in app.user.transactions if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_REFERRAL') == transaction.type and (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_WAITING') == transaction.status or constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_PENDING_CONFIRMATION') == transaction.status)) %}
+                            <tr>
+                                <td>{{ transaction.transactionDate|date("d/m/Y") }}</td>
+                                <td>{{ transaction.getreferralEmail }}</td>
+                                <td>{{ transaction.userGainAmount|number_format(2) }} {{ CURRENCY }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="3">{% trans %}userearnings.norecords.text{% endtrans %}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="details">
+                    <table class="table earningDetails t4">
+                        <thead>
+                        <tr>
+                            <th class="head  head4" colspan="6"><span class="aleft">{% trans %}userearnings.invalidatedamount.text{% endtrans %}</span><span class="fright">{{ invalidatedAmount }} {{ CURRENCY }}</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr  class="t-heading">
+                            <td>{% trans %}userearnings.datetitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.merchanttitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.ordernumbertitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.statustitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.cancelledcashback.title{% endtrans %}</td>
+                            <td>{% trans %}userearnings.reasontitle.text{% endtrans %}</td>
+                        </tr>
+                        {% for transaction in app.user.transactions if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_CANCELLED') == transaction.status or constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_REJECTED') == transaction.status or constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_ON_HOLD') == transaction.status or constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_LOST') == transaction.status) %}
+                            <tr>
+                                <td>{{ transaction.transactionDate|date("d/m/Y") }}</td>
+                                  {% if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_OFFER') == transaction.type) %}
+                                        <td>{{ transaction.offer.merchant.getName }}</td> 
+                                  {% elseif (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_REFERRAL') == transaction.type) %}
+                                        <td>{{ transaction.getreferralEmail }}</td> 
+                                  {% else %}<td>---</td>{% endif %}
+                                 <td>{% if transaction.orderNumber is null %}---{% else %}{{transaction.orderNumber}}{% endif %}</td>
+                                <td>{{ transaction.getStatusAsString | trans }}</td>
+                                <td>{{ transaction.userGainAmount|number_format(2) }} {{ CURRENCY }}</td>
+                                <td>{{ transaction.reason }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6">{% trans %}userearnings.norecords.text{% endtrans %}</td>
+                            </tr>
+                        {% endfor %} 
+                        </tbody>
+                    </table>
+                </div>
+                <div class="details">
+                    <table class="table earningDetails t5">
+                        <thead>
+                        <tr>
+                            <th class="head  head5" colspan="5"><span class="aleft">{% trans %}userearnings.onholdamount.text{% endtrans %}</span><span class="fright">{{ onHoldAmount }} {{ CURRENCY }}</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="t-heading">
+                            <td>{% trans %}userearnings.datetitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.amounttypetitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.ordermerchantdetail.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.earningstitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.reasontitle.text{% endtrans %}</td>
+                        </tr>
+                        {% for transaction in app.user.transactions if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_ON_HOLD') == transaction.status) %}
+                            <tr>
+                                <td>{{ transaction.transactionDate|date("d/m/Y") }}</td>
+                                <td>{{ transaction.getTypeAsString | trans }}</td>
+                                <td>{% if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_OFFER') == transaction.type) %}
+                                        {{ transaction.offer.merchant.getName }} - {{ transaction.orderNumber }} 
+                                    {% elseif (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_REFERRAL') == transaction.type) %}
+                                        {{ transaction.referralEmail }}
+                                    {% else %}---{% endif %}</td>
+                                <td>{{ transaction.userGainAmount|number_format(2) }} {{ CURRENCY }}</td>
+                                <td>{{ transaction.withdrawal.userComment }} </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">{% trans %}userearnings.norecords.text{% endtrans %}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>               
+                <div class="details">
+                    <table class="table earningDetails t6">
+                        <thead>
+                        <tr>
+                            <th class="head  head6" colspan="6"><span class="aleft">{% trans %}userearnings.withdrawnamount.text{% endtrans %}</span><span class="fright">{{ withdrawnAmount }} {{ CURRENCY }}</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="t-heading">
+                            <td>{% trans %}userearnings.datetitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.amounttypetitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.ordermerchantdetail.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.ordernumbertitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.referraltitle.text{% endtrans %}</td>
+                            <td>{% trans %}userearnings.withdrawnamount.text{% endtrans %}</td>
+                        </tr>
+                        {% for transaction in app.user.transactions if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_STATUS_PAID') == transaction.status) %}
+                            <tr>
+                                <td>{{ transaction.transactionDate|date("d/m/Y") }}</td>
+                                <td>{{ transaction.getTypeAsString | trans }}</td>
+                                <td>{% if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_OFFER') == transaction.type) %}
+                                    {{ transaction.offer.merchant.getName }}{% else %}---{% endif %}</td>
+                                <td>{% if transaction.orderNumber is null %}---{% else %}{{transaction.orderNumber}}{% endif %}</td>
+                                <td>{% if (constant('GD\\AdminBundle\\Entity\\Transaction::TRANSACTION_TYPE_REFERRAL') == transaction.type) %}
+                                    {{ transaction.referralEmail }}{% else %} --- {% endif %}</td>
+                                <td>{{ transaction.userGainAmount|number_format(2) }} {{ CURRENCY }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6">{% trans %}userearnings.norecords.text{% endtrans %}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+             </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+       $(document).ready(function () {
+
+            $('table th.head1').on('click', function() {
+                $('.t1 tbody').slideToggle('fast');
+            });
+
+            $('.t2 tbody').hide();
+            $('table th.head2').on('click', function() {
+                $('.t2 tbody').slideToggle('fast');
+            });
+
+            $('.t3 tbody').hide();
+            $('table th.head3').on('click', function() {
+                $('.t3 tbody').slideToggle('fast');
+            });
+
+            $('.t4 tbody').hide();
+            $('table th.head4').on('click', function() {
+                $('.t4 tbody').slideToggle('fast');
+            });
+
+            $('.t5 tbody').hide();
+            $('table th.head5').on('click', function() {
+                $('.t5 tbody').slideToggle('fast');
+            });
+
+            $('.t6 tbody').hide();
+            $('table th.head6').on('click', function() {
+                $('.t6 tbody').slideToggle('fast');
+            });
+       });
+    </script>
+{% endblock %}

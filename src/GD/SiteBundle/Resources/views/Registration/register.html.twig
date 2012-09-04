@@ -1,0 +1,150 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}detailregister.htmltitle.text{% endtrans %}{% endblock title %}
+{% form_theme form 'GDSiteBundle:Form:form_detail_div_layout.html.twig' %}
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">
+        <div class="rightnavi">
+           <div class="msgs">
+                {% if app.session.hasFlash('profileUpdate') %}
+                    <div class="flash flash-success">
+                        {{ app.session.flash('profileUpdate') }}
+                    </div>
+                {% endif %}
+            </div>
+            <h1 class="title">{% trans %}detailregister.title.text{% endtrans %}</h1>
+            <form action="{{ path('gd_site_user_registration') }}" method="post" {{ form_enctype(form) }}>
+           
+             <!--Mandatory Fields First -->
+                <div class="form">
+                  <fieldset>
+                        <legend>{% trans %}detailregister.mandatoryfields.text{% endtrans %}</legend>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.salutation) }}
+                    </div>                    
+                    <div class="form_layers floated1">
+                        {{ form_row(form.email) }}
+                        <div class="clr"></div>
+                    </div>                            
+                    <div class="form_layers floated1">
+                        {{ form_row(form.username) }}
+                        <div class="clr"></div>
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.plainPassword) }}
+                        <div class="clr"></div>
+                    </div>
+                    <div class="form_layers lay1">                
+                        {{ form_row(form.hasAcceptedTermsAndConditions,{'label':  'ajaxregister.readterms.text' |trans |raw }) }}
+                        &nbsp;
+                        {% spaceless %}
+                        <a class="terms" href="{{path('gd_tnc')}}" target="_blank">{% trans %}ajaxregister.termslink.text{% endtrans %}</a>
+                        {% endspaceless %}
+                        <div class="clr"></div>
+                    </div>
+                    <div class="form_layers floated1">
+                        <span class="customButton popuplt_btn link">
+                            <input id="normal_font" type="submit" class="popuprt_btn" name="register" value="{% trans %}ajaxregister.registerbutton.text{% endtrans %}">
+                        </span>
+                    </div>
+                    </fieldset>              
+                                     
+                    <!-- Personal Details -->
+                    <fieldset>
+                           <legend>{% trans %}detailregister.personaldetails.text{% endtrans %}</legend>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribePersonal.firstName) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribePersonal.lastName) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribePersonal.dateOfBirth) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.gender) }}
+                    </div> 
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribePersonal.profession) }}
+                    </div>                   
+                    </fieldset>
+                    <!-- Address Details -->
+                     <fieldset>
+                            <legend>{% trans %}detailregister.addressdetails.text{% endtrans %}</legend>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAddress.apartmentNumber) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAddress.addressLocation) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAddress.locationName) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAddress.complementaryAddressDetails,{'help': 'detailregister.adressnotification.text'| trans}) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAddress.zipcode) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAddress.city) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAddress.country) }}
+                    </div>
+                     </fieldset>
+                    
+                    <!-- Contact Details -->
+                     <fieldset>
+                            <legend>{% trans %}detailregister.contactdetails.text{% endtrans %}</legend>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeContact.phoneHome) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeContact.phoneMobile) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeContact.phoneOffice) }}
+                    </div>
+                     </fieldset>
+                    <!-- Referral Details -->
+                    <fieldset>
+                      <legend>{% trans %}detailregister.referraldetails.text{% endtrans %}</legend>
+                   <div class="form_layers floated1">
+                        {{ form_row(form.referralType) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.sponsorshipCode,{'help': 'detailregister.referralnotification.text'| trans})}}
+                   </div>
+                    </fieldset>
+                    <!-- Advetisement details -->
+                    <fieldset>
+                      <legend>{% trans %}detailregister.advertisementdetails.text{% endtrans %}</legend>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAds.advertisementByEmail ,{'help': 'detailregister.advtemailnotification.text'| trans}) }}
+                    </div>
+                   {# <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAds.advertisementByPost,{'help': 'detailregister.advtpostnotification.text'| trans}) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAds.advertisementByTelephone,{'help': 'detailregister.advtphonenotification.text'| trans}) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.subscribeAds.advertisementBySms,{'help': 'detailregister.advtsmsnotification.text'| trans}) }}
+                    </div>#}
+                    </fieldset>
+                    
+                    <div class="form_layers floated1">
+                        <span class="customButton popuplt_btn link">
+                            <input id="normal_font" type="submit" class="popuprt_btn" name="register" value="{% trans %}ajaxregister.registerbutton.text{% endtrans %}">
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

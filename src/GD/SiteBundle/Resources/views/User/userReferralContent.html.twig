@@ -1,0 +1,16 @@
+{% block body_html %}
+<br>
+<h4>{% trans %}referralpage.gdmessage.text{% endtrans %}</h4>
+<br>
+<p>{{ 'Bonjour,'}}</p>
+<br>
+<p><b>{{sponsorshipCode }}</b> {{ "vous a invité à rejoindre la communauté Conso-Acteur :" }} {{ siteUrl }}</p>
+<br>
+<p>{{ 'Ce nouveau site propose :' }}
+<ul>
+  <li>{{ "du cashback, des réductions sur vos achats effectués auprès des plus grands marchands"}}</li>  
+</ul>
+</p>
+<br>
+<p>{{ "Pour s'inscrire sur Conso-Acteur : vous pouvez cliquer sur "}} {{ registrationUrl }} {{ "en indiquant le code parrain :"}} <b>{{ sponsorshipCode }}</b></p>
+{% endblock %}

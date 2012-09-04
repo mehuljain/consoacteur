@@ -1,0 +1,114 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{% trans %}layout.title.text{% endtrans %}{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{% trans %}layout.metadescription.text{% endtrans %}"/>
+    <meta name="keywords" content="{% trans %}layout.metakeywords.text{% endtrans %}" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/gdsite/css/style.css') }}" type="text/css" rel="stylesheet"/>
+    <link href="{{ asset('bundles/gdsite/css/ui-lightness/jquery-ui-1.8.18.custom.css') }}" type="text/css" rel="stylesheet"/>
+    <style>
+    .ui-autocomplete-loading { background: white url('{{ asset('images/ui-anim_basic_16x16.gif')  }}') right center no-repeat; z-index: 2000; }
+    .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #FFFFFF; background: #2F90BD  50% 50% repeat-x; font-weight: bold; color: #FFFFFF; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    
+    <div id="bgwrap">
+      <noscript><div class="scriptNull">{% trans %}layout.javascriptdisabled.text{% endtrans %}</div></noscript>
+        {% include 'GDSiteBundle::popup.html.twig' %}        
+        <div id="main">
+            {% render "GDSiteBundle:Default:header" %}
+            {% render "GDSiteBundle:Default:menu" %}
+            <div id="body">
+                {% block leftsidebar %}{% endblock %}
+                {% block content %}{% endblock %}
+            </div>
+            {% include 'GDSiteBundle::footer.html.twig' %}
+        </div> 
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery-1.7.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery-ui-1.8.18.custom.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery.hoverIntent.minified.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/gdsite/js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/gdsite/js/IEmarginFix.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/gdsite/js/star.rating.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery.qtip-1.0.0-rc3.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+    <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var locale = '{{ app.request.attributes.get('_locale') | default(default_locale) }}';
+            var confirmation = '{{enabled}}';
+            var menuUpUrl = '{{ asset('bundles/gdsite/images/menu_up.png') }}';
+            var menuDownUrl = '{{ asset('bundles/gdsite/images/menu_down.png') }}'
+            //HomePage Ajax registration
+            $('#register-form').live('submit',function(event) {            
+                $("#loader").show();
+                $('#ajax_registration').hide();
+                event.preventDefault();
+                $.post( $(this).attr('action'), $("#register-form").serialize(),
+                  function(registerData) {                    
+                    var registerError = $(registerData).find('input[name=register]').val();
+                    if(registerError != 2 && confirmation != 1){                                             
+                          window.location.replace(Routing.generate('gd_site_user_registration_confirmed',{ '_locale': locale}));
+                         return false;
+                     }
+                     else {
+                         $("#loader").hide();
+                         $('#ajax_registration').show();                                   
+                         $('#ajax_registration').html(registerData);
+                     }
+                   }
+                );
+             });
+            //Newsletter Ajax form
+            $('#newsletter-form').live('submit',function(event) {
+              $("#loader").show();
+              event.preventDefault();
+              $.post( $(this).attr('action'), $("#newsletter-form").serialize(),
+                  function(data) {
+                     $("#loader").hide();
+                     $('#ajax_newsletter').html(data);                     
+                  }
+                );
+            });
+            //Search ajax request
+            $("#search_keywords").autocomplete({
+                    source: "{{ path('gd_site_user_search') }}",
+                    minLength: 2,
+                    position: { offset: "-25 2", collision: "fit"},
+                    select: function( event, ui ) {
+                        window.location.href = Routing.generate('gd_merchant_show', { '_locale': locale,'slug':  ui.item.slug });
+                        return false; // Prevent the widget from inserting the value.
+                    },
+                    focus: function(event, ui) {
+                        $("#search_keywords").val(ui.item.value);
+                        return false; // Prevent the widget from inserting the value.
+                    },
+                    open: function()  {$('#search_keywords').autocomplete("widget").width(261),
+                                       $('#search_keywords').autocomplete('widget').css('z-index', 200);
+                                      }
+            });
+   
+            //Newsletter footer
+            $("#footer_newsletter").live('submit', function (event) {
+                event.preventDefault();
+                $(this).parent("div.inside").css("opacity","0.4");
+                $.post( $(this).attr('action'), $("#footer_newsletter").serialize(),
+                  function(data) {
+                      $('li.newsletter .inside').removeAttr( 'style' ).html(data);
+                  }
+                );
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'Votre code de paiement - Conso-Acteur'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bonjour '}}{{user.username}} {{','}}
+{{ "Conformément à votre demande pour le paiement, veuillez trouver ci-dessous votre code de paiement" }}
+{{'Votre code de paiement: '}}{{user.WithdrawalCode}}
+{{ 'Ce code ne sera valide que pendant 30 minutes' }}
+
+{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}
+{{" -L'équipe Conso-Acteur" }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}
+<p>{{ 'Bonjour '}}{{user.username}} {{','}}</p>
+<p>{{ "Conformement à votre demande pour le paiement, veuillez trouver ci-dessous votre code de paiement" }}</p>
+<ul>
+  <li>{{'Votre code de paiement: '}}<b>{{user.WithdrawalCode}}</b></</li>
+</ul>
+
+<p>{{ 'Ce code ne sera valide que pendant 30 minutes' }}</p>
+
+<p>{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}</p>
+<p>{{" -L'équipe Conso-Acteur" }}</p>
+{% endblock %}

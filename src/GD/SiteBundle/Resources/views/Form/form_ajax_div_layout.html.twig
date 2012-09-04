@@ -1,0 +1,35 @@
+{% block field_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        {% if not form.hasParent  or 'repeated' in form.get('types') %}
+           {% endif %}
+           <ul>
+            {% for error in errors %}
+                {% if loop.first %}
+              <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+                {% endif %}              
+            {% endfor %}
+            </ul>
+        {% if not form.hasParent  or 'repeated' in form.get('types') %}
+         {% endif %}
+    {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
+{% block field_rows %}
+{% spaceless %}
+    {% for child in form %}
+        {{ form_row(child) }}
+    {% endfor %}
+{% endspaceless %}
+{% endblock field_rows %}
+
+{% block checkbox_row %}
+{% spaceless %}
+    <label for="{{ form.vars.id }}">     
+        {{ form_widget(form) }}
+        {{ label|default(form_label(form)) | raw }}        
+    </label>
+{% endspaceless %}
+{% endblock %}
+

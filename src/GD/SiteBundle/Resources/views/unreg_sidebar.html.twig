@@ -1,0 +1,31 @@
+{% block leftsidebar %}
+    <div class="leftnavi">
+        <div class="left_module referrals">
+            <div class="title"><font><font class="">{% trans %}sidebar.newmerchants.text{% endtrans %}</font></font></div>
+            <div class="cont">
+                <table class="mtable" cellpadding="5px">
+                    <tbody>
+                    {% render "GDSiteBundle:Default:newMerchantsSidebar" %}
+                </tbody>
+                </table>
+                <div class="more">
+                    <a href="{{ path('gd_merchant_list', { 'filter': 'list', 'type': 'new' }) }}">{% trans %}sidebar.morelink.text{% endtrans %}</a>
+                </div>
+            </div>
+            <div class="left_module_bottom"></div>
+        </div>
+        <div class="left_module offers">
+            <div class="title"><font><font>{% trans %}sidebar.topmerchants.text{% endtrans %}</font></font></div>
+            <div class="cont">
+                <table class="mtable" cellpadding="5px">
+                    <tbody>
+                    {% render "GDSiteBundle:Default:topMerchantsSidebar" %}
+                </tbody></table>
+                <div class="more">
+                    <a href="{{ path('gd_merchant_list', { 'filter': 'list', 'type': 'top' }) }}">{% trans %}sidebar.morelink.text{% endtrans %}</a>
+                </div>
+            </div>
+            <div class="left_module_bottom"></div>
+        </div>
+    </div>
+{% endblock %}

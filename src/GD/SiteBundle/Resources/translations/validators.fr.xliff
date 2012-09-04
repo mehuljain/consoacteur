@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+     <body>
+     <!--Constraint message translations-->
+      <trans-unit id="user.salutation.not_blank">
+                <source>user.salutation.not_blank</source>
+                <target>Veuillez sélectionner civilité.</target>
+      </trans-unit>
+      <trans-unit id="user.username.not_length">
+                <source>user.username.not_length</source>
+                <target>L'identifiant doit avoir entre 6 et 32 caractères.</target>
+      </trans-unit>
+      <trans-unit id="user.username.not_blank">
+                <source>user.username.not_blank</source>
+                <target>L'identifiant ne doit pas être vide.</target>
+      </trans-unit>
+      <trans-unit id="user.username.not_characters">
+                <source>user.username.not_characters</source>
+                <target>L'identifiant ne doit contenir que des caractères alphanumériques ou '-' tiret, '.' point et '_' underscore.</target>
+      </trans-unit>
+      <trans-unit id="user.plainPassword.not_length">
+                <source>user.plainPassword.not_length</source>
+                <target>Le mot de passe doit faire plus de 4 caractères.</target>
+      </trans-unit>
+      <trans-unit id="user.plainPassword.not_blank">
+                <source>user.plainPassword.not_blank</source>
+                <target>Le mot de passe ne doit pas être vide.</target>
+      </trans-unit>
+      <trans-unit id="user.plainPassword.not_valid">
+                <source>user.plainPassword.not_valid</source>
+                <target>Le mot de passe saisie est invalide.</target>
+      </trans-unit>
+      <trans-unit id="user.plainPassword.not_match">
+                <source>user.plainPassword.not_match</source>
+                <target>Les mots de passe ne correspondent pas</target>
+      </trans-unit>
+      <trans-unit id="user.email.not_valid">
+                <source>user.email.not_valid</source>
+                <target>L'adresse email saisie est invalide.</target>
+      </trans-unit>
+      <trans-unit id="user.email.not_blank">
+                <source>user.email.not_blank</source>
+                <target>L'adresse email ne doit pas être vide.</target>
+      </trans-unit>
+      <trans-unit id="user.email.not_match">
+                <source>user.email.not_match</source>
+                <target>Les adresses email ne correspondent pas.</target>
+      </trans-unit>
+      <trans-unit id="user.firstName.not_number">
+                <source>user.firstName.not_number</source>
+                <target>Le prénom ne doit contenir les numéros.</target>
+      </trans-unit>
+      <trans-unit id="user.lastName.not_number">
+                <source>user.lastName.not_number</source>
+                <target>Le nom de famille ne doit contenir les numéros.</target>
+      </trans-unit>
+      <trans-unit id="user.dateOfBirth.not_valid">
+                <source>user.dateOfBirth.not_valid</source>
+                <target>La date de naissance saisie est incorrecte. Veuillez la modifier.</target>
+      </trans-unit>
+      <trans-unit id="user.hasAcceptedTermsAndConditions.not_blank">
+                <source>user.hasAcceptedTermsAndConditions.not_blank</source>
+                <target>Vous devez accepter les conditions générales d'utilisation pour vous inscrire.</target>
+      </trans-unit>
+      <trans-unit id="user.sponsorshipCode.not_valid">
+                <source>user.sponsorshipCode.not_valid</source>
+                <target>Il n'y a pas d'utilisateur avec cet identifiant.</target>
+      </trans-unit>
+      <trans-unit id="user.username.not_unique">
+                <source>user.username.not_unique</source>
+                <target>L'identifiant saisie est déjà enregistré avec nous. Veuillez la modifier.</target>
+      </trans-unit>
+      <trans-unit id="user.email.not_unique">
+                <source>user.email.not_unique</source>
+                <target>L'adresse email saisie est déjà enregistré avec nous. Veuillez la modifier.</target>
+      </trans-unit>
+      <trans-unit id="offer.Percentage.not_less">
+                <source>offer.Percentage.not_less</source>
+                <target>Le valeur de champ pourcentage ne ​​doit pas être inférieur à 0.</target>
+      </trans-unit>
+      <trans-unit id="offer.Percentage.not_more">
+                <source>offer.Percentage.not_more</source>
+                <target>Le valeur de champ pourcentage doit être inférieur à 100.</target>
+      </trans-unit>
+      <trans-unit id="user.accountCloseConfirm.not_blank">
+                <source>user.accountCloseConfirm.not_blank</source>
+                <target>Veuillez confirmer la fermeture de votre compte</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.code.invalid">
+                <source>withdrawal.code.invalid</source>
+                <target>Le code de paiement saisie est invalide</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.code.expired">
+                <source>withdrawal.code.expired</source>
+                <target>Le code de paiement saisie est expiré.</target>
+      </trans-unit>
+      <trans-unit id="referral.email.not_blank">
+                <source>referral.email.not_blank</source>
+                <target>Vous devez entrer au moin une adresse email pour une soumission valide</target>
+      </trans-unit>
+      <trans-unit id="referral.email.already_registered">
+                <source>referral.email.already_registered</source>
+                <target>Un membre est déjà inscrit avec cette adresse mail.</target>
+      </trans-unit>
+      <trans-unit id="referral.email.already_sent">
+                <source>referral.email.already_sent</source>
+                <target>Vous avez déjà invité cet utilisateur</target>
+      </trans-unit>
+      </body>
+    </file>
+</xliff>

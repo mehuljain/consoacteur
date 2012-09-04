@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+          <trans-unit id="newsletter.subscribed">
+                <source>newsletter.subscribed</source>
+                <target>Un membre est déjà inscrit avec cette adresse mail</target>
+          </trans-unit>
+          <trans-unit id="newsletter.subscription.success">
+                <source>newsletter.subscription.success</source>
+                <target>Votre inscription newsletter a bien été prise en compte! Merci</target>
+          </trans-unit>
+          <trans-unit id="newsletter.exception.message">
+                <source>newsletter.exception.message</source>
+                <target>Une erreur est survenue lors de l'enregistrement, merci de réessayer plus tard.</target>
+          </trans-unit>
+        </body>
+     </file>
+</xliff>

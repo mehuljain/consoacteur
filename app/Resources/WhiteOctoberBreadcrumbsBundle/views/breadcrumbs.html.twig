@@ -1,0 +1,16 @@
+<div class="breadcrumbs">
+{% if wo_breadcrumbs()|length %}
+  <ul id="wo-breadcrumbs">
+    {% for b in wo_breadcrumbs() %}
+        {% if not loop.first %}
+            >
+        {% endif %}
+      {% if loop.last %}
+        <li>{{ b.text }}</li>
+      {% else %}
+        <li><a href="{{ b.url }}">{{ b.text }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
+</div>

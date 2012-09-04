@@ -1,0 +1,16 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'Votre paiement est suspendu dans votre compte Conso-Acteur'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bonjour, '}}
+{{"Votre paiement est suspendu pour la raison suivante"}} 
+{{ message }}
+
+{{ 'En vous remerciant encore de votre confiance.' }}
+{{ "-L'équipe Conso-Acteur" }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}

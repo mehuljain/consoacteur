@@ -1,0 +1,35 @@
+{% if feedbackPagination|length %}
+    <ul>
+        {% for feedback in feedbackPagination %}
+        <li class="details">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td width="65%">
+                      <b>{{ feedback.createdAt|date("d/m/Y") }}&nbsp;{% trans %}feedbackdescription.at.text{% endtrans%}&nbsp;{{ feedback.createdAt|date("g:i") }}
+                            {% trans %}feedbackdescription.by.text{% endtrans%} {{ feedback.user.username }}</b>
+
+                        <p style="width: 400px;word-wrap:break-word;">{{ feedback.comment }}</p>
+                    </td>
+                    <td valign="middle" align="right">
+                       <div class="rate_widget">
+                            {% for i in 1..feedback.rating if feedback.rating != 0 %}
+                                <div class="star_{{ i }} ratings_stars ratings_vote"></div>
+                            {% endfor %}
+                            {% if feedback.rating < 5%}
+                                {% for j in 1..(5 - feedback.rating) %}
+                                    <div class="star_{{ feedback.rating+j }} ratings_stars"></div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <div class="bolded_title">{% trans %}merchantdetail.nofeedback.text{% endtrans %}</div>
+{% endif %}
+<span id="feedback-pagination">{{ feedbackPagination.render()|raw }}</span>

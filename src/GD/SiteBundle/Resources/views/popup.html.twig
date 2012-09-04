@@ -1,0 +1,59 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div class="feedback">
+        <img class="close" id="close04" src="{{ asset('bundles/gdsite/images/cancel.png') }}" alt="Close" title="Close">
+        <div class="top"><h2>{% trans %}popup.feeback.title{% endtrans %}</h2></div>
+        <div class="middle">
+          <form id="feedback" action="{{ path('gd_site_user_feedback_create') }}" method="post" name="feedback">
+                <div class="form">
+                    <input type="hidden" name="id" id="mid"/>
+                    <div class="merchantRating">
+                        <h3>{% trans %}popup.feebackratingtitle.text{% endtrans %}</h3>
+                        <div id="star-rating" class="rating">
+                            <div title="{% trans %} popup.feedbackrating1.text {% endtrans %}" id="1" class="star_1 ratings_stars"></div>
+                            <div title="{% trans %} popup.feedbackrating2.text {% endtrans %}" id="2" class="star_2 ratings_stars"></div>
+                            <div title="{% trans %} popup.feedbackrating3.text {% endtrans %}" id="3" class="star_3 ratings_stars"></div>
+                            <div title="{% trans %} popup.feedbackrating4.text {% endtrans %}" id="4" class="star_4 ratings_stars"></div>
+                            <div title="{% trans %} popup.feedbackrating5.text {% endtrans %}" id="5" class="star_5 ratings_stars"></div>
+                            <input type="hidden" name="rating" id="rating"/>
+                        </div>
+                    </div>
+                    <div class="userFeedback">
+                        <h3>{% trans %}popup.feebackcommenttitle.text{% endtrans %}</h3>
+                        <textarea required="required" rows="5" cols="32" id="comment" name="feedback"></textarea>
+                        <center>{% trans %}popup.feebacktextlength.text{% endtrans %}</center>
+                    </div>
+                    <div class="form_layer floated1">
+                        <span class="comment_btn"><input type="submit" class="comment_submit" name="validate"
+                                                     value="{% trans %}popup.feebacksubmitbutton.text{% endtrans %}"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom"></div>
+    </div>
+    <div id="lightbox"></div>
+
+{% else %}
+ <div class="popup">
+        <img class="close" id="close01" src="{{ asset('bundles/gdsite/images/cancel.png') }}" alt="Close" title="Close">
+        <div class="top"><h2>{% trans %}popup.registration.title{% endtrans %}</h2></div>
+        <div id="loader" style="height: 300px; background:white url('{{ asset('bundles/gdsite/images/loader.gif') }}')  no-repeat center center; display: none">    
+        </div>
+        <div class="middle" id="ajax_registration">            
+            {% render "GDSiteBundle:Registration:register" with {'isAjax': true } %}
+        </div>        
+        <div class="bottom"></div>
+    </div>
+    <div id="lightbox"></div>
+{% endif %}
+<div class="newsl_popup">
+        <img class="close" id="close02" src="{{ asset('bundles/gdsite/images/cancel.png') }}" alt="Close" title="Close">
+        <div class="top"><h2>{% trans %}popup.newsletter.title{% endtrans %}</h2></div>
+        <div id="loader" style="height: 300px; background:white url('{{ asset('bundles/gdsite/images/loader.gif') }}')  no-repeat center center; display: none">    
+        </div>
+        <div class="middle" id="ajax_newsletter">            
+              {% render "GDSiteBundle:Default:newsletterSubscription" with {'isNewsletterAjax': true } %}
+        </div>
+        <div class="bottom"></div>
+ </div>
+<div id="lightbox"></div>

@@ -1,0 +1,200 @@
+parameters:
+    gd_admin.page.class: GD\AdminBundle\Admin\PageAdmin
+    gd_admin.page_translation.class: GD\AdminBundle\Admin\PageTranslationAdmin
+    gd_admin.category.class: GD\AdminBundle\Admin\CategoryAdmin
+    gd_admin.tag.class: GD\AdminBundle\Admin\TagAdmin
+    gd_admin.merchant.class: GD\AdminBundle\Admin\MerchantAdmin
+    gd_admin.merchant_archived.class: GD\AdminBundle\Admin\MerchantArchivedAdmin
+    gd_admin.offer_cashback.class: GD\AdminBundle\Admin\OfferCashbackAdmin
+    gd_admin.offer_reimbursement.class: GD\AdminBundle\Admin\OfferReimbursementAdmin
+    gd_admin.offer_codepromo.class: GD\AdminBundle\Admin\OfferCodePromoAdmin
+    gd_admin.offer_subscription.class: GD\AdminBundle\Admin\OfferSubscriptionGainAdmin
+    gd_admin.offer_archived.class: GD\AdminBundle\Admin\OfferArchivedAdmin
+    gd_admin.customer.class: GD\AdminBundle\Admin\CustomerAdmin
+    gd_admin.customers_blacklisted.class: GD\AdminBundle\Admin\CustomersBlacklistedAdmin
+    gd_admin.customers_archived.class: GD\AdminBundle\Admin\CustomersArchivedAdmin
+    gd_admin.withdrawal_pending.class: GD\AdminBundle\Admin\WithdrawalPendingAdmin
+    gd_admin.withdrawal_approved.class: GD\AdminBundle\Admin\WithdrawalApprovedAdmin
+    gd_admin.withdrawal_paid.class: GD\AdminBundle\Admin\WithdrawalPaidAdmin
+    gd_admin.withdrawal_on_hold.class: GD\AdminBundle\Admin\WithdrawalOnHoldAdmin
+    gd_admin.module.class: GD\AdminBundle\Admin\ModuleAdmin
+    gd_admin.merchant_list.class: GD\AdminBundle\Admin\MerchantListAdmin
+    gd_admin.carousel_list.class: GD\AdminBundle\Admin\CarouselListAdmin
+    gd_admin.transaction.class: GD\AdminBundle\Admin\TransactionAdmin
+    gd_admin.feedback.class: GD\AdminBundle\Admin\FeedbackAdmin
+    gd_admin.request.class: GD\AdminBundle\Admin\RequestAdmin
+    gd_admin.flash_parameter.class: GD\AdminBundle\Admin\FlashParameterAdmin
+    gd_admin.newsletter.class: GD\AdminBundle\Admin\NewsletterAdmin
+    gd_admin.backend_user.class: GD\AdminBundle\Admin\BackendUserAdmin
+
+# Once an admin class is created, the framework needs to be made aware of it.
+# To do that, a tag with the name 'sonata.admin' needs to be added to the service. Parameters for that tag are:
+# manager_type: Label of the database manager to use
+# group: A label to allow grouping on the dashboard
+# label: Label to use for the name of the entity this manager handles
+# 
+# A CRUD controller can be mapped to the corresponding admin instance by passing it as an argument
+services:
+    gd_admin.page:
+        class: %gd_admin.page.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_pages, label: Pages }
+        arguments: [null, GD\AdminBundle\Entity\Page, null]
+
+    gd_admin.category:
+        class: %gd_admin.category.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_category, label: Categories }
+        arguments: [null, GD\AdminBundle\Entity\Category, GDAdminBundle:CategoryAdmin]
+
+    gd_admin.merchant_archived:
+        class: %gd_admin.merchant_archived.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_merchant, label: Archived Merchants }
+        arguments: [null, GD\AdminBundle\Entity\Merchant, GDAdminBundle:MerchantAdmin]
+
+    gd_admin.merchant:
+        class: %gd_admin.merchant.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_merchant, label: Merchants }
+        arguments: [null, GD\AdminBundle\Entity\Merchant, GDAdminBundle:MerchantAdmin]
+    
+    gd_admin.merchant_list:
+        class: %gd_admin.merchant_list.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_merchant, label: New/Private/Top Merchants Lists }
+        arguments: [null, GD\AdminBundle\Entity\MerchantList, null]
+
+    gd_admin.carousel_list:
+        class: %gd_admin.carousel_list.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_merchant, label: Homepage Carousel Lists }
+        arguments: [null, GD\AdminBundle\Entity\MerchantList, GDAdminBundle:CarouselListAdmin]
+
+    gd_admin.offer_archived:
+        class: %gd_admin.offer_archived.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_offer, label: Archived Offers }
+        arguments: [null, GD\AdminBundle\Entity\Offer, GDAdminBundle:OfferAdmin]
+
+    gd_admin.offer_cashback:
+        class: %gd_admin.offer_cashback.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_offer, label: Cashback Offers }
+        arguments: [null, GD\AdminBundle\Entity\Offer, GDAdminBundle:OfferAdmin]
+
+    gd_admin.offer_reimbursement:
+        class: %gd_admin.offer_reimbursement.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_offer, label: Full Reimbursement Offers }
+        arguments: [null, GD\AdminBundle\Entity\Offer, GDAdminBundle:OfferAdmin]
+
+    gd_admin.offer_codepromo:
+        class: %gd_admin.offer_codepromo.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_offer, label: Code Promo Offers }
+        arguments: [null, GD\AdminBundle\Entity\Offer, GDAdminBundle:OfferAdmin]
+
+    gd_admin.offer_subscription:
+        class: %gd_admin.offer_subscription.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_offer, label: Subscription Gain Offers }
+        arguments: [null, GD\AdminBundle\Entity\Offer, GDAdminBundle:OfferAdmin]
+    
+    gd_admin.tag:
+        class: %gd_admin.tag.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_tag, label: Tags }
+        arguments: [null, GD\AdminBundle\Entity\Tag, GDAdminBundle:TagAdmin]
+
+    gd_admin.customers_archived:
+        class: %gd_admin.customers_archived.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_customer, label: Archived Customers }
+        arguments: [null, GD\AdminBundle\Entity\User, GDAdminBundle:CustomerAdmin]
+        calls:
+          - [setUserManager, [@fos_user.user_manager]]
+
+    gd_admin.customer_details:
+        class: %gd_admin.customer.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_customer, label: Customer Details }
+        arguments: [null, GD\AdminBundle\Entity\User, GDAdminBundle:CustomerAdmin]
+        calls:
+          - [setUserManager, [@fos_user.user_manager]]
+
+    gd_admin.customers_blacklisted:
+        class: %gd_admin.customers_blacklisted.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_customer, label: Blacklisted Customers }
+        arguments: [null, GD\AdminBundle\Entity\User, GDAdminBundle:CustomerAdmin]
+        calls:
+          - [setUserManager, [@fos_user.user_manager]]
+
+    gd_admin.withdrawal_pending:
+        class: %gd_admin.withdrawal_pending.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_withdrawal, label: Pending Withdrawals }
+        arguments: [null, GD\AdminBundle\Entity\Withdrawal, GDAdminBundle:WithdrawalAdmin]
+        
+    gd_admin.withdrawal_approved:
+        class: %gd_admin.withdrawal_approved.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_withdrawal, label: Approved Withdrawals }
+        arguments: [null, GD\AdminBundle\Entity\Withdrawal, GDAdminBundle:WithdrawalAdmin]
+        
+    gd_admin.withdrawal_paid:
+        class: %gd_admin.withdrawal_paid.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_withdrawal, label: Paid Withdrawals }
+        arguments: [null, GD\AdminBundle\Entity\Withdrawal, GDAdminBundle:WithdrawalAdmin]
+        
+    gd_admin.withdrawal_on_hold:
+        class: %gd_admin.withdrawal_on_hold.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_withdrawal, label: On Hold Withdrawals }
+        arguments: [null, GD\AdminBundle\Entity\Withdrawal, GDAdminBundle:WithdrawalAdmin]
+
+    gd_admin.module:
+        class: %gd_admin.module.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_modules, label: Modules }
+        arguments: [null, GD\AdminBundle\Entity\Module, null]
+
+    gd_admin.transaction:
+        class: %gd_admin.transaction.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_transaction, label: All Transactions }
+        arguments: [null, GD\AdminBundle\Entity\Transaction, GDAdminBundle:TransactionAdmin]
+
+    gd_admin.feedback:
+        class: %gd_admin.feedback.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_merchant, label: Feedback }
+        arguments: [null, GD\AdminBundle\Entity\Feedback, null]
+
+    gd_admin.request:
+        class: %gd_admin.request.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_customer, label: Requests }
+        arguments: [null, GD\AdminBundle\Entity\Request, null]
+
+    gd_admin.flash_parameter:
+        class: %gd_admin.flash_parameter.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_parameters, label: Flash }
+        arguments: [null, GD\AdminBundle\Entity\Parameter, null]
+        
+    gd_admin.newsletter:
+        class: %gd_admin.newsletter.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_customer, label: Newsletter }
+        arguments: [null, GD\AdminBundle\Entity\Newsletter, null]
+
+    sonata.user.admin.user:
+        class: %gd_admin.backend_user.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: gd_backend_user, label: Backend User }
+        arguments: [null, GD\AdminBundle\Entity\User, GDAdminBundle:BackendUserAdmin]
+        calls:
+          - [setUserManager, [@fos_user.user_manager]]

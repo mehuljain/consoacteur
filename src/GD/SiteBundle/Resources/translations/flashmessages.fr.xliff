@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+          <!--Feedback form flash messages -->
+          <trans-unit id="feedback.success.message">
+                <source>feedback.success.message</source>
+                <target>Merci pour votre avis</target>
+          </trans-unit>
+          <trans-unit id="feedback.error.message">
+                <source>feedback.error.message</source>
+                <target>Une erreur est survenue lors de l'enregistrement de votre avis, merci de réessayer plus tard.</target>
+          </trans-unit>       
+          <!-- Registration form flash messages -->
+          <trans-unit id="registration.success.message">
+                <source>registration.success.message</source>
+                <target>Félicitations, votre compte est maintenant activé. Aidez-nous à mieux vous connaitre en remplissant les champs ci-dessous</target>
+          </trans-unit>
+          <!-- Password resetting form flash messages -->
+          <trans-unit id="passwordreset.linkexpired.message">
+                <source>passwordreset.linkexpired.message</source>
+                <target>Votre lien de réinitialisation de votre mot de passe a expiré. Veuillez essayer à nouveau à l'aide de votre pseudo ou votre email</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.invaliduser.message">
+                <source>passwordreset.invaliduser.message</source>
+                <target>Désolé, %usernameOrEmail% n'est reconnu ni comme un nom d'utilisateur ni comme une adresse e-mail.</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.unauthorizeduser.message">
+                <source>passwordreset.unauthorizeduser.message</source>
+                <target>Désolé, Vous n'êtes pas autorisé a accéder a la ressource requise. Veuillez contacter l'assistance pour tout renseignement</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.repeatrequest.message">
+                <source>passwordreset.repeatrequest.message</source>
+                <target>Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières %resetHourTime% heure(s).</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.mailsent.message">
+                <source>passwordreset.mailsent.message</source>
+                <target>Un e-mail a été envoyé à votre l'adresse email. Veuillez suivre les instructions qui vous y sont indiquées</target>
+          </trans-unit>
+          <trans-unit id="passwordreset.mailsenderror.message">
+                <source>passwordreset.mailsenderror.message</source>
+                <target>Une erreur est survenue lors de la demande. Veuillez essayer à nouveau à l'aide de votre pseudo ou votre email</target>
+          </trans-unit>      
+          <trans-unit id="passwordreset.emailsent.message">
+                <source>passwordreset.emailsent.message</source>
+                <target>Le mot de passe a été réinitialisé avec succès</target>
+          </trans-unit>
+          <!-- Login form flash messages -->
+          <trans-unit id="login.notactivated.message">
+                <source>login.notactivated.message</source>
+                <target>Pour recevoir votre cadeau bienvenue, vous devez confirmer votre enregistrement qui a été envoyé à votre boîte à lettre. Si vous n´avez pas reçu votre email d´activation, Veuillez essayer à nouveau à l'aide de votre pseudo ou votre email</target>
+          </trans-unit>
+          <trans-unit id="login.credentialsexpired.message">
+                <source>login.credentialsexpired.message</source>
+                <target>Your credentials have expired. Please enter your username or email to receive the link in your email</target>
+          </trans-unit>     
+          <!-- Profile Form flash messages -->
+          <trans-unit id="profileupdate.success.message">
+                <source>profileupdate.success.message</source>
+                <target>Le profil a été mis à jour avec succès</target>
+          </trans-unit>
+          <trans-unit id="emailupdate.success.message">
+                <source>emailupdate.success.message</source>
+                <target>L'adresse email a été mis à jour avec succès</target>
+          </trans-unit>
+          <trans-unit id="passwordupdate.success.message">
+                <source>passwordupdate.success.message</source>
+                <target>Le mot de passe a été mis à jour avec succès</target>
+          </trans-unit>
+          <trans-unit id="newrequest.sent.message">
+                <source>newrequest.sent.message</source>
+                <target>Votre demande d'assistance clientèle Conso-Acteur a été enregistrer avec succès. Le numéro de la demande est: %requestNumber%</target>
+          </trans-unit>
+          <!-- Withdrawal Page flash messages -->
+          <trans-unit id="withdrawal.invalidamount.message">
+                <source>withdrawal.invalidamount.message</source>
+                <target>Le montant disponible n'est pas valide. Votre montant disponible est: %withdrawableAmount% %currency%</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.lowamount.message">
+                <source>withdrawal.lowamount.message</source>
+                <target>Montant minimum pour faire la demande de paiement par %type% est: %minimumAmount% %currency%</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.requestsuccess.message">
+                <source>withdrawal.requestsuccess.message</source>
+                <target>Votre demande de paiement a été enregristre avec succès. Le numéro de la demande est: %withdrawalId%</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.requesterror.message">
+                <source>withdrawal.requesterror.message</source>
+                <target>Une erreur est survenue lors de l'enregistrement de la demande. Veuillez essayer à nouveau</target>
+          </trans-unit>
+          <trans-unit id="withdrawal.amountdetails.message">
+                <source>withdrawal.amountdetails.message</source>
+                <target>Un e-mail a été envoyé à votre l'adresse email.</target>
+          </trans-unit>
+          <!--Referral Page Flash messages -->
+          <trans-unit id="referralemail.sent.sucess">
+                <source>referralemail.sent.sucess</source>
+                <target>Votre mail de parrainage a bien été transmis.</target>
+          </trans-unit>
+          <trans-unit id="referralemail.sent.error">
+                <source>referralemail.sent.error</source>
+                <target>Une erreur est survenue lors de l'envoi de votre mail de parrainage, merci de réessayer plus tard.</target>
+          </trans-unit>
+          </body>
+     </file>
+</xliff>

@@ -1,0 +1,137 @@
+{% extends '::base.html.twig' %}
+{% block title %}{% trans %}merchantredirection.title.text{% endtrans %}{% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('bundles/gdsite/css/style.css') }}" media="screen" type="text/css" rel="stylesheet"/>
+{% endblock %}
+{% block body %}
+<div id="bgwrap">
+<table align="center" style="width:100%;height:100%;">
+<tbody>
+<tr>
+<td align="center" valign="middle">
+<div class="redirectionLayout">                
+<div style=" text-align: left;">
+<table cellspacing = "0" width="100%">
+<tbody>
+<tr>
+<td width="100%">
+<div>
+<h3 class="redirectionHeader">{% trans %}merchantredirection.notification.text{% endtrans %}</h3>
+</div>
+</td>                              
+<td align ="right"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="border: 1px solid #2189B9; margin-bottom: 12px;">
+<div class="standardHeader"></div>
+<div>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr valign="top">
+<td align="left" class="redirectionHeader" width="33%">                        
+</td> 
+<td align="center" width="33%">
+<div id="loader" style="height: 300px; background:white url('{{ asset('bundles/gdsite/images/loader.gif') }}')  no-repeat center center; display: none">
+</div>
+<div id="auth-register-form-output">                                 
+{% render "GDSiteBundle:Registration:register" with {'isAjax': true , 'merchantRedirection' : true } %}
+</div>
+<div id="confirmationMessage"></div>
+<div id="login-form-output" style="display :none">
+{% render "GDSiteBundle:Security:login" with {'ajaxLogin' : true} %}
+</div>
+<br>
+</td>
+<td align="right" width="31%"></td>                                
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<a style="color :#A8649B; font-size: 11px; font-weight: bold" href="javascript:void(0);" id="loginLink">{% trans %}merchantredirection.loginlink.text{% endtrans %}</a>&nbsp;                    
+<a href="javascript:void(0);" id="subscribeLink" style="color :#A8649B; font-size: 11px; font-weight: bold; display :none">{% trans %}merchantredirection.subscribelink.text{% endtrans %}</a>&nbsp;
+<a style="color :#2F90BD; font-size: 11px; font-weight: bold" href="{{ path('gd_site_user_resetting') }}" id="resettingLink">{% trans %}merchantredirection.forgotpasswordlink.text{% endtrans %}</a>
+<br/>
+<br/>
+<a style="color :red; font-size: 13px; font-weight: bold; " href="{{ redirectionDeal }}" id="sansCashbackLink">{% trans %}merchantredirection.continuesanscashbacklink.text{% endtrans %}</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
+</div>
+<script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery-1.7.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery-ui-1.8.18.custom.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery.hoverIntent.minified.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/gdsite/js/IEmarginFix.js') }}"></script>  
+<script type="text/javascript" src="{{ asset('bundles/gdsite/js/jquery.qtip-1.0.0-rc3.min.js') }}"></script>
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+  var locale = '{{ app.request.get('_locale') | default(default_locale)}}';
+  var slug = '{{ app.request.get('slug') }}';
+  var confirmation = '{{ enabled }}';
+  var redirectionDeal = '{{ redirectionDeal }}';
+  var redirectionSansDeal = '{{ redirectionSansDeal }}';
+        
+  $('#auth-register-form').live('submit', function (event) {                
+      $("#loader").show();
+      $('#auth-register-form').hide();
+      event.preventDefault();
+      var redirectionData = $('#auth-register-form').serializeArray();
+      redirectionData.push({name: 'merchantRedirection', value: true});                
+      $.post( $("#auth-register-form").attr('action'),redirectionData,
+      function(data) {
+        var registerError = $(data).find('input[name=register]').val();
+        if(registerError != 2 && confirmation != 1){
+          window.location.replace(Routing.generate('gd_offers_usage',{ '_locale': locale,'slug' : slug}));
+          return false;
+        }else {
+        if(confirmation == 1  && registerError != 2 ) {
+          // This should be a link to merchant
+          $('#sansCashbackLink').hide();
+          var user = $(data).find('input[name=user]').val();          
+          var re = new RegExp("{\s*userid\s*}", "ig");
+          var userUrl = redirectionSansDeal.replace(re,user);
+          $('#confirmationMessage').empty().append('<a href='+userUrl+'>{% trans %}merchantredirection.wincashbacklink.text{% endtrans %}</a>');
+        }
+        $("#loader").hide();
+        $('#auth-register-form').show();
+        $('#auth-register-form-output').html(data);
+       }
+     });
+  });  
+  $("#login-form").on('submit', function (event){
+  event.preventDefault();
+  var redirectionLoginData = $('#login-form').serializeArray();
+  redirectionLoginData.push({name: 'ajaxLogin', value: true});
+  $.post( $("#login-form").attr('action'),redirectionLoginData,function(data) {
+  var loginError = $(data).find('div[id=loginError]');
+    if(loginError != null){
+      $('#login-form-output').html(data);
+    }
+    });
+  });
+  $('#loginLink').click(function(event){
+    $("#auth-register-form-output").fadeOut("fast",function(){
+      $("#login-form-output").fadeIn("fast",function(){
+        $('#subscribeLink').show();
+        $('#loginLink').hide();
+      });
+   })});          
+  $('#subscribeLink').click(function(e){
+    $("#login-form-output").fadeOut("fast",function(){
+      $("#auth-register-form-output").fadeIn("fast",function(){ 
+        $('#loginLink').show();
+        $('#subscribeLink').hide();
+      });
+    })});
+  });   
+</script>
+{% endblock %}

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+     <body>
+     <!--Breadcrumbs translations-->
+      <trans-unit id="home.page">
+                <source>home.page</source>
+                <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="how.it.works">
+                <source>how.it.works</source>
+                <target>Comment ça marche</target>
+      </trans-unit>
+      <trans-unit id="how.to.register">
+                <source>how.to.register</source>
+                <target>Comment s’inscrire</target>
+      </trans-unit>
+      <trans-unit id="cashback.offer">
+                <source>cashback.offer</source>
+                <target>Cashback</target>
+      </trans-unit>
+      <trans-unit id="code.promo">
+                <source>code.promo</source>
+                <target>Codes Promo</target>
+      </trans-unit>
+      <trans-unit id="full.reimbursement">
+                <source>full.reimbursement</source>
+                <target>Achat Remboursement</target>
+      </trans-unit>
+      <trans-unit id="subscription.gain">
+                <source>subscription.gain</source>
+                <target>Gain à l'inscription</target>
+      </trans-unit>
+      <trans-unit id="copyright.act">
+                <source>copyright.act</source>
+                <target>Copyright</target>
+      </trans-unit>
+      <trans-unit id="sitemap">
+                <source>sitemap</source>
+                <target>Plan du site</target>
+      </trans-unit>
+      <trans-unit id="rss.feed">
+                <source>rss.feed</source>
+                <target>Flux RSS</target>
+      </trans-unit>
+      <trans-unit id="your.profile">
+                <source>your.profile</source>
+                <target>Mon profil</target>
+      </trans-unit>
+      <trans-unit id="your.earnings">
+                <source>your.earnings</source>
+                <target>Mes Gains</target>
+      </trans-unit>
+      <trans-unit id="your.earnings.details">
+                <source>your.earnings.details</source>
+                <target>détail de mes achats</target>
+      </trans-unit>
+      <trans-unit id="new.request">
+                <source>new.request</source>
+                <target>Nouvelle demande</target>
+      </trans-unit>
+      <trans-unit id="your.requests">
+                <source>your.requests</source>
+                <target>Mes demandes</target>
+      </trans-unit>
+      <trans-unit id="refer.friend">
+                <source>refer.friend</source>
+                <target>Parrainage</target>
+      </trans-unit>
+      <trans-unit id="referral.details">
+                <source>referral.details</source>
+                <target>Mes Filleuls</target>
+      </trans-unit>
+      <trans-unit id="new.offers">
+                <source>new.offers</source>
+                <target>Nouveaux Marchands</target>
+      </trans-unit>
+      <trans-unit id="top.offers">
+                <source>top.offers</source>
+                <target>Top Marchands</target>
+      </trans-unit>
+      <trans-unit id="private.offers">
+                <source>private.offers</source>
+                <target>Ventes Privées</target>
+      </trans-unit>
+      <trans-unit id="preferred.offers">
+                <source>preferred.offers</source>
+                <target>Mes favoris</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.bank">
+                <source>withdrawal.bank</source>
+                <target>Paiement par virement bancaire</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.cheque">
+                <source>withdrawal.cheque</source>
+                <target>Paiement par chèque</target>
+      </trans-unit>
+      <trans-unit id="withdrawal.paypal">
+                <source>withdrawal.paypal</source>
+                <target>Paiement par virement bancaire</target>
+      </trans-unit>
+      <trans-unit id="forgot.password">
+                <source>forgot.password</source>
+                <target>Mot de passe oublié</target>
+      </trans-unit>
+      <trans-unit id="change.email">
+                <source>change.email</source>
+                <target>Changez Email</target>
+      </trans-unit>
+      <trans-unit id="change.password">
+                <source>change.password</source>
+                <target>Changez mot de passe</target>
+      </trans-unit>
+      <trans-unit id="check.password">
+                <source>check.password</source>
+                <target>Valider mot de passe</target>
+      </trans-unit>
+      <trans-unit id="account.closure">
+                <source>account.closure</source>
+                <target>Fermeture de compte</target>
+      </trans-unit>
+      </body>
+    </file>
+</xliff>

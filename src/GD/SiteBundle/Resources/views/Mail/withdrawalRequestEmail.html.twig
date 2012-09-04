@@ -1,0 +1,37 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'Votre demande de paiement - Conso-Acteur'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bonjour '}} {{user.username}} {{','}}
+{{"Conformément à votre demande pour le paiement, veuillez trouver ci-dessous les détails de la demande"}}
+{{"Numéro de la demande : "}}{{withdrawal.id}}
+{{'Le montant : '}}{{withdrawal.amount |number_format(2)}}
+{{'Le mode de paiement : '}}{{withdrawal.getTypeAsString}}
+
+{{ "Nous procédons actuellement à la validation de votre demande de paiement." }}
+{{"Vous le recevrez au plus tard dans 45 jours."}}
+
+{{"Au delà de 45 jours contactez notre support clientèle pour connaitre l'etat de votre  demande. Pour cela identifiez vous sur votre compte et cliquez sur Mes demandes/Nouvelle demande. N'oubliez pas de mentionner votre numéro de demande dans le sujet."}}
+
+{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}
+{{" -L'équipe Conso-Acteur" }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}
+<p>{{ 'Bonjour '}} {{user.username}} {{','}}</p>
+<p>{{"Conformément à votre demande pour le paiement, veuillez trouver ci-dessous les détails de la demande"}}
+<ul>
+  <li>{{"Numéro de la demande : "}}<b>{{withdrawal.id}}</b></li>
+  <li>{{'Le montant : '}}<b>{{withdrawal.amount |number_format(2)}}</b></li>
+  <li>{{'Le mode de paiement : '}}<b>{{withdrawal.getTypeAsString}}</b></li>
+</ul>
+</p>
+<p>{{ "Nous procédons actuellement à la validation de votre demande de paiement. Vous le recevrez au plus tard dans 45 jours." }}</p>
+<p>{{"Au delà de 45 jours contactez notre support clientèle pour connaitre l'etat de votre  demande. Pour cela identifiez vous sur votre compte et cliquez sur Mes demandes/Nouvelle demande. N'oubliez pas de mentionner votre numéro de demande dans le sujet."}}</p>
+
+<p>{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}</p>
+<p>{{" -L'équipe Conso-Acteur" }}</p>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title%}{% trans %}referralpage.title.text{% endtrans %}{% endblock %}
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% else %}
+                {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                <div class="msgs">
+                    {% if app.session.hasFlash('email-notice') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('email-notice') }}
+                        </div>
+                    {% endif %}
+                </div>
+                <h1 class="title">{% trans %}referralpage.title.text{% endtrans %}</h1>
+                <div class="msgs">
+                  <table>
+                    <tr><td height="4">&nbsp;</td></tr>
+                    <tr>
+                      <td style="font-weight: bold; color: #2189B9;">{% trans %}referralpage.admessage1.text{% endtrans %}</td>
+                    </tr>
+                    <tr><td height="2">&nbsp;</td></tr>
+                    <tr>
+                      <td style="color: #2189B9;">{% trans %}referralpage.admessage2.text{% endtrans %}</td>
+                    </tr>
+                    <tr><td height="4">&nbsp;</td></tr>
+                  </table>
+                </div>
+                <div class="referFriend">
+                <form action="{{ path('gd_site_user_refer_friends') }}" method="POST" id="referFriendForm" novalidate="novalidate">
+                    {{ form_errors(form) }}
+                    <div class="form">
+                        <div class="form_layers floated1">
+                            {{ form_row(form.email1) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            {{ form_row(form.email2) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            {{ form_row(form.email3) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            {{ form_row(form.email4) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            {{ form_row(form.email5) }}
+                        </div>
+                        <div class="form_layers floated1">
+                            {{ form_row(form.subject) }}
+                        </div>
+                        {% spaceless %}
+                        <table>
+                          <tr>
+                            <td height="4">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>{% render "GDSiteBundle:User:userReferralContent" %}</td>
+                          </tr>
+                        </table>
+                        {% endspaceless %}
+                        <div class="form_layers floated1">
+                            {{ form_row(form.message) }}
+                        </div>
+                        <div class="form_layers floated1 refer_buttons">
+                            <span class="popuplt_btn link referButton">
+                                <input type="submit" class="popuprt_btn" name="send" value="{% trans %}referralpage.submit.button{% endtrans %}">
+                            </span>
+                            <span class="popuplt_btn link referButton">
+                                <input type="reset" onclick="location.reload();" class="popuprt_btn" value="{% trans %}referralpage.cancel.button{% endtrans %}">
+                            </span>
+                        </div>
+                        {{ form_rest(form)}}
+                    </div>
+                </form>
+                </div>
+             </div>
+            <div class="clr"></div>
+        </div>
+        <br>
+        <div style="color: #999999; font-size: 10px; margin-left: 220px">
+          <div>{% trans %}referral.notification1.text{% endtrans %}</div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% block leftsidebar %}
+<div class="leftnavi">
+    <div class="left_module votre">
+        <div class="title">{% trans %}sidebar.youraccount.text{% endtrans %}</div>
+        <div class="cont">
+            <ul>
+                <li><a href="{{ path('gd_site_user_profile') }}">{% trans %}sidebar.yourprofile.text{% endtrans %}</a></li>
+                <li><a href="{{ path('gd_site_withdrawal') }}">{% trans %}sidebar.yourearnings.text{% endtrans %}</a></li>
+            </ul>
+        </div>
+        <div class="left_module_bottom"></div>
+    </div>
+    <div class="left_module referrals">
+        <div class="title">{% trans %}sidebar.referrals.text{% endtrans %}</div>
+        <div class="cont">
+            <ul>
+                <li><a href="{{ path('gd_site_user_refer_friends') }}">{% trans %}sidebar.referfriend.text{% endtrans %}</a></li>
+                <li><a href="{{ path('gd_site_user_referral_details') }}">{% trans %}sidebar.myreferrals.text{% endtrans %}</a></li>
+            </ul>
+        </div>
+        <div class="left_module_bottom"></div>
+    </div>
+    <div class="left_module offers">
+        <div class="title">{% trans %}sidebar.youroffers.text{% endtrans %}</div>
+        <div class="cont">
+            <ul>
+                <li><a href="{{ path('gd_merchant_list', { 'filter': 'list', 'type': 'new' }) }}">{% trans %}sidebar.newoffers.text{% endtrans %}</a></li>
+                <li><a href="{{ path('gd_merchant_list', { 'filter': 'list', 'type': 'top' }) }}">{% trans %}sidebar.topoffers.text{% endtrans %}</a></li>
+                <li><a href="{{ path('gd_merchant_list', { 'filter': 'list', 'type': 'private' }) }}">{% trans %}sidebar.privateoffers.text{% endtrans %}</a></li>
+                <li><a href="{{ path('gd_merchant_list', { 'filter': 'list', 'type': 'preferred' }) }}">{% trans %}sidebar.preferredoffers.text{% endtrans %}</a></li>
+            </ul>
+        </div>
+        <div class="left_module_bottom"></div>
+    </div>
+    <div class="left_module offers_green">
+        <div class="title">{% trans %}sidebar.yourrequest.text{% endtrans %}</div>
+        <div class="cont">
+            <ul>
+                <li><a href="{{ path('gd_site_user_new_request') }}">{% trans %}sidebar.newrequest.text{% endtrans %}</a></li>
+            </ul>
+        </div>
+        <div class="left_module_bottom"></div>
+    </div>
+</div>
+{% endblock %}

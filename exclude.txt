@@ -1,0 +1,14 @@
+app/config/parameters.ini
+app/config/france/parameters.ini
+app/cache
+app/logs
+vendor
+.git
+.gitignore
+.idea
+exclude.txt
+updateServer.sh
+web/bundles
+web/uploads/
+web/config.php
+web/flash.xml

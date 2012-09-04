@@ -1,0 +1,20 @@
+{% for merchant in topMerchants if true == merchant.isActive and false == merchant.isArchived and loop.index0 < 6 %}
+    {% if loop.index0 is divisibleby(2) %}
+        {% set counter = loop.index0 %}
+        <tr class="middle">
+    {% endif %}
+        <td class="merchant">
+            <a class="image" href="{{ path('gd_merchant_show', { 'slug': merchant.getSlug }) }}"><img src="{{ asset(merchant.id~"."~merchant.image) | imagine_filter('sidebarthumb', true)}}"></a>
+            <br/>
+            <a class="value" href="{{ path('gd_merchant_show', { 'slug': merchant.getSlug }) }}">
+                {% set totalOffers = 0 %}
+                {% for offer in merchant.offers if (offer.isCurrent == true and offer.isArchived == false and offer.startDate|date('Y-m-d') <= "now"|date('Y-m-d') and offer.endDate|date('Y-m-d') >= "now"|date('Y-m-d')) %}
+                    {% set totalOffers = totalOffers + 1 %}
+                {% endfor %}
+                {{ '{0} merchant.nooffer.text |{1} merchant.singleoffer.text |]1,Inf] merchant.multipleoffers.text' | transchoice(totalOffers) | trans({'%totalOffers%': totalOffers },"messages") }}
+            </a>
+        </td>
+    {% if ( counter == (loop.index0 + 2)) %}
+        </tr>
+    {% endif %}
+{% endfor %}

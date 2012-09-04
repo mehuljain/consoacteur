@@ -1,0 +1,44 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}accountclose.htmltitle.text{% endtrans %}{% endblock %}
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">        
+            {% include 'GDSiteBundle::sidebar.html.twig' %}      
+        <div class="rightnavi">
+            <h1 class="title">{% trans %}accountclose.title.text{% endtrans %}</h1>
+            <div class="accClosure">
+                <form action="{{ path('gd_site_user_account_closure') }}" method="POST" id="accClosureForm" novalidate="novalidate">
+                <div class="error"></div>
+                {{ form_errors(form) }}
+                <div class="form">
+                    <div class="form_layers floated1">
+                        {{ form_row(form.reason) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        {{ form_row(form.message) }}
+                    </div>
+                    <div class="form_layers floated1">
+                        <div>
+                            {{ form_widget(form.confirm) }}<span>{% trans %}accountclose.confirmation.text{% endtrans %}</span>
+                            {{ form_errors(form.confirm) }}
+                        </div>
+                    </div>                    
+                    <div class="form_layers floated1">
+                        <span class="popuplt_btn link">
+                            <input type="submit" class="popuprt_btn" name="send" value="{% trans %}accountclose.submitbutton.text{% endtrans %}">
+                        </span>
+                        <span class="popuplt_btn link">
+                            <input type="reset" onclick="location.reload();" class="popuprt_btn" value="{% trans %}accountclose.cancelbutton.text{% endtrans %}">
+                        </span>
+                    </div>
+                    {{ form_rest(form) }}
+                </div>
+                </form>
+            </div>
+         </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

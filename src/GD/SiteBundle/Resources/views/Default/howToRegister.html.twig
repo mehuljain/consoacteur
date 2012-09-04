@@ -1,0 +1,28 @@
+{# Not being used for release 1 #}
+{% extends 'GDSiteBundle::layout.html.twig' %}
+
+{% block title %}Great Deals - How to Register?{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Great Deals" />
+    <meta name="keywords" content="How to Register?" />
+{% endblock %}
+
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">
+        {% if is_granted('ROLE_USER') %}
+            {% include 'GDSiteBundle::sidebar.html.twig' %}
+        {% else %}
+            {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+        {% endif %}
+        <div class="rightnavi">
+            <div class="title"><font><font class="">{% trans from "navigation" %}How to register?{% endtrans %}</font></font></div>
+            <p>Content for how to register goes in here.</p>
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

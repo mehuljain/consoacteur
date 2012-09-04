@@ -1,0 +1,47 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}login.htmltitle.text{% endtrans %}{% endblock %}
+{% block content %}
+    <div class="inner">
+	<fieldset>
+        {{ wo_render_breadcrumbs() }}
+        <legend><h1 class="title">{% trans %}login.title.text{% endtrans %}</h1></legend>
+        {% if error %}
+        <div style="background-color: #F7541C;color: white; text-align: center;width: 250px;">{{ error|trans }}</div>
+        {% endif %}
+        {% if app.session.hasFlash('user_activate') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('user_activate') }}
+                        </div>
+        {% endif %}
+        {% block fos_user_content %}
+         <form action="{{ path("fos_user_security_check") }}" method="post">
+            <div class="form">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                <div class="formLabel"><label for="username" style="color: #A8649B;font-size: 11px;">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label></div>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                <br />
+
+	        <div class="formLabel"><label for="password" style="color: #A8649B;font-size: 11px;">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label></div>
+                <input type="password" id="password" name="_password" />
+                <br />
+
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                <br />
+                <br>            
+                <a href="{{ path('gd_site_user_registration') }}" style="margin: 5px; color:#A8649B; ">{% trans %}login.registrationlink.text{% endtrans %}</a>
+                <span>
+                <a href="{{ path('gd_site_user_resetting') }}" style="color: #2F90BD">{% trans %}header.forgotpasswordlink.text{% endtrans %}</a>
+                </span>
+                <br>
+                <input type="hidden" name="_target_path" value="{{url('gd_site_legal_confirm')}}" />
+                <span class="loginlt_btn">	<!--added span tag for image button-->
+                <input id="_submit" class="loginrt_btn" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" type="submit" /></span>
+            </div>
+        </form>
+        {% endblock fos_user_content %}
+	</fieldset>
+    </div>
+    <div class="bottom_rounded login_page"></div>
+{% endblock %}

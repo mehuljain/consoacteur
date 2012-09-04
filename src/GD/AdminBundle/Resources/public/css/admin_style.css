@@ -1,0 +1,71 @@
+.ralign {
+    text-align: right;
+}
+
+.lalign {
+    text-align: left;
+}
+
+.calign {
+    text-align: center;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.action a {
+    margin: 0 10px;
+}
+
+
+.flash {
+    border-top: 1px solid;
+    margin: 0 0 10px 0;
+    padding: 10px 0px;
+    font-weight: bold;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.flash-success {
+    color: #FFF;
+    background-color: #C3E711;
+}
+
+.flash-warning {
+    color: #FFF;
+    background-color: #fac32c;
+}
+
+.flash-error {
+    color: #FFF;
+    background-color: #f7541c;
+}
+
+.sonata-bc h1.resetting {
+    margin: 15px 0 0 0;
+}
+
+label.translatable {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#changeEmail input {
+    margin: 2px 0 2px 30px;
+}
+
+#changePassword input {
+    margin: 2px 0 2px 30px;
+}

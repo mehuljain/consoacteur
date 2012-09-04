@@ -1,0 +1,37 @@
+{% block subject %}
+{% autoescape false %}
+{{ "Votre demande d'assistance clientèle Conso-Acteur :"}}{{userRequest.id}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bonjour,'}}
+{{"Merci pour votre message. Votre demande sera traitée dans les plus brefs délais."}}
+{{"Veuillez trouver ci-dessous les  détails de votre demande :"}}
+{{'Pseudo : '}}{{userRequest.user}}
+{{'Sujet : '}}{{userRequest.subject}}
+{{"Numéro de la demande : "}}{{userRequest.id}}
+{{"Catégorie du problème : "}}{{userRequest.ProblemTypeAsString | trans}}
+{{'Vos Commentaires : '}}{{userRequest.message}}
+{{ "Un e-mail vous sera envoyé lorsque votre demande sera traitée."}}
+
+{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}
+{{" -L'équipe Conso-Acteur" }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}
+<p>{{ 'Bonjour,'}}</p>
+<p>{{"Merci pour votre message. Votre demande sera traitée dans les plus brefs délais."}}</p>
+<p>{{"Veuillez trouver ci-dessous les  détails de votre demande :"}}
+<ul>
+  <li>{{'Pseudo : '}}{{user.username}}</li>
+  <li>{{'Sujet : '}}{{userRequest.subject}}</li>
+  <li>{{"Numéro de la demande : "}}{{userRequest.id}}</li>
+  <li>{{"Catégorie du problème : "}}{{userRequest.ProblemTypeAsString | trans}}</li>
+  <li>{{'Commentaires : '}}{{userRequest.message}}</li>
+</ul>
+</p>
+<p>{{ "Un e-mail vous sera envoyé lorsque votre demande sera traitée."}}</p>
+<p>{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}</p>
+<p>{{" -L'équipe Conso-Acteur" }}</p>
+{% endblock %}

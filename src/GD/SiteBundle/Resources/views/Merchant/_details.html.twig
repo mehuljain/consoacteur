@@ -1,0 +1,172 @@
+<div class="accord blue">
+    <div class="title_bar">
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td id="cb" class="title">{% trans %}merchantdetail.cashback.title{% endtrans %}</td>                
+                {% if cashbackOffer %}
+                <td>{{ cashbackOffer.userGainValue }}&nbsp;{% trans %}merchantdetail.cashbackavailable.text{% endtrans %}</td>
+                {% endif %}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="accord_cont">
+        {% if cashbackOffer %}
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td width="60%">
+                      <div class="bolded_title">{% trans %}merchantdetail.cashbackdescription.text{% endtrans %}<sup>*</sup></div>
+                      <div class="cashback_listing">{{ cashbackOffer.description|raw }}</div>
+                    </td>
+                    <td valign="middle" align="right">                      
+                            <a target="_blank" href="{{ path('gd_offers_usage', { 'slug': cashbackOffer.slug }) }}" class="button offerLink"><span>{% trans %}merchantdetail.cashbacklink.text{% endtrans %}</span></a>                        
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        {% else %}
+            <div class="bolded_title">{% trans %}merchantdetail.nocashback.text{% endtrans %}</div>
+        {% endif %}
+    </div>
+</div>
+<div class="accord orange"> 
+    <div class="title_bar">
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td id="cp" class="title">{% trans %}merchantdetail.codepromo.title{% endtrans %}</td>
+                <td>{{ codePromoOffers|length }}&nbsp;{% trans %}merchantdetail.codepromoavailable.text{% endtrans %}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="accord_cont">
+        <ul>
+            {% if codePromoOffers|length %}
+                {% for offer in codePromoOffers%}
+                    <li class="details">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td width="65%">
+                                    <div class="bolded_title">{% trans %}merchantdetail.codepromodescription.text{% endtrans %}</div>
+                                    <p>{{ offer.description|raw }}</p>
+                                    <b>{% trans %}merchantdetail.codepromovalidity.text{% endtrans %} : {{ offer.getStartDate.format('d.m.Y') }} - {{ offer.getEndDate.format('d.m.Y') }}</b>
+                                </td>
+                                <td valign="middle" align="right">
+                                    <span><a id="usergain" class="button" onclick="getCode(this,'{{ offer.getUserGainValue }}','{{ offer.getDisplayUri }}');"><span>{% trans %}merchantdetail.codepromogetcodelink.text{% endtrans %}</span></a></span>
+                                </td>
+                                <td valign="middle" align="right">                                    
+                                        <a target="_blank" href="{{ path('gd_offers_usage', { 'slug': offer.slug }) }}" class="button offerLink"><span>{% trans %}merchantdetail.codepromousecodelink.text{% endtrans %}</span></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                {% endfor %}
+            {% else %}
+                    <div class="bolded_title">{% trans %}merchantdetail.nocodepromo.text{% endtrans %}</div>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<div class="accord black">
+    <div class="title_bar">
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td id="sg" class="title">{% trans %}merchantdetail.subscriptiongain.title{% endtrans %}</td>
+                {% if subscriptionGain %}
+                <td>{{subscriptionGain.getUserGainValue}}&nbsp;{% trans %}merchantdetail.subscriptiongainavailable.text{% endtrans %}</td>
+                {% endif %}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="accord_cont">
+        {% if subscriptionGain %}
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td width="65%">
+                        <div class="bolded_title">{% trans %}merchantdetail.subscriptiongain.title{% endtrans %}<sup>*</sup></div>
+                        <p>{{ subscriptionGain.description|raw }}</p>                        
+                    </td>
+                    <td valign="middle" align="right">
+                      <a target="_blank" href="{{ path('gd_offers_usage', { 'slug': subscriptionGain.slug }) }}" class="button sg offerLink"><span>{% trans %}merchantdetail.subscriptiongainlink.text{% endtrans %}</span></a>
+                    </td>
+                </tr>
+            </table>
+        {% else %}
+            <div class="bolded_title">{% trans %}merchantdetail.nosubscriptiongain.text{% endtrans %}</div>
+        {% endif %}
+    </div>
+</div>
+<div class="accord pink">
+    <div class="title_bar">
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td id="fre" class="title">{% trans %}merchantdetail.fullreimbursementtitle.text{% endtrans %}</td>
+                {% if fullReimbursementOffer %}
+                    <td>{{ fullReimbursementOffer.getUserGainValue }}&nbsp;{% trans %}merchantdetail.fullreimbursementavailable.text{% endtrans %}</td>
+                {% endif %}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="accord_cont">
+        {% if fullReimbursementOffer %}
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td width="65%">
+                        <div class="bolded_title">{% trans %}merchantdetail.fullreimbursementtitle.text{% endtrans %}<sup>*</sup></div>
+                        <p>{{ fullReimbursementOffer.description|raw }}</p>
+                        <br/>
+                        <b>{% trans %}merchantdetail.codepromovalidity.text{% endtrans %} : {{ fullReimbursementOffer.getStartDate.format('d.m.Y') }} - {{ fullReimbursementOffer.getEndDate.format('d.m.Y') }}</b>
+                        <div class="clr"></div>
+                        <div class="bolded_title">{% trans %}merchantdetail.fullreimbursementtermsconditions.text{% endtrans %}:</div>
+                        <p>{{ fullReimbursementOffer.getFullReimbursementTermsAndConditions }}</p>
+                    </td>
+                    <td valign="middle" align="right">
+                      <a target="_blank" href="{{ path('gd_offers_usage', { 'slug': fullReimbursementOffer.slug }) }}" class="button fr offerLink"><span>{% trans %}merchantdetail.fullreimbursementlink.text{% endtrans %}</span></a>
+                    </td>
+                </tr>
+            </table>
+        {% else %}
+            <div class="bolded_title">{% trans %}merchantdetail.nofullreimbursement.text{% endtrans %}</div>
+        {% endif %}
+    </div>
+</div>
+<div class="accord green">
+    <div class="title_bar">
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td class="title">{% trans %}merchantdetail.feedbacktitle.text{% endtrans %}</td>
+                <td>
+                    {% if feedbackPagination %}
+                    {{ '{0} merchantdetail.nofeedback.text |{1} merchantdetail.singlefeedback.text |]1,Inf] merchantdetail.multiplefeedbacks.text' | transchoice(numFeedback) | trans({'%numFeedback%': numFeedback },"messages") }}
+                    {% endif %}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="accord_cont">
+        <div id="_feedback">
+            {% include 'GDSiteBundle:Merchant:_feedback.html.twig' %}
+        </div>
+    <div class="pagination">
+            {% if is_granted('ROLE_USER') %}
+                <a id="fbk" class="button"><span>{% trans %}merchantdetail.givefeedbacklink.text{% endtrans %}</span></a>
+            {% endif %}
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+<div style="color: #999999; font-size: 10px; margin-left: 15px">
+<div>{% trans %}offers.notification1.text{% endtrans %}</div>
+<div>{% trans %}offers.notification2.text{% endtrans %}</div>
+</div>

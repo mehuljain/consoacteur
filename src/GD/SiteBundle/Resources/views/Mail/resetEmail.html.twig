@@ -1,0 +1,19 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'Réinitialiser votre mot de passe : Conso-Acteur'}}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Bonjour '}}{{user.username}}{{','}}
+{{"Conformément à votre demande de réinitialisation de mot de passe, merci de vous rendre sur :"}}
+{{ resetUrl }}
+
+{{ "Vous pourrez aussi réinitialiser votre mot de passe en copiant/collant ce lien dans la barre de votre navigateur: "}}
+{{ resetUrl }}
+
+{{ 'Merci de votre confiance et à bientôt sur conso-acteur.com' }}
+{{" -L'équipe Conso-Acteur" }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}

@@ -1,0 +1,16 @@
+<p>{% trans %}footer.newsletterrequest.text{% endtrans %}</p>
+<form action="{{ path('gd_site_newsletter') }}" id="footer_newsletter" method="post" novalidate="novalidate">  
+<div class="form">            
+          <div class="floated1">
+            {{ form_widget(form.email) }}            
+            {{ form_rest(form) }}
+            <div class="clr"></div>
+        </div>
+        <br/>
+        <input type="hidden" name="newsfooter" value="1">
+        <span class="news_btn">
+               <input type="submit" class="news_submit" name="validate" value="{% trans %}footer.submitbutton.text{% endtrans %}"/>
+        </span>        
+        <div class="clr"></div>
+    </div>
+</form>

@@ -1,0 +1,69 @@
+parameters:
+    search_indexer.class:   GD\SiteBundle\Listener\SearchIndexer
+    sponsor.validator.class:   GD\SiteBundle\Validator\CheckSponsorValidator
+    uniqueemail.validator.class:   GD\SiteBundle\Validator\UniqueEmailValidator
+    uniquereferralemail.validator.class:   GD\SiteBundle\Validator\UniqueReferralEmailValidator
+    search.utility.class:   Zend\Search\lib\SearchUtility
+    mailer.class: GD\SiteBundle\Mailer\Mailer
+
+services:
+    kernel.listener.locale_listener:
+        class: GD\SiteBundle\Listener\LocaleListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+        arguments: [ '@router', '@service_container', %languages%, %fallback_language% ]
+        # TODO: Remove @service_container
+
+    post_persist_listener:
+        class: GD\SiteBundle\Listener\PostPersistListener
+        tags:
+            - { name: doctrine.event_listener, event: postPersist, connection: default }
+        arguments: [ '@service_container', %joining_bonus%, %referral_bonus%, '@logger','@router' ]
+
+    pre_update_listener:
+        class: GD\SiteBundle\Listener\PreUpdateListener
+        tags:
+            - { name: doctrine.event_listener, event: preUpdate, connection: default }
+        arguments: [ '@logger' ]
+        
+    search_insert:
+        class: %search_indexer.class%
+        calls:
+            - [ setSearchUtility, [ '@search_utility' ] ]
+        tags:
+            - { name: doctrine.event_listener, event: postPersist, connection: default }
+        arguments : ['@router']
+
+    search_update:
+        class: %search_indexer.class%
+        calls:
+            - [ setSearchUtility, [ '@search_utility' ] ]
+        tags:
+            - { name: doctrine.event_listener, event: postUpdate, connection: default }
+        arguments : ['@router']
+        
+    validator.checksponsor:
+        class : %sponsor.validator.class%
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: validator.constraint_validator, alias: validator.sponsor }           
+            
+    validator.uniqueemail:
+        class : %uniqueemail.validator.class%
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: validator.constraint_validator, alias: validator.uniqueemail }
+            
+    validator.uniquereferralemail:
+        class : %uniquereferralemail.validator.class%
+        arguments: ['@doctrine.orm.entity_manager','@service_container']
+        tags:
+            - { name: validator.constraint_validator, alias: validator.uniquereferralemail }           
+    
+    search_utility:
+        class:        %search.utility.class%
+        
+    mailer_utility:
+        class:        %mailer.class%
+        arguments : ['@mailer','@twig']
+

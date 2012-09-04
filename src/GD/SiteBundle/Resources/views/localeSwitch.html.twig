@@ -1,0 +1,12 @@
+
+<ul>
+    <li {% if app.request.session.locale == 'en' %}class="cur_lang"{% endif %}>
+        <a class="gd_locale" href="{{ path('switch_locale', { 'locale' : 'en' }) }}">Ch-En</a>
+    </li>
+    <li {% if app.request.session.locale == 'fr' %}class="cur_lang"{% endif %}>
+        <a class="gd_locale" href="{{ path('switch_locale', { 'locale' : 'fr' }) }}">Ch-Fr</a>
+    </li>
+    <li {% if app.request.session.locale == 'de' %}class="cur_lang"{% endif %}>
+        <a class="gd_locale" href="{{ path('switch_locale', { 'locale' : 'de' }) }}">Ch-De</a>
+    </li>
+</ul>

@@ -1,0 +1,26 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+
+{% block title %}{{ translatedPage.name }}{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ translatedPage.metaDescription }}" />
+    <meta name="keywords" content="{{ translatedPage.metaTags }}" />
+{% endblock %}
+
+{% block content %}
+<div class="inner">
+    {{ wo_render_breadcrumbs() }}
+    <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% else %}
+                {% include 'GDSiteBundle::unreg_sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                {{ translatedPage.content()|raw }}
+            </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<div class="bottom_rounded"></div>
+{% endblock %}

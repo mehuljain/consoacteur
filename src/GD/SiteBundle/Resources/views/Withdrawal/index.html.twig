@@ -1,0 +1,112 @@
+{% extends 'GDSiteBundle::layout.html.twig' %}
+{% block title %}{% trans %}userearningspage.title.text{% endtrans %}{% endblock %}
+{% block content %}
+    <div class="inner">
+        {{ wo_render_breadcrumbs() }}
+        <div class="content">
+            {% if is_granted('ROLE_USER') %}
+                {% include 'GDSiteBundle::sidebar.html.twig' %}
+            {% endif %}
+            <div class="rightnavi">
+                <div class="msgs">
+                    {% if app.session.hasFlash('success') %}
+                        <div class="flash flash-success">
+                            {{ app.session.flash('success')|trans }}
+                        </div>
+                    {% endif %}
+                    {% if app.session.hasFlash('error') %}
+                        <div class="flash flash-error">
+                            {{ app.session.flash('error') }}
+                        </div>
+                    {% endif %}
+                </div>
+                <h1 class="title">{% trans %}userearningspage.title.text{% endtrans %}</h1>
+                <div class="details">
+                    <table class="table">
+                        <tr>
+                          <td class="aleft"><b>{% trans %}userearningstable.withdrawalamount.text{% endtrans %}</b><sup>*</sup></td>
+                          <td class="acenter"><b>{% if accountSummary.withdrawableAmount >= MINIMUM_WITHDRAWAL_AMOUNT %} {{ accountSummary.withdrawableAmount|number_format(2) }} {% else %} 0 {% endif %}{{ CURRENCY }}</b></td>
+                        </tr>
+                        <tr>
+                            <td class="aleft">{% trans %}userearningstable.confirmedvalidatedamount.text{% endtrans %}</td>
+                            <td class="acenter">{{ accountSummary.confirmedAndValidatedAmount|number_format(2) }} {{ CURRENCY }}</td>
+                        </tr>
+                        <tr>
+                            <td class="aleft">{% trans %}userearningstable.referralamounttovalidate.text{% endtrans %}</td>
+                            <td class="acenter">{{ accountSummary.referralAmountToBeValidated|number_format(2) }} {{ CURRENCY }}</td>
+                        </tr>
+                        <tr>
+                            <td class="aleft">{% trans %}userearningstable.offeramounttovalidate.text{% endtrans %}</td>
+                            <td class="acenter">{{ accountSummary.offerAmountToBeValidated|number_format(2) }} {{ CURRENCY }}</td>
+                        </tr>
+                        <tr>
+                            <td class="aleft">{% trans %}userearningstable.currentlyrequestedamount.text{% endtrans %}</td>
+                            <td class="acenter">{{ accountSummary.requestedAmount|number_format(2) }} {{ CURRENCY }}</td>
+                        </tr>
+                        <tr>
+                            <td class="aleft">{% trans %}userearningstable.invalidatedamount.text{% endtrans %}</td>
+                            <td class="acenter">{{ accountSummary.invalidatedAmount|number_format(2) }} {{ CURRENCY }}</td>
+                        </tr>
+                        <tr>
+                            <td class="aleft">{% trans %}userearningstable.onholdamount.text{% endtrans %}</td>
+                            <td class="acenter">{{ accountSummary.onHoldAmount|number_format(2) }} {{ CURRENCY }}</td>
+                        </tr>
+                        <tr>
+                            <td class="aleft">{% trans %}userearningstable.withdrawnamount.text{% endtrans %}</td>
+                            <td class="acenter">{{ accountSummary.withdrawnAmount|number_format(2) }} {{ CURRENCY }}</td>
+                        </tr>   
+                        <tr>
+                          <td style="border: none;text-align: left;"><a href="{{ path('gd_faq') }}">{% trans %}userearnings.faqlink.text{% endtrans %}</a></td>
+                          <td style="border: none;text-align: right;"><a style="color: #2189B9; font-weight: bold; text-decoration: underline" href="{{ path('gd_site_user_earnings_detail')}}">&gt;&nbsp;{% trans %}userearnings.seedetailamountlink.text{% endtrans %}</a></td>
+                        </tr>   
+                    </table>
+                </div>
+                <h1 class="title">{% trans %}userearnings.withdrawoptionstitle.text{% endtrans %}</h1>
+                <div class="wtdOptions">
+                  <div style="background-color: #F7541C;color: white; text-align: center;width: 250px;">{{ form_errors(formView.type) }}</div>
+                  <form action="{{ path('gd_site_withdrawal') }}" method="POST" id="wtdForm" novalidate="novalidate">
+                      <div class="form">
+                        <div class="form_layer lay1">
+                          {{ form_widget(formView.type) }}
+                        </div>
+                          {{ form_rest(formView) }}
+                        <div class="form_layers floated1">
+                          <span class="btn"><input class="submit" type="submit" name="submit" value="{% trans %}userearnings.withdrawsubmitbutton.text{% endtrans %}"/></span>
+                        </div>
+                       </div>
+					   <div class="ttips">
+              <div class="chequeTtip"><p>{% trans %}userearnings.chequedetails.text{% endtrans %}</p></div>
+              <div class="bankTtip"><p>{% trans %}userearnings.bankdetails.text{% endtrans %}</p></div>              
+							<div class="ppalTtip"><p>{% trans %}userearnings.paypaldetails.text{% endtrans %}</p></div>
+						</div>
+                 </form>
+                </div>                
+              </div>
+            <div class="clr"></div>
+            <br/>
+            <div style="color: #999999; font-size: 10px; margin-left: 220px">
+                    <div>{% trans %}userearnings.withdrawamountnotify.text{% endtrans %}</div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_rounded"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+       $(document).ready(function () {
+            
+			$('.wtdOptions .form_layer label').hover(
+				function(){
+					i=$(this).index('.form_layer label');
+					$('.ttips div').eq(i).css('opacity','1.0');
+				},
+				function(){
+					i=$(this).index('.form_layer label');
+					$('.ttips div').eq(i).css('opacity','0.0');
+				}
+			);
+       });
+    </script>
+{% endblock %}
