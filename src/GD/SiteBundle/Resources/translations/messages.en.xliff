@@ -21,98 +21,102 @@
                 <target>I found something better elsewhere</target>
       </trans-unit>
      <!--Address Locations-->
-     <trans-unit id="address.location.choice0">
-                <source>address.location.choice0</source>
-                <target>Street</target>
-     </trans-unit>
      <trans-unit id="address.location.choice1">
                 <source>address.location.choice1</source>
-                <target>Avenue</target>
+                <target>Street</target>
       </trans-unit>
      <trans-unit id="address.location.choice2">
                 <source>address.location.choice2</source>
-                <target>Boulevard</target>
+                <target>Avenue</target>
       </trans-unit>
      <trans-unit id="address.location.choice3">
                 <source>address.location.choice3</source>
-                <target>Quai</target>
+                <target>Boulevard</target>
       </trans-unit>
      <trans-unit id="address.location.choice4">
                 <source>address.location.choice4</source>
-                <target>Impasse</target>
+                <target>Voie</target>
       </trans-unit>
      <trans-unit id="address.location.choice5">
                 <source>address.location.choice5</source>
-                <target>Chemin</target>
+                <target>Quai</target>
       </trans-unit>
      <trans-unit id="address.location.choice6">
                 <source>address.location.choice6</source>
-                <target>Route</target>
+                <target>Impasse</target>
       </trans-unit>
      <trans-unit id="address.location.choice7">
                 <source>address.location.choice7</source>
-                <target>Place</target>
+                <target>Chemin</target>
       </trans-unit>
      <trans-unit id="address.location.choice8">
                 <source>address.location.choice8</source>
-                <target>Villa</target>
+                <target>Route</target>
       </trans-unit>
      <trans-unit id="address.location.choice9">
                 <source>address.location.choice9</source>
-                <target>Parc</target>
+                <target>Place</target>
       </trans-unit>
      <trans-unit id="address.location.choice10">
                 <source>address.location.choice10</source>
-                <target>Square</target>
+                <target>Villa</target>
       </trans-unit>
      <trans-unit id="address.location.choice11">
                 <source>address.location.choice11</source>
-                <target>Alley</target>
+                <target>Parc</target>
       </trans-unit>
      <trans-unit id="address.location.choice12">
                 <source>address.location.choice12</source>
-                <target>Cours</target>
+                <target>Square</target>
       </trans-unit>
      <trans-unit id="address.location.choice13">
                 <source>address.location.choice13</source>
-                <target>Sente</target>
+                <target>Alley</target>
       </trans-unit>
      <trans-unit id="address.location.choice14">
                 <source>address.location.choice14</source>
-                <target>Sentier</target>
+                <target>Cours</target>
       </trans-unit>
      <trans-unit id="address.location.choice15">
                 <source>address.location.choice15</source>
-                <target>Passage</target>
+                <target>Sente</target>
       </trans-unit>
      <trans-unit id="address.location.choice16">
                 <source>address.location.choice16</source>
-                <target>Jardins</target>
+                <target>Sentier</target>
       </trans-unit>
      <trans-unit id="address.location.choice17">
                 <source>address.location.choice17</source>
-                <target>Parvis</target>
+                <target>Passage</target>
       </trans-unit>
      <trans-unit id="address.location.choice18">
                 <source>address.location.choice18</source>
-                <target>Residence</target>
+                <target>Jardins</target>
       </trans-unit>
      <trans-unit id="address.location.choice19">
                 <source>address.location.choice19</source>
-                <target>Terrasse</target>
+                <target>Parvis</target>
       </trans-unit>
      <trans-unit id="address.location.choice20">
                 <source>address.location.choice20</source>
-                <target>Grande Rue</target>
+                <target>Terrasse</target>
       </trans-unit>
      <trans-unit id="address.location.choice21">
                 <source>address.location.choice21</source>
-                <target>Grand Place</target>
+                <target>Grand Rue</target>
       </trans-unit>
      <trans-unit id="address.location.choice22">
                 <source>address.location.choice22</source>
-                <target>Chateau</target>
+                <target>Grand Place</target>
       </trans-unit> 
+     <trans-unit id="address.location.choice23">
+                <source>address.location.choice23</source>
+                <target>Residence</target>
+      </trans-unit> 
+     <trans-unit id="address.location.choice24">
+                <source>address.location.choice24</source>
+                <target>Chateau</target>
+      </trans-unit>
       <!--Advertisement Options-->
       <trans-unit id="advertisement.option.choice1">
                 <source>advertisement.option.choice1</source>

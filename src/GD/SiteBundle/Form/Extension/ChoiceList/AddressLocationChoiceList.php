@@ -8,7 +8,6 @@ class AddressLocationChoiceList implements ChoiceListInterface
     public function getChoices()
     {
         return array(
-        '0' => 'address.location.choice0',
         '1' => 'address.location.choice1',
         '2' => 'address.location.choice2',
         '3' => 'address.location.choice3',
@@ -18,8 +17,8 @@ class AddressLocationChoiceList implements ChoiceListInterface
         '7' => 'address.location.choice7',
         '8' => 'address.location.choice8',
         '9' => 'address.location.choice9',
-        '10'=> 'address.location.choice10',
-        '11' => 'address.location.choice11',
+        '10' => 'address.location.choice10',
+        '11'=> 'address.location.choice11',
         '12' => 'address.location.choice12',
         '13' => 'address.location.choice13',
         '14' => 'address.location.choice14',
@@ -31,6 +30,9 @@ class AddressLocationChoiceList implements ChoiceListInterface
         '20' => 'address.location.choice20',
         '21' => 'address.location.choice21',
         '22' => 'address.location.choice22',
+        '23' => 'address.location.choice23',
+        '24' => 'address.location.choice24',
+        '25' => '',
 );    
 
     }

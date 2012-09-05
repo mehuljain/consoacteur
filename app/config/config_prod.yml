@@ -24,4 +24,3 @@ swiftmailer:
     host: %mailer_host%
     username: %mailer_user%
     password: %mailer_password%
-    delivery_address:  %delivery_address%

@@ -8,7 +8,24 @@ use GD\AdminBundle\Entity\Group;
 use Doctrine\Common\Persistence\ObjectManager;
 
 class LoadAdminGroupsData extends AbstractFixture implements OrderedFixtureInterface {
-
+  
+   protected $adminRoles = array(
+        'ROLE_SONATA_USER_ADMIN_USER_EDIT',
+        'ROLE_SONATA_USER_ADMIN_USER_LIST',
+        'ROLE_SONATA_USER_ADMIN_USER_CREATE',
+        'ROLE_SONATA_USER_ADMIN_USER_VIEW',
+        'ROLE_SONATA_USER_ADMIN_USER_DELETE',
+        'ROLE_SONATA_USER_ADMIN_USER_OPERATOR',
+        'ROLE_SONATA_USER_ADMIN_USER_MASTER',
+        'ROLE_SONATA_USER_ADMIN_GROUP_EDIT',
+        'ROLE_SONATA_USER_ADMIN_GROUP_LIST',
+        'ROLE_SONATA_USER_ADMIN_GROUP_CREATE',
+        'ROLE_SONATA_USER_ADMIN_GROUP_VIEW',
+        'ROLE_SONATA_USER_ADMIN_GROUP_DELETE',
+        'ROLE_SONATA_USER_ADMIN_GROUP_OPERATOR',
+        'ROLE_SONATA_USER_ADMIN_GROUP_MASTER',
+        'ROLE_ADMIN'
+    );
   /**
    * Light roles will have LIST AND VIEW actions
    * @var type 
@@ -160,10 +177,13 @@ class LoadAdminGroupsData extends AbstractFixture implements OrderedFixtureInter
     
     $feedbackLight = new Group('feedbackLight', $feedbackLightRoles);
     $manager->persist($feedbackLight);
-
-    $manager->flush();
-
-  }
+     
+    $admin = new Group('admin', $this->adminRoles);
+    $manager->persist($admin);
+    
+      $manager->flush();
+      $this->addReference('admin-group', $admin);
+    }
 
   public function getOrder() {
     return 9;

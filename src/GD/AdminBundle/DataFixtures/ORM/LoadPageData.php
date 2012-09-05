@@ -11,16 +11,6 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-//        $parrainage = new Page();
-//        $parrainage->setName("Sponsorship");
-//        $parrainage->setSlug("sponsorship");
-//        $parrainage->setCreatedAt(new \DateTime());
-//        $parrainage->setUpdatedAt(new \DateTime());
-//        $parrainage->setMetaTags("sponsorship");
-//        $parrainage->setMetaDescription("About Great Deals Sponsorship");
-//        $parrainage->setContent("<p>Sponsorship</p>");
-//        $manager->persist($parrainage);
-
         $faq = new Page();
         $faq->setName("FAQ");
         $faq->setSlug("faq");
@@ -178,17 +168,17 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface
         $assistance->setCreatedAt(new \DateTime());
         $assistance->setUpdatedAt(new \DateTime());
         $assistance->setMetaTags("assistance");
-        $assistance->setMetaDescription("Great Deals help-lines");
+        $assistance->setMetaDescription("Conso-Acteur");
         $assistance->setContent("<p>Need Assistance?</p>");
         $manager->persist($assistance);
         
         $tnc = new Page();
-        $tnc->setName("Terms and Conditions");
+        $tnc->setName("Conso-Acteur");
         $tnc->setSlug("terms-and-conditions");
         $tnc->setCreatedAt(new \DateTime());
         $tnc->setUpdatedAt(new \DateTime());
         $tnc->setMetaTags("tnc");
-        $tnc->setMetaDescription("Great Deals tnc");
+        $tnc->setMetaDescription("ConsoActeur");
         $tnc->setContent("<p>Terms and Condition goes in here!</p>");
         $manager->persist($tnc);
         
@@ -199,7 +189,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface
         $copyright->setCreatedAt(new \DateTime());
         $copyright->setUpdatedAt(new \DateTime());
         $copyright->setMetaTags("copyright");
-        $copyright->setMetaDescription("Great Deals Copyright Acts");
+        $copyright->setMetaDescription("ConsoActeur");
         $copyright->setContent("<p>Copyright content goes in here!</p>");
         $manager->persist($copyright);
         
@@ -209,8 +199,8 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface
         $sitemap->setCreatedAt(new \DateTime());
         $sitemap->setUpdatedAt(new \DateTime());
         $sitemap->setMetaTags("sitemap");
-        $sitemap->setMetaDescription("Great Deals sitemap");
-        $sitemap->setContent("<h1>Sitemap</h1><p>Sitemap goes in here!</p>");
+        $sitemap->setMetaDescription("ConsoActeur sitemap");
+        $sitemap->setContent("<h1>Sitemap</h1><p>En attente!</p>");
         $manager->persist($sitemap);
         
         $rssFeed = new Page();
