@@ -63,10 +63,10 @@ class OfferReimbursementAdmin extends SonataAdmin
             ))
             ->add('isCurrent')
             ->add('fullReimbursementMaxWinAmount', null, array('help' => $this->translator->trans('fullreimburse.maxwinamountnotification.message')))
-            ->add('fullReimbursementMinParticipants')
-            ->add('fullReimbursementMinTransactionAmount', null, array('help' => $this->translator->trans('fullreimburse.mintransactionnotification.message')))
-            ->add('fullReimbursementCashbackPercentage', 'percent', array('type' => 'integer', 'precision' => '2', 'help' =>  $this->translator->trans('cashbackpercentage.notification.message') ))
-            ->add('fullReimbursementTermsAndConditions', null, array('attr' => array('class' => 'translatable')))
+            ->add('fullReimburseMinParticipant')
+            ->add('fullReimburseMinTransAmount', null, array('help' => $this->translator->trans('fullreimburse.mintransactionnotification.message')))
+            ->add('fullReimburseCashbackPercent', 'percent', array('type' => 'integer', 'precision' => '2', 'help' =>  $this->translator->trans('cashbackpercentage.notification.message') ))
+            ->add('fullReimbursementTermsCondition', null, array('attr' => array('class' => 'translatable')))
             ->add('affiliatePartner', 'entity', array(
                 'class' => 'GDAdminBundle:Merchant',
                 'property' => 'affiliatePartner',
@@ -135,13 +135,13 @@ class OfferReimbursementAdmin extends SonataAdmin
             ->with('fullReimbursementMaxWinAmount')
             ->assertNotBlank()
             ->end()
-            ->with('fullReimbursementMinParticipants')
+            ->with('fullReimburseMinParticipant')
             ->assertNotBlank()
             ->end()
-            ->with('fullReimbursementMinTransactionAmount')
+            ->with('fullReimburseMinTransAmount')
             ->assertNotBlank()
             ->end()
-            ->with('fullReimbursementCashbackPercentage')
+            ->with('fullReimburseCashbackPercent')
             ->assertNotBlank()
             ->end();
 

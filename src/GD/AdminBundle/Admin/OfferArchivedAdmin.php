@@ -62,10 +62,10 @@ class OfferArchivedAdmin extends SonataAdmin
             ->add('cashbackValuePercentage', null, array('read_only' => true))
             ->add('cashbackValueAmount', null, array('read_only' => true))
             ->add('fullReimbursementMaxWinAmount', null, array('read_only' => true))
-            ->add('fullReimbursementMinParticipants', null, array('read_only' => true))
-            ->add('fullReimbursementMinTransactionAmount', null, array('read_only' => true))
-            ->add('fullReimbursementCashbackPercentage', null, array('read_only' => true))
-            ->add('fullReimbursementTermsAndConditions', null, array('read_only' => true))
+            ->add('fullReimburseMinParticipant', null, array('read_only' => true))
+            ->add('fullReimburseMinTransAmount', null, array('read_only' => true))
+            ->add('fullReimburseCashbackPercent', null, array('read_only' => true))
+            ->add('fullReimbursementTermsCondition', null, array('read_only' => true))
             ->add('affiliatePartner', 'entity', array(
                 'class' => 'GDAdminBundle:Merchant',
                 'property' => 'affiliatePartner',

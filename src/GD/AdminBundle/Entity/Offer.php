@@ -57,12 +57,12 @@ class Offer
 
     /**
      * Only for Full reimbursement
-     * @var text $fullReimbursementTermsAndConditions
+     * @var text $fullReimbursementTermsCondition
      *
-     * @ORM\Column(name="full_reimbursement_terms_and_conditions", type="text", nullable=true)
+     * @ORM\Column(name="full_reimbursement_tnc", type="text", nullable=true)
      * @Gedmo\Translatable
      */
-    private $fullReimbursementTermsAndConditions;
+    private $fullReimbursementTermsCondition;
 
     /**
      * @var smallint $type
@@ -158,32 +158,32 @@ class Offer
     /**
      * @var float $fullReimbursementMaxWinAmount
      *
-     * @ORM\Column(name="full_reimbursement_max_win_amount", type="float", nullable=true)
+     * @ORM\Column(name="fr_max_win_amount", type="float", nullable=true)
      */
     private $fullReimbursementMaxWinAmount;
 
     /**
-     * @var integer $fullReimbursementMinParticipants
+     * @var integer $fullReimburseMinParticipant
      *
-     * @ORM\Column(name="full_reimbursement_min_participants", type="integer", nullable=true)
+     * @ORM\Column(name="fr_min_participants", type="integer", nullable=true)
      */
-    private $fullReimbursementMinParticipants;
+    private $fullReimburseMinParticipant;
 
     /**
-     * @var float $fullReimbursementMinTransactionAmount
+     * @var float $fullReimburseMinTransAmount
      *
-     * @ORM\Column(name="full_reimbursement_min_transaction_amount", type="float", nullable=true)
+     * @ORM\Column(name="fr_min_transaction_amount", type="float", nullable=true)
      */
-    private $fullReimbursementMinTransactionAmount;
+    private $fullReimburseMinTransAmount;
 
     /**
-     * @var float $fullReimbursementCashbackPercentage
+     * @var float $fullReimburseCashbackPercent
      *
-     * @ORM\Column(name="full_reimbursement_cashback_percentage", type="float", nullable=true)
+     * @ORM\Column(name="fr_cashback_percentage", type="float", nullable=true)
      * @Assert\Min(limit = "0", message = "Percentage Value should not be less than 0")
      * @Assert\Max(limit = "100", message = "Percentage Value should not be more than 100")     
      */
-    private $fullReimbursementCashbackPercentage;
+    private $fullReimburseCashbackPercent;
 
     /**
      * @var float $cashbackValuePercentage
@@ -316,7 +316,7 @@ class Offer
      */
     public function setFullReimbursementTermsAndConditions($fullReimbursementTermsAndConditions)
     {
-        $this->fullReimbursementTermsAndConditions = $fullReimbursementTermsAndConditions;
+        $this->fullReimbursementTermsCondition = $fullReimbursementTermsAndConditions;
         return $this;
     }
 
@@ -327,7 +327,7 @@ class Offer
      */
     public function getFullReimbursementTermsAndConditions()
     {
-        return $this->fullReimbursementTermsAndConditions;
+        return $this->fullReimbursementTermsCondition;
     }
 
     /**
@@ -645,7 +645,7 @@ class Offer
      */
     public function setFullReimbursementMinParticipants($fullReimbursementMinParticipants)
     {
-        $this->fullReimbursementMinParticipants = $fullReimbursementMinParticipants;
+        $this->fullReimburseMinParticipant = $fullReimbursementMinParticipants;
         return $this;
     }
 
@@ -656,7 +656,7 @@ class Offer
      */
     public function getFullReimbursementMinParticipants()
     {
-        return $this->fullReimbursementMinParticipants;
+        return $this->fullReimburseMinParticipant;
     }
 
     /**
@@ -667,7 +667,7 @@ class Offer
      */
     public function setFullReimbursementMinTransactionAmount($fullReimbursementMinTransactionAmount)
     {
-        $this->fullReimbursementMinTransactionAmount = $fullReimbursementMinTransactionAmount;
+        $this->fullReimburseMinTransAmount = $fullReimbursementMinTransactionAmount;
         return $this;
     }
 
@@ -678,7 +678,7 @@ class Offer
      */
     public function getFullReimbursementMinTransactionAmount()
     {
-        return $this->fullReimbursementMinTransactionAmount;
+        return $this->fullReimburseMinTransAmount;
     }
 
     /**
@@ -689,7 +689,7 @@ class Offer
      */
     public function setFullReimbursementCashbackPercentage($fullReimbursementCashbackPercentage)
     {
-        $this->fullReimbursementCashbackPercentage = $fullReimbursementCashbackPercentage;
+        $this->fullReimburseCashbackPercent = $fullReimbursementCashbackPercentage;
         return $this;
     }
 
@@ -700,7 +700,7 @@ class Offer
      */
     public function getFullReimbursementCashbackPercentage()
     {
-        return $this->fullReimbursementCashbackPercentage;
+        return $this->fullReimburseCashbackPercent;
     }
 
     /**
