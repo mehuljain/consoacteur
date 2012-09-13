@@ -16,7 +16,7 @@ $tempTable_withdraw = 'withdrawal_temp';
 // The database name under which temporary tables will be stored.
 $dbname = 'consoacteur_fr';
 // The old database name to transfer the data 
-$olddbname = 'consoact_old';
+$olddbname = 'consoactdb1';
 
 
 //function getuserArray($id){
@@ -112,13 +112,13 @@ $today = date('Y-m-d', time());
 while ($tableCount = $bd->select($olddbname. '.mouvements', '*', '', $start . ',' . $end, '', '', false, true) > 0) {
   $rowsTransactionsTemp = $bd->toutesLignes();
   foreach ($rowsTransactionsTemp as $transactionRow) {
-    $count = $bd->select($dbname.'.users_temp', array('id','username_cannonical'));
+    $count = $bd->select($dbname.'.users_temp', array('id','username_canonical'),'id='.$transactionRow['id']);
     if($count != 1)
     {
       continue;
     }
     
-    $temp['username'] = $bd->valeur('username_cannonical');
+    $temp['username'] = $bd->valeur('username_canonical');
     
     $temp['user_id'] = $transactionRow['id'];
     $temp['offer_id'] = 1;

@@ -128,7 +128,8 @@ class ResettingController extends Controller {
    $user = $this->container->get('fos_user.user_manager')->findUserByConfirmationToken($confirmationToken);
 
     if (null === $user) {
-      throw new NotFoundHttpException(sprintf('The user with "confirmation token" does not exist for value "%s"', $confirmationToken));
+      $this->get('session')->setFlash('error', $this->get('translator')->trans('passwordreset.linkexpired.message',array(), 'flashmessages'));
+      return $this->redirect($this->generateUrl('gd_site_user_resetting'));
     }
     
     if (!$user->isPasswordRequestNonExpired($this->container->getParameter('fos_user.resetting.token_ttl'))) {

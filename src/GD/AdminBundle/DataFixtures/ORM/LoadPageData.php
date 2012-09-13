@@ -19,147 +19,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface
         $faq->setMetaTags("faq");
         $faq->setMetaDescription("Great Deals Question and Answers");
         $faq->setContent('
-            <h1 class="title">FAQ</h1>
-                <div id="faq-topics">
-                <ul class="floatl">
-                <li><a href="#general">General</a></li>
-                <li><a href="#cashback">Cashback</a></li>
-                <li><a href="#codepromo">Code Promo</a></li>
-                <li><a href="#sgain">Subscription Gain</a></li>
-                </ul>
-                <ul>
-                <li><a href="#full-reimbru">Full Reimbruisement</a></li>
-                <li><a href="#referralp">Referral Programme</a></li>
-                <li><a href="#wap">Withdrawals and Payments</a></li>
-                </ul>
-                </div>
-                <div class="faq-block"><a name="general"></a>
-                <h4>General<a class="top" href="#top">Top</a></h4>
-                <ul>
-                <li>
-                <p class="question"><span>Q.</span>Is joining Great-Deals free?</p>
-                <p class="answer"><span>A.</span>Yes, and you also get 3 Euros bonus on joining.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>What is automatic invoicing?</p>
-                <p class="answer"><span>A.</span>This service is only available to individuals. It enables our system to automatically create your invoice for the past month without you having to do anything: you won\'t receive any invoice requests and won\'t have to send us an invoice. A copy of the invoice will be sent to you by e-mail (you should keep it as proof) and another copy will be kept by NetAffiliation. You will receive payment at the end of the month via your chosen method of payment.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much does it cost?</p>
-                <p class="answer"><span>A.</span>Webmaster registration is ENTIRELY FREE OF CHARGE! Affiliation is for you to make money, not spend it!</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much will I earn?</p>
-                <p class="answer"><span>A.</span>That depends on each campaign.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How do I collect my earnings?</p>
-                <p class="answer"><span>A.</span>NetAffiliation will collect your earnings from the advertisers and pay them to you every month once they reach a certain threshold. This threshold depends on the currency of payment.</p>
-                </li>
-                </ul>
-                </div>
-                <div class="faq-block"><a name="cashback"></a>
-                <h4>Cashback<a class="top" href="#top">Top</a></h4>
-                <ul>
-                <li>
-                <p class="question"><span>Q.</span>Is joining Great-Deals free?</p>
-                <p class="answer"><span>A.</span>Yes, and you also get 3 Euros bonus on joining.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>What is automatic invoicing?</p>
-                <p class="answer"><span>A.</span>This service is only available to individuals. It enables our system to automatically create your invoice for the past month without you having to do anything: you won\'t receive any invoice requests and won\'t have to send us an invoice. A copy of the invoice will be sent to you by e-mail (you should keep it as proof) and another copy will be kept by NetAffiliation. You will receive payment at the end of the month via your chosen method of payment.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much does it cost?</p>
-                <p class="answer"><span>A.</span>Webmaster registration is ENTIRELY FREE OF CHARGE! Affiliation is for you to make money, not spend it!</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much will I earn?</p>
-                <p class="answer"><span>A.</span>That depends on each campaign.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How do I collect my earnings?</p>
-                <p class="answer"><span>A.</span>NetAffiliation will collect your earnings from the advertisers and pay them to you every month once they reach a certain threshold. This threshold depends on the currency of payment.</p>
-                </li>
-                </ul>
-                </div>
-                <div class="faq-block"><a name="codepromo"></a>
-                <h4>Code Promo<a class="top" href="#top">Top</a></h4>
-                <ul>
-                <li>
-                <p class="question"><span>Q.</span>Is joining Great-Deals free?</p>
-                <p class="answer"><span>A.</span>Yes, and you also get 3 Euros bonus on joining.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>What is automatic invoicing?</p>
-                <p class="answer"><span>A.</span>This service is only available to individuals. It enables our system to automatically create your invoice for the past month without you having to do anything: you won\'t receive any invoice requests and won\'t have to send us an invoice. A copy of the invoice will be sent to you by e-mail (you should keep it as proof) and another copy will be kept by NetAffiliation. You will receive payment at the end of the month via your chosen method of payment.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much does it cost?</p>
-                <p class="answer"><span>A.</span>Webmaster registration is ENTIRELY FREE OF CHARGE! Affiliation is for you to make money, not spend it!</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much will I earn?</p>
-                <p class="answer"><span>A.</span>That depends on each campaign.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How do I collect my earnings?</p>
-                <p class="answer"><span>A.</span>NetAffiliation will collect your earnings from the advertisers and pay them to you every month once they reach a certain threshold. This threshold depends on the currency of payment.</p>
-                </li>
-                </ul>
-                </div>
-                <div class="faq-block"><a name="sgain"></a>
-                <h4>Subscription Gain<a class="top" href="#top">Top</a></h4>
-                <ul>
-                <li>
-                <p class="question"><span>Q.</span>Is joining Great-Deals free?</p>
-                <p class="answer"><span>A.</span>Yes, and you also get 3 Euros bonus on joining.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>What is automatic invoicing?</p>
-                <p class="answer"><span>A.</span>This service is only available to individuals. It enables our system to automatically create your invoice for the past month without you having to do anything: you won\'t receive any invoice requests and won\'t have to send us an invoice. A copy of the invoice will be sent to you by e-mail (you should keep it as proof) and another copy will be kept by NetAffiliation. You will receive payment at the end of the month via your chosen method of payment.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much does it cost?</p>
-                <p class="answer"><span>A.</span>Webmaster registration is ENTIRELY FREE OF CHARGE! Affiliation is for you to make money, not spend it!</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much will I earn?</p>
-                <p class="answer"><span>A.</span>That depends on each campaign.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How do I collect my earnings?</p>
-                <p class="answer"><span>A.</span>NetAffiliation will collect your earnings from the advertisers and pay them to you every month once they reach a certain threshold. This threshold depends on the currency of payment.</p>
-                </li>
-                </ul>
-                </div>
-                <div class="faq-block"><a name="full-reimbru"></a>
-                <h4>Full Reimbruisement<a class="top" href="#top">Top</a></h4>
-                <ul>
-                <li>
-                <p class="question"><span>Q.</span>Is joining Great-Deals free?</p>
-                <p class="answer"><span>A.</span>Yes, and you also get 3 Euros bonus on joining.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>What is automatic invoicing?</p>
-                <p class="answer"><span>A.</span>This service is only available to individuals. It enables our system to automatically create your invoice for the past month without you having to do anything: you won\'t receive any invoice requests and won\'t have to send us an invoice. A copy of the invoice will be sent to you by e-mail (you should keep it as proof) and another copy will be kept by NetAffiliation. You will receive payment at the end of the month via your chosen method of payment.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much does it cost?</p>
-                <p class="answer"><span>A.</span>Webmaster registration is ENTIRELY FREE OF CHARGE! Affiliation is for you to make money, not spend it!</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How much will I earn?</p>
-                <p class="answer"><span>A.</span>That depends on each campaign.</p>
-                </li>
-                <li>
-                <p class="question"><span>Q.</span>How do I collect my earnings?</p>
-                <p class="answer"><span>A.</span>NetAffiliation will collect your earnings from the advertisers and pay them to you every month once they reach a certain threshold. This threshold depends on the currency of payment.</p>
-                </li>
-                </ul>
-                </div><!-- testing -->
-        
-        ');
+            <h1 class="title">FAQ</h1>');
         $manager->persist($faq);
 
         $assistance = new Page();
@@ -173,12 +33,12 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($assistance);
         
         $tnc = new Page();
-        $tnc->setName("Conso-Acteur");
+        $tnc->setName("CGU");
         $tnc->setSlug("terms-and-conditions");
         $tnc->setCreatedAt(new \DateTime());
         $tnc->setUpdatedAt(new \DateTime());
-        $tnc->setMetaTags("tnc");
-        $tnc->setMetaDescription("ConsoActeur");
+        $tnc->setMetaTags("cgu");
+        $tnc->setMetaDescription("CGU");
         $tnc->setContent("<p>Terms and Condition goes in here!</p>");
         $manager->persist($tnc);
         

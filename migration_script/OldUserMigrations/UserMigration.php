@@ -44,7 +44,7 @@ $tempTable = 'users_temp';
 // The database name under which temporary tables will be stored.
 $dbname = 'consoacteur_fr';
 //old database name 
-$olddbname = 'consoact_old';
+$olddbname = 'consoactdb1';
 // The database to transfer the data 
 $create = $bd->requete('CREATE TABLE '.$dbname.'.'.$tempTable . ' LIKE '. $dbname.'.users', $dbname.'.'.$tempTable);
 
@@ -170,5 +170,4 @@ while($tableCount = $bd->select($olddbname.'.comptes','*','supprime_le IS NULL',
     $start += $end;  
 }
 
-$bd->ferme();
-    
+$bd->ferme();    
