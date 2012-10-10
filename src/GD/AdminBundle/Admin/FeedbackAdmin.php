@@ -25,7 +25,7 @@ class FeedbackAdmin extends SonataAdmin
     {
         $formMapper
             ->add('merchant', null, array('read_only' => true))
-            ->add('user', null, array('read_only' => true))
+//            ->add('user', null, array('read_only' => true))
             ->add('rating', null, array('read_only' => true))
             ->add('comment')
             ->add('ipAddress', null, array('read_only' => true))

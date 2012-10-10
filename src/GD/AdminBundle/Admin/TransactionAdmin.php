@@ -112,7 +112,7 @@ class TransactionAdmin extends SonataAdmin
     {
         $datagridMapper
             ->add('offer')
-            ->add('user')
+            ->add('username')
             ->add('status', 'doctrine_orm_choice', array(), 'choice', array('choices' => Transaction::getStatusList()))
             ->add('type', 'doctrine_orm_choice', array(), 'choice', array('choices' => Transaction::getTypeList()))
             ->add('programId')
