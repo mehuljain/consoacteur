@@ -49,6 +49,16 @@
                                     </td>
                                     <td>{% trans %}merchantlist.sortby.text{% endtrans %}
                                         <select id="cashback_filter" name="sort_by" onchange="Javascript:setFilterFormAction(null);">
+                                            {% if app.request.request.get('sort_by') == 'name' %}
+                                                <option selected="selected"
+                                                        value="name">
+                                                    {% trans %}merchantlist.cashbacknamedropdown.text{% endtrans %}
+                                                </option>
+                                            {% else %}
+                                                <option value="name">
+                                                    {% trans %}merchantlist.cashbacknamedropdown.text{% endtrans %}
+                                                </option>
+                                            {% endif %}
                                             {% if app.request.request.get('sort_by') == 'cashback-amount' %}
                                                 <option selected="selected"
                                                         value="cashback-amount">
@@ -81,17 +91,7 @@
                                                     {% trans %}merchantlist.cashbackstartdatedropdown.text{% endtrans %}
                                                 </option>
                                             {% endif %}
-
-                                            {% if app.request.request.get('sort_by') == 'name' %}
-                                                <option selected="selected"
-                                                        value="name">
-                                                    {% trans %}merchantlist.cashbacknamedropdown.text{% endtrans %}
-                                                </option>
-                                            {% else %}
-                                                <option value="name">
-                                                    {% trans %}merchantlist.cashbacknamedropdown.text{% endtrans %}
-                                                </option>
-                                            {% endif %}
+                                            
                                         </select>
                                     </td>
                                 </form>

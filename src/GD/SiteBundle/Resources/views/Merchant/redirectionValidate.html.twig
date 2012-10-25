@@ -107,8 +107,7 @@ $(document).ready(function () {
      });
   });  
   $("#login-form").on('submit', function (event){
-  event.preventDefault();
-  var redirectionLoginData = $('#login-form').serializeArray();
+   var redirectionLoginData = $('#login-form').serializeArray();
   redirectionLoginData.push({name: 'ajaxLogin', value: true});
   $.post( $("#login-form").attr('action'),redirectionLoginData,function(data) {
   var loginError = $(data).find('div[id=loginError]');

@@ -48,7 +48,7 @@ class MerchantController extends Controller
     /**
      * The listing of merchants based on the type of offer (cashback, code promo...)
      * 
-     * @Route("/merchants/{filter}/{type}/page/{page}/rows-per-page/{rows_per_page}/sort-by/{sort_by}/search-key/{search_key}", name="gd_merchant_list", requirements={"filters" = "offer|category|tag|search"}, defaults={"filter" = "offer", "page" = 1, "rows_per_page" = 20, "sort_by" = "cashback-amount" ,"search_key" = ""})
+     * @Route("/merchants/{filter}/{type}/page/{page}/rows-per-page/{rows_per_page}/sort-by/{sort_by}/search-key/{search_key}", name="gd_merchant_list", requirements={"filters" = "offer|category|tag|search"}, defaults={"filter" = "offer", "page" = 1, "rows_per_page" = 20, "sort_by" = "name" ,"search_key" = ""})
      * @Template()
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return array

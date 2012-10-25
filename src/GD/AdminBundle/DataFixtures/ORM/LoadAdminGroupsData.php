@@ -58,131 +58,131 @@ class LoadAdminGroupsData extends AbstractFixture implements OrderedFixtureInter
      * All content management pages must be added here. The list of pages can 
      * be obtained from services.yml under the Admin Bundle
      */
-    $cmsGroup = array(
-        'PAGE',
-        'CATEGORY',
-        'TAG',
-        'MERCHANT',
-        'MERCHANT_LIST',
-        'OFFER_CASHBACK',
-        'OFFER_REIMBURSEMENT',
-        'OFFER_CODEPROMO',
-        'OFFER_SUBSCRIPTION',
-        'MODULE',
-        'CAROUSEL_LIST',
-        'FLASH_PARAMETER',
-        'NEWSLETTER');
-
-    /**
-     * All customer(registered user) related pages must be added here
-     */
-    $customerGroup = array(
-        'CUSTOMER_DETAILS',
-        'CUSTOMERS_BLACKLISTED',
-        'CUSTOMERS_ARCHIVED');
-    
-    /**
-     * Feedback module group 
-     */
-    $feedbackGroup = array(
-        'FEEDBACK'
-    );
-
-    /**
-     * All transaction related pages in the backend 
-     */
-    $transactionGroup = array(
-        'TRANSACTION',
-        'WITHDRAWAL_PENDING',
-        'WITHDRAWAL_APPROVED',
-        'WITHDRAWAL_PAID',
-        'WITHDRAWAL_ON_HOLD');
-
-    $customerRoles = $customerLightRoles =  
-    $transactionRoles = $transactionLightRoles = 
-    $cmsRoles = $cmsLightRoles = 
-    $feedbackRoles = $feedbackLightRoles = array();
-
-    foreach ($cmsGroup as $cms) {
-      //Provide Full Access to cmsRoles
-      foreach ($this->rolesFull as $roleFull) {
-        $cmsRoles[] = str_replace('__NAME__', '_' . $cms . '_', $roleFull);
-      }
-      //Provide Light Access to cmsLightRoles
-      foreach ($this->rolesLight as $roleLight){
-        $cmsLightRoles[] = str_replace('__NAME__', '_' . $cms. '_', $roleLight);
-      }
-    }
-        
-    foreach ($customerGroup as $customer) {
-      //Provide Full Access to customerRoles
-      foreach ($this->rolesFull as $role) {
-        $customerRoles[] = str_replace('__NAME__', '_' . $customer . '_', $role);
-      }
-      //Provide Light Access to cmsLightRoles
-      foreach ($this->rolesLight as $roleLight){
-        $customerLightRoles[] = str_replace('__NAME__', '_' . $customer. '_', $roleLight);
-      }
-    }
-
-    foreach ($transactionGroup as $transaction) {
-      //Provide Full access to transaction roles
-      foreach ($this->rolesFull as $role) {
-        $transactionRoles[] = str_replace('__NAME__', '_' . $transaction . '_', $role);
-      }
-      //Provide Light Access to transaction roles
-      foreach ($this->rolesLight as $roleLight){
-        $transactionLightRoles[] = str_replace('__NAME__', '_' . $transaction. '_', $roleLight);
-      }
-    }
-    
-    foreach ($feedbackGroup as $feedback) {
-      //Provide Full access to feedback roles
-      foreach ($this->rolesFull as $role) {
-        $feedbackRoles[] = str_replace('__NAME__', '_' . $feedback . '_', $role);
-      }
-      //Provide Light Access to feedback roles
-      foreach ($this->rolesLight as $roleLight){
-        $feedbackLightRoles[] = str_replace('__NAME__', '_' . $feedback. '_', $roleLight);
-      }
-    }
-    
-    //Provide ROLE_ADMIN access so that the user can access backend pages
-    $customerRoles[] = $customerLightRoles[] =  
-    $transactionRoles[] = $transactionLightRoles[] = 
-    $cmsRoles[] = $cmsLightRoles[] = 
-    $feedbackRoles[] = $feedbackLightRoles[] = 'ROLE_ADMIN';
-    
-    //Persist all roles to the database. The first argument is the name and the second the array of roles.
-    $customer = new Group('customer', $customerRoles);
-    $manager->persist($customer);
-    
-    $customerLight = new Group('customerLight', $customerLightRoles);
-    $manager->persist($customerLight);
-
-    $transaction = new Group('transaction', $transactionRoles);
-    $manager->persist($transaction);
-    
-    $transactionLight = new Group('transactionLight', $transactionLightRoles);
-    $manager->persist($transactionLight);
-
-    $cms = new Group('cms', $cmsRoles);
-    $manager->persist($cms);
-    
-    $cmsLight = new Group('cmsLight', $cmsLightRoles);
-    $manager->persist($cmsLight);
-    
-    $feedback = new Group('feedback', $feedbackRoles);
-    $manager->persist($feedback);
-    
-    $feedbackLight = new Group('feedbackLight', $feedbackLightRoles);
-    $manager->persist($feedbackLight);
-     
-    $admin = new Group('admin', $this->adminRoles);
-    $manager->persist($admin);
-    
-      $manager->flush();
-      $this->addReference('admin-group', $admin);
+//    $cmsGroup = array(
+//        'PAGE',
+//        'CATEGORY',
+//        'TAG',
+//        'MERCHANT',
+//        'MERCHANT_LIST',
+//        'OFFER_CASHBACK',
+//        'OFFER_REIMBURSEMENT',
+//        'OFFER_CODEPROMO',
+//        'OFFER_SUBSCRIPTION',
+//        'MODULE',
+//        'CAROUSEL_LIST',
+//        'FLASH_PARAMETER',
+//        'NEWSLETTER');
+//
+//    /**
+//     * All customer(registered user) related pages must be added here
+//     */
+//    $customerGroup = array(
+//        'CUSTOMER_DETAILS',
+//        'CUSTOMERS_BLACKLISTED',
+//        'CUSTOMERS_ARCHIVED');
+//    
+//    /**
+//     * Feedback module group 
+//     */
+//    $feedbackGroup = array(
+//        'FEEDBACK'
+//    );
+//
+//    /**
+//     * All transaction related pages in the backend 
+//     */
+//    $transactionGroup = array(
+//        'TRANSACTION',
+//        'WITHDRAWAL_PENDING',
+//        'WITHDRAWAL_APPROVED',
+//        'WITHDRAWAL_PAID',
+//        'WITHDRAWAL_ON_HOLD');
+//
+//    $customerRoles = $customerLightRoles =  
+//    $transactionRoles = $transactionLightRoles = 
+//    $cmsRoles = $cmsLightRoles = 
+//    $feedbackRoles = $feedbackLightRoles = array();
+//
+//    foreach ($cmsGroup as $cms) {
+//      //Provide Full Access to cmsRoles
+//      foreach ($this->rolesFull as $roleFull) {
+//        $cmsRoles[] = str_replace('__NAME__', '_' . $cms . '_', $roleFull);
+//      }
+//      //Provide Light Access to cmsLightRoles
+//      foreach ($this->rolesLight as $roleLight){
+//        $cmsLightRoles[] = str_replace('__NAME__', '_' . $cms. '_', $roleLight);
+//      }
+//    }
+//        
+//    foreach ($customerGroup as $customer) {
+//      //Provide Full Access to customerRoles
+//      foreach ($this->rolesFull as $role) {
+//        $customerRoles[] = str_replace('__NAME__', '_' . $customer . '_', $role);
+//      }
+//      //Provide Light Access to cmsLightRoles
+//      foreach ($this->rolesLight as $roleLight){
+//        $customerLightRoles[] = str_replace('__NAME__', '_' . $customer. '_', $roleLight);
+//      }
+//    }
+//
+//    foreach ($transactionGroup as $transaction) {
+//      //Provide Full access to transaction roles
+//      foreach ($this->rolesFull as $role) {
+//        $transactionRoles[] = str_replace('__NAME__', '_' . $transaction . '_', $role);
+//      }
+//      //Provide Light Access to transaction roles
+//      foreach ($this->rolesLight as $roleLight){
+//        $transactionLightRoles[] = str_replace('__NAME__', '_' . $transaction. '_', $roleLight);
+//      }
+//    }
+//    
+//    foreach ($feedbackGroup as $feedback) {
+//      //Provide Full access to feedback roles
+//      foreach ($this->rolesFull as $role) {
+//        $feedbackRoles[] = str_replace('__NAME__', '_' . $feedback . '_', $role);
+//      }
+//      //Provide Light Access to feedback roles
+//      foreach ($this->rolesLight as $roleLight){
+//        $feedbackLightRoles[] = str_replace('__NAME__', '_' . $feedback. '_', $roleLight);
+//      }
+//    }
+//    
+//    //Provide ROLE_ADMIN access so that the user can access backend pages
+//    $customerRoles[] = $customerLightRoles[] =  
+//    $transactionRoles[] = $transactionLightRoles[] = 
+//    $cmsRoles[] = $cmsLightRoles[] = 
+//    $feedbackRoles[] = $feedbackLightRoles[] = 'ROLE_ADMIN';
+//    
+//    //Persist all roles to the database. The first argument is the name and the second the array of roles.
+//    $customer = new Group('customer', $customerRoles);
+//    $manager->persist($customer);
+//    
+//    $customerLight = new Group('customerLight', $customerLightRoles);
+//    $manager->persist($customerLight);
+//
+//    $transaction = new Group('transaction', $transactionRoles);
+//    $manager->persist($transaction);
+//    
+//    $transactionLight = new Group('transactionLight', $transactionLightRoles);
+//    $manager->persist($transactionLight);
+//
+//    $cms = new Group('cms', $cmsRoles);
+//    $manager->persist($cms);
+//    
+//    $cmsLight = new Group('cmsLight', $cmsLightRoles);
+//    $manager->persist($cmsLight);
+//    
+//    $feedback = new Group('feedback', $feedbackRoles);
+//    $manager->persist($feedback);
+//    
+//    $feedbackLight = new Group('feedbackLight', $feedbackLightRoles);
+//    $manager->persist($feedbackLight);
+//     
+//    $admin = new Group('admin', $this->adminRoles);
+//    $manager->persist($admin);
+//    
+//      $manager->flush();
+//      $this->addReference('admin-group', $admin);
     }
 
   public function getOrder() {

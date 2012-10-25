@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\HttpFoundation\Request;
 
 class CustomerAdminController extends Controller
 {
@@ -138,4 +139,64 @@ class CustomerAdminController extends Controller
       $this->get('mailer_utility')->sendEmailMessage($renderTemplate, $context,$fromEmail,$object->getEmail());
        return true;
     }
+    
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function exportAction(Request $request)
+    {
+        $format = $request->get('format');
+
+        $allowedExportFormats = (array) $this->admin->getExportFormats();
+
+        if(!in_array($format, $allowedExportFormats) ) {
+            throw new \RuntimeException(sprintf('Export in format `%s` is not allowed for class: `%s`. Allowed formats are: `%s`', $format, $this->admin->getClass(), implode(', ', $allowedExportFormats)));
+        }
+
+        $filename = sprintf('export_%s_%s.%s',
+            strtolower(substr($this->admin->getClass(), strripos($this->admin->getClass(), '\\') + 1)),
+            date('Y_m_d_H_i_s', strtotime('now')),
+            $format
+        );
+        
+        $loop = 0; 
+        $end = 0;
+        $offset = 50000;//Collect these many records and then loop again for further records
+        $datagrid = $this->admin->getDatagrid();        
+        $datagrid->buildPager();
+        $count = (int)$datagrid->getPager()->count();
+        $count = ceil($count/$offset);
+        
+        set_time_limit(0);
+        ini_set('memory_limit','512M');
+        $data = array();        
+        $content = $this->renderView('GDAdminBundle:Default:adminCsvHeader.html.twig');
+        $response = new Response($content);
+        $response->headers->set('Content-Type', 'text/csv');
+        $response->headers->set('Content-Disposition', 'attachment; filename='.$filename);        
+        $response->setContent($content);
+        $response->send();
+        $em = $this->getDoctrine()->getEntityManager();
+        while($loop < $count){
+          $start = 1 + $end;
+          $end = $end + $offset;
+          $query = $em->createQuery('SELECT u.email,u.username,u.newsletterSubscription,u.salutation,u.enabled FROM GD\AdminBundle\Entity\User u where u.isArchived = false');
+          $query->setFirstResult($start);
+          $query->setMaxResults($offset);
+          $data = $query->getArrayResult();
+          $content = $this->renderView('GDAdminBundle:Default:adminCsv.html.twig', array('data' => $data));
+          $response->setContent($content);
+          $response->send();
+          unset($query);
+          unset($data);
+          unset($content);
+          $loop++;
+        }
+        
+        $content = 'End of file';
+
+        return new Response($content);
+    }    
+
 }

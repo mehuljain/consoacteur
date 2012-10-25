@@ -36,7 +36,7 @@ class Merchant
      *
      * @Gedmo\Sluggable(slugField="slug")
      * @ORM\Column(name="name", type="string", length=255)
-     * @Gedmo\Translatable
+     * 
      */
     private $name;
 

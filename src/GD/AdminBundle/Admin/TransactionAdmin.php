@@ -36,7 +36,8 @@ class TransactionAdmin extends SonataAdmin
                 ->add('user', 'text', array('read_only' => true));
         } else {
             $formMapper
-                ->add('user', 'sonata_type_model', array('query' => $customerQuery, 'attr' => array('class' => 'chzn-select')), array('edit' => 'standard'));
+//                ->add('user', 'sonata_type_model', array('query' => $customerQuery, 'attr' => array('class' => 'chzn-select')), array('edit' => 'standard'));
+                  ->add('user', 'text', array('read_only' => false));
         }
 
         if($this->isWithdrawalAssigned) {
@@ -111,6 +112,7 @@ class TransactionAdmin extends SonataAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add('id')
             ->add('offer')
             ->add('username')
             ->add('status', 'doctrine_orm_choice', array(), 'choice', array('choices' => Transaction::getStatusList()))
